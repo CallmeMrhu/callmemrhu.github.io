@@ -79,13 +79,17 @@
 
 
 
+<meta name="description" content="这是一段开场白欢迎来到胡先生的个人博客！ 这里将分享生活的点滴，记录技术的成长 持续更新中！😊">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Chan&#39;s Blog">
 <meta property="og:url" content="http://mrhu.vip/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="这是一段开场白欢迎来到胡先生的个人博客！ 这里将分享生活的点滴，记录技术的成长 持续更新中！😊">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-16T06:51:14.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chan&#39;s Blog">
+<meta name="twitter:description" content="这是一段开场白欢迎来到胡先生的个人博客！ 这里将分享生活的点滴，记录技术的成长 持续更新中！😊">
 
 
 
@@ -121,7 +125,7 @@
 
 
 
-  <title>Chan's Blog</title>
+  <title> | Chan's Blog</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,436 +237,40 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-9-Palindrome-Number/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheng Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan's Blog">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/16/a-9-Palindrome-Number/" itemprop="url">a_9_Palindrome_Number</a></h1>
-        
+	<h1 class="post-title" itemprop="name headline"></h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:12:16+08:00">
-                2018-04-16
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
+      <div class="post-body">
         
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 28/03/2018.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 9 Palindrome Number (回文数)</span></span><br><span class="line"><span class="comment">// determine whether an integer is a palindrome, without extra space;</span></span><br><span class="line"><span class="comment">// Note negative integers are not palindromes</span></span><br><span class="line"><span class="comment">// 解这道回文数判断时，首先要明确负数不属于回文数</span></span><br><span class="line"><span class="comment">// 第一个解题思路是code中的第一种解法，使用vector来存储判定值，然后用最简单的比较方法进行判断，</span></span><br><span class="line"><span class="comment">// 当然这样做的话，算法的空间复杂度就达到来O(n)，不符合题目without extra space的要求，</span></span><br><span class="line"><span class="comment">// 在思考的过程中，题目有提示之前做过的reverse integer，翻转数字，int型翻转后，可能会overflow。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 第二个解题思路是差了别人的思路之后再写的，主要是对without extra space的这个要求的理解不到位</span></span><br><span class="line"><span class="comment">// 第二个方法借助临时变量，考虑到回文数折中后左边剩下的部分，和右边翻转得到的数字相等则为palindrome，</span></span><br><span class="line"><span class="comment">// 并且这样折中后再翻转就不存在overflow的情况了，这是关键！</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 注：leetcode上的without extra space实际上的意思空间复杂度为O(1)；</span></span><br><span class="line"><span class="comment">// explanation from stackoverflow: “without extra space” usually means with O(1) space.</span></span><br><span class="line"><span class="comment">//                                  so if you use a temp variable you’e still using O(1) space and it is fine."</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; line;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = x % <span class="number">10</span>;</span><br><span class="line">            line.push_back(tmp);</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> size = line.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tag = size / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tag; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (line[i] == line[size - i])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome_criterion</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//without extra space</span></span><br><span class="line">        <span class="keyword">int</span> xx = x;</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            length++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; length / <span class="number">2</span>) &#123;</span><br><span class="line">            sum = sum * <span class="number">10</span> + xx % <span class="number">10</span>;</span><br><span class="line">            xx /= <span class="number">10</span>;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (length % <span class="number">2</span> == <span class="number">0</span> &amp;&amp; xx == sum)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (length % <span class="number">2</span> == <span class="number">1</span> &amp;&amp; xx / <span class="number">10</span> == sum)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> result = solution.isPalindrome(number);</span><br><span class="line">    <span class="keyword">bool</span> result_criterion = solution.isPalindrome_criterion(number);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result_criterion &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <h3 id="这是一段开场白"><a href="#这是一段开场白" class="headerlink" title="这是一段开场白"></a>这是一段开场白</h3><p>欢迎来到胡先生的个人博客！</p>
+<p>这里将分享生活的点滴，记录技术的成长</p>
+<p>持续更新中！😊</p>
 
-          
         
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheng Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/16/a-7-Reverse-Integer/" itemprop="url">a_7_Reverse_Integer</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T14:56:16+08:00">
-                2018-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 24/03/2018.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 7 reverse integer</span></span><br><span class="line"><span class="comment">// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow</span></span><br><span class="line"><span class="comment">// 所以在存储结果上，要设置为long long，然后对最终的结果要进行判断，且绝对值是否大于INT_MAX。</span></span><br><span class="line"><span class="comment">// 注：32bit的int，有符号（signed int）其值的范围在[-2147483647～2147483647]的闭区间，2^32-1</span></span><br><span class="line"><span class="comment">// 对于无符号（unsigned int）其范围在[0~4294967295]的闭区间 2^32-1</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> negative = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            negative = <span class="literal">true</span>;</span><br><span class="line">            x = -x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result = result * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (result &gt; INT_MAX)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (negative)</span><br><span class="line">            result = -result;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.reverse(x);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-1-Two-Sum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheng Hu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/16/a-1-Two-Sum/" itemprop="url">a_1_Two_Sum</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T14:18:57+08:00">
-                2018-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 21/03/2018.</span></span><br><span class="line"><span class="comment">// leetcode 1 : Two_Sum</span></span><br><span class="line"><span class="comment">// 相邻两个值的和为目标结果，则输出该数对</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> target = <span class="number">6</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result = twoSum(nums, target);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">0</span>] &lt;&lt; result[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">    <span class="keyword">long</span> number = nums.size();</span><br><span class="line">    <span class="keyword">bool</span> isRight = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; number; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; number; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                result.push_back(i);</span><br><span class="line">                result.push_back(j);</span><br><span class="line">                isRight = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (isRight)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 学会使用c++容器vector</span></span><br><span class="line"><span class="comment">// 该算法的时间效率还不是最高的</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -671,6 +278,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -691,8 +302,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -752,6 +372,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#这是一段开场白"><span class="nav-number">1.</span> <span class="nav-text">这是一段开场白</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -885,6 +521,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
