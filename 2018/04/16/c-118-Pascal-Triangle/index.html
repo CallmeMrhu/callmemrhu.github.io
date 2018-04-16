@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243//// Created by Mr.Hu on 24/03/2018.//// leetcode 7 reverse integer// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow//">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455//// Created by Mr.Hu on 2018/3/31.//// leetcode 118 Pascal&apos;s Triangle// 这一题就是有名的帕斯卡三角形，也叫杨辉三角形（高中数">
 <meta name="keywords" content="Array,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a_7_Reverse_Integer">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/index.html">
+<meta property="og:title" content="c_118_Pascal_Triangle">
+<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-118-Pascal-Triangle/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243//// Created by Mr.Hu on 24/03/2018.//// leetcode 7 reverse integer// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow//">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455//// Created by Mr.Hu on 2018/3/31.//// leetcode 118 Pascal&apos;s Triangle// 这一题就是有名的帕斯卡三角形，也叫杨辉三角形（高中数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T07:40:00.754Z">
+<meta property="og:updated_time" content="2018-04-16T07:55:21.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="a_7_Reverse_Integer">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243//// Created by Mr.Hu on 24/03/2018.//// leetcode 7 reverse integer// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow//">
+<meta name="twitter:title" content="c_118_Pascal_Triangle">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455//// Created by Mr.Hu on 2018/3/31.//// leetcode 118 Pascal&apos;s Triangle// 这一题就是有名的帕斯卡三角形，也叫杨辉三角形（高中数">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-118-Pascal-Triangle/"/>
 
 
 
 
 
-  <title>a_7_Reverse_Integer | Chan's Blog</title>
+  <title>c_118_Pascal_Triangle | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-118-Pascal-Triangle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">a_7_Reverse_Integer</h1>
+          <h1 class="post-title" itemprop="name headline">c_118_Pascal_Triangle</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T14:56:16+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:55:01+08:00">
                 2018-04-16
               </time>
             
@@ -342,7 +342,7 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 24/03/2018.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 7 reverse integer</span></span><br><span class="line"><span class="comment">// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow</span></span><br><span class="line"><span class="comment">// 所以在存储结果上，要设置为long long，然后对最终的结果要进行判断，且绝对值是否大于INT_MAX。</span></span><br><span class="line"><span class="comment">// 注：32bit的int，有符号（signed int）其值的范围在[-2147483647～2147483647]的闭区间，2^32-1</span></span><br><span class="line"><span class="comment">// 对于无符号（unsigned int）其范围在[0~4294967295]的闭区间 2^32-1</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> negative = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            negative = <span class="literal">true</span>;</span><br><span class="line">            x = -x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result = result * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (result &gt; INT_MAX)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (negative)</span><br><span class="line">            result = -result;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.reverse(x);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/3/31.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 118 Pascal's Triangle</span></span><br><span class="line"><span class="comment">// 这一题就是有名的帕斯卡三角形，也叫杨辉三角形（高中数学应该都听说过）</span></span><br><span class="line"><span class="comment">// 在解决这一题时，刚开始并没有想到能够使用二维vector进行操作，编译栏给了点提示。</span></span><br><span class="line"><span class="comment">// 然后进行编码时，发现每行的第一和最后一个数都是1，并且当前行的数字个数与行数相同，当前行与上一行存在着关系</span></span><br><span class="line"><span class="comment">// 所以想到使用嵌套循环，第一层表示当前为第几行，第二层为了去计算当前行的每个数字值是多少。</span></span><br><span class="line"><span class="comment">// 首先考虑特殊情况，第一行和第二行，以及每行的第一个和最后一个数字，然后再考虑中间数字与上一行数字的关系。</span></span><br><span class="line"><span class="comment">// 在代码中使用tmp来保存当前行的值，没计算完一行，则需要对tmp进行释放。使用来两种方式，发现都可以</span></span><br><span class="line"><span class="comment">// 1、vector&lt;int&gt; tmp;tmp.clear(); 2、vector&lt;int&gt; tmp;vector&lt;int&gt;().swap(tmp);</span></span><br><span class="line"><span class="comment">// 第一种是对tmp中的内容进行清空，但是capacity还存在；第二种就是capacity也为0，下次使用tmp需要重新声明。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 问题一：Time Limit Exceeded</span></span><br><span class="line"><span class="comment">// solution:第二个for循环的j++写成了i++</span></span><br><span class="line"><span class="comment">// 问题二：reference binding to null pointer of type 'value_type'</span></span><br><span class="line"><span class="comment">// solution: int sum = result[i-2][j-1]+result[i-2][j];代码中，i-2写成了i-1;</span></span><br><span class="line"><span class="comment">//           原因在于为了让嵌套循环能够执行，在第一层循环中初始化i=1，这样j就可以方便的与i进行比较来判断当前行的状态</span></span><br><span class="line"><span class="comment">//           但是在下一行需要使用上一行数据时，直接使用i-1进行提取出现了问题，由于vector下标是从0开始的，而我此时设置i=1开始</span></span><br><span class="line"><span class="comment">//           因此如果用i-1，所指向的还是当前行，因此报空指针错误，改为i-2就是正常的读取前一行的数据。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line"><span class="comment">//        vector&lt;int&gt; tmp;</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=numRows;i++)&#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(j==<span class="number">0</span> || j==i<span class="number">-1</span>)&#123;</span><br><span class="line">                    tmp.push_back(<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">int</span> sum = result[i<span class="number">-2</span>][j<span class="number">-1</span>]+result[i<span class="number">-2</span>][j];</span><br><span class="line">                    tmp.push_back(sum);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            result.push_back(tmp);</span><br><span class="line"><span class="comment">//            tmp.clear();</span></span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;().swap(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> numRows = <span class="number">5</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result = solution.generate(numRows);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -374,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/a-1-Two-Sum/" rel="next" title="a_1_Two_Sum">
-                <i class="fa fa-chevron-left"></i> a_1_Two_Sum
+              <a href="/2018/04/16/b-88-Merge-Sorted-Array/" rel="next" title="b_88_Merge_Sorted_Array">
+                <i class="fa fa-chevron-left"></i> b_88_Merge_Sorted_Array
               </a>
             
           </div>
@@ -384,8 +384,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/a-9-Palindrome-Number/" rel="prev" title="a_9_Palindrome_Number">
-                a_9_Palindrome_Number <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/c-119-Pascal-Triangle-two/" rel="prev" title="c_119_Pascal_Triangle_two">
+                c_119_Pascal_Triangle_two <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

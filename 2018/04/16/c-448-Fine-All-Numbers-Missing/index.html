@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243//// Created by Mr.Hu on 24/03/2018.//// leetcode 7 reverse integer// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow//">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/13.//// leetcode 448 find all numbers disappeared// 题目给定一个数组，size为n，数组中">
 <meta name="keywords" content="Array,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a_7_Reverse_Integer">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/index.html">
+<meta property="og:title" content="c_448_Fine_All_Numbers_Missing">
+<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-448-Fine-All-Numbers-Missing/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243//// Created by Mr.Hu on 24/03/2018.//// leetcode 7 reverse integer// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow//">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/13.//// leetcode 448 find all numbers disappeared// 题目给定一个数组，size为n，数组中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T07:40:00.754Z">
+<meta property="og:updated_time" content="2018-04-16T08:04:15.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="a_7_Reverse_Integer">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243//// Created by Mr.Hu on 24/03/2018.//// leetcode 7 reverse integer// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow//">
+<meta name="twitter:title" content="c_448_Fine_All_Numbers_Missing">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/13.//// leetcode 448 find all numbers disappeared// 题目给定一个数组，size为n，数组中">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-448-Fine-All-Numbers-Missing/"/>
 
 
 
 
 
-  <title>a_7_Reverse_Integer | Chan's Blog</title>
+  <title>c_448_Fine_All_Numbers_Missing | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-7-Reverse-Integer/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-448-Fine-All-Numbers-Missing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">a_7_Reverse_Integer</h1>
+          <h1 class="post-title" itemprop="name headline">c_448_Fine_All_Numbers_Missing</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T14:56:16+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T16:03:59+08:00">
                 2018-04-16
               </time>
             
@@ -342,7 +342,7 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 24/03/2018.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 7 reverse integer</span></span><br><span class="line"><span class="comment">// 将整数进行颠倒，值得注意的是，输入的是int值，但是颠倒后可能会超过32bit，导致overflow</span></span><br><span class="line"><span class="comment">// 所以在存储结果上，要设置为long long，然后对最终的结果要进行判断，且绝对值是否大于INT_MAX。</span></span><br><span class="line"><span class="comment">// 注：32bit的int，有符号（signed int）其值的范围在[-2147483647～2147483647]的闭区间，2^32-1</span></span><br><span class="line"><span class="comment">// 对于无符号（unsigned int）其范围在[0~4294967295]的闭区间 2^32-1</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> negative = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            negative = <span class="literal">true</span>;</span><br><span class="line">            x = -x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result = result * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (result &gt; INT_MAX)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (negative)</span><br><span class="line">            result = -result;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.reverse(x);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/13.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 448 find all numbers disappeared</span></span><br><span class="line"><span class="comment">// 题目给定一个数组，size为n，数组中数字的范围为[1,n]，由于数组中存在重复出现的数字，</span></span><br><span class="line"><span class="comment">// 所以存在1-n中未出现的数字，求所有为出现的数字。要求不实用额外的空间，时间复杂度为O(n)。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 这一题容易让人联想到268那一题，那一题是只有一个数字，且不存在重复数组，求和做差即可。</span></span><br><span class="line"><span class="comment">// 但是这一题有区别，不能用求和的方式进行解答。</span></span><br><span class="line"><span class="comment">// 思考一会后，想了使用蛮力法、使用set来存储已有数字，最后输出未出现的数字，但是这都不符合题目对时间和空间复杂度的要求。</span></span><br><span class="line"><span class="comment">// 于是去查了一下别人的做法，因为实在想不出这种策略...</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 符合要求的解题方法是对数组进行遍历，每个数-1即为索引值，将该索引值上的数字更新为其相反数；</span></span><br><span class="line"><span class="comment">// 一次遍历之后，再进行二次遍历，此时数组中不为负数的索引值+1即为数组中未出现的数字，因为如果该数字出现，</span></span><br><span class="line"><span class="comment">// 则该数字-1所在索引位置的数应该为负数。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 注意，这个方法在第一次遍历时都要取绝对值，因为前面可能出现大数，导致后面索引位置的值为负数，那么</span></span><br><span class="line"><span class="comment">// 在遍历到后面位置时，其值-1就不是索引值来，应该是其值的绝对值-1。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 这种方法妙在将数字与索引位置联系起来，由不改变索引位置上绝对值结果，这样就使得出现过的数字其对应的索引位置上的值为负数，</span></span><br><span class="line"><span class="comment">// 未出现过的数字其对应的索引位置上的值为非负数，为更改过，其实就是重复的数字。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; findDisappearedNumbers(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> index = <span class="built_in">abs</span>(nums[i])<span class="number">-1</span>;</span><br><span class="line">            nums[index] = <span class="built_in">abs</span>(nums[index])*(<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[j]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                res.push_back(j+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">7</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result = solution.findDisappearedNumbers(nums);</span><br><span class="line">    <span class="keyword">auto</span> it = result.begin();</span><br><span class="line">    <span class="keyword">for</span>(it;it!=result.end();it++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;*it&lt;&lt;<span class="string">' '</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -374,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/a-1-Two-Sum/" rel="next" title="a_1_Two_Sum">
-                <i class="fa fa-chevron-left"></i> a_1_Two_Sum
+              <a href="/2018/04/16/c-414-Third-Maximum-Number/" rel="next" title="c_414_Third_Maximum_Number">
+                <i class="fa fa-chevron-left"></i> c_414_Third_Maximum_Number
               </a>
             
           </div>
@@ -384,8 +384,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/a-9-Palindrome-Number/" rel="prev" title="a_9_Palindrome_Number">
-                a_9_Palindrome_Number <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/c-485-Max-Consecutive-Ones/" rel="prev" title="c_485_Max_Consecutive_Ones">
+                c_485_Max_Consecutive_Ones <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
