@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//// Created by Mr.Hu on 2018/4/4.//// leetcode 169 Majority Element// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859//// Created by Mr.Hu on 2018/4/17.//// leetcode 566 reshape the matrix//// 题目要求对矩阵进行行列变换，">
 <meta name="keywords" content="Array,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_169_Majority_Element">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-169-Majority-Element/index.html">
+<meta property="og:title" content="c_566_Reshape_the_Matrix">
+<meta property="og:url" content="http://mrhu.vip/2018/04/17/c-566-Reshape-the-Matrix/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//// Created by Mr.Hu on 2018/4/4.//// leetcode 169 Majority Element// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859//// Created by Mr.Hu on 2018/4/17.//// leetcode 566 reshape the matrix//// 题目要求对矩阵进行行列变换，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:18:49.577Z">
+<meta property="og:image" content="http://mrhu.vip/2018/04/17/c-566-Reshape-the-Matrix/question.png">
+<meta property="og:updated_time" content="2018-04-17T03:22:25.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_169_Majority_Element">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//// Created by Mr.Hu on 2018/4/4.//// leetcode 169 Majority Element// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个">
+<meta name="twitter:title" content="c_566_Reshape_the_Matrix">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859//// Created by Mr.Hu on 2018/4/17.//// leetcode 566 reshape the matrix//// 题目要求对矩阵进行行列变换，">
+<meta name="twitter:image" content="http://mrhu.vip/2018/04/17/c-566-Reshape-the-Matrix/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-169-Majority-Element/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/04/17/c-566-Reshape-the-Matrix/"/>
 
 
 
 
 
-  <title>c_169_Majority_Element | Chan's Blog</title>
+  <title>c_566_Reshape_the_Matrix | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-169-Majority-Element/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/17/c-566-Reshape-the-Matrix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_169_Majority_Element</h1>
+          <h1 class="post-title" itemprop="name headline">c_566_Reshape_the_Matrix</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:58:47+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-17T11:22:25+08:00">
+                2018-04-17
               </time>
             
 
@@ -342,7 +344,8 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/4.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 169 Majority Element</span></span><br><span class="line"><span class="comment">// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个，且出现次数大于n/2。</span></span><br><span class="line"><span class="comment">// 这个题目很扯，需要找出现次数最多的数字，就想到用map的key-value来操作，</span></span><br><span class="line"><span class="comment">// key值为具体的element，value值为出现的次数。</span></span><br><span class="line"><span class="comment">// 于是想对所有数字遍历完后，来找出value最大值所对应的key，</span></span><br><span class="line"><span class="comment">// 但是由于对map不是很熟悉，所以在网上查了一些资料，发现要重写模板方法，懒得搞，</span></span><br><span class="line"><span class="comment">// 突然想到题目说Majority Element出现的次数要大于n/2，那我在进行遍历的时候就可以判断某个element的value值，</span></span><br><span class="line"><span class="comment">// 一旦大于n/2，则该element就是majority element，return出来就欧科了...</span></span><br><span class="line"><span class="comment">// submit之后，accepted了，哈哈哈，但是...我将代码copy到Clion下，map的find方法出现异常，指向不明...但是可以执行。</span></span><br><span class="line"><span class="comment">// 使用另外一种方法，count方法，element_map.count(element)，可以判断element是否出现，这里就是key值是否存在，输出1则说明存在，0则为不存在。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; element_map;</span><br><span class="line">        <span class="keyword">auto</span> size = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (size &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> element = nums[i];</span><br><span class="line">            <span class="keyword">if</span> (element_map.count(element) &gt; <span class="number">0</span>) &#123;</span><br><span class="line"><span class="comment">//            if (element_map.find(element) != element_map.end()) &#123;</span></span><br><span class="line">                element_map[element]++;</span><br><span class="line">                <span class="keyword">if</span> (element_map[element] &gt; size / <span class="number">2</span>)</span><br><span class="line">                    <span class="keyword">return</span> element;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element_map[element] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> element = solution.majorityElement(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; element &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/04/17/c-566-Reshape-the-Matrix/question.png" alt=""></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/17.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 566 reshape the matrix</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 题目要求对矩阵进行行列变换，根据给定的行数和列数，将原矩阵转换为目标矩阵，如果无法变换，则返回原矩阵</span></span><br><span class="line"><span class="comment">// 分析：如果无法变换，则说明前后两个矩阵的元素个数不相同，即行列乘积结果不等，于是输出原矩阵；</span></span><br><span class="line"><span class="comment">// 若行列数乘积相等，则可以进行变换，考虑到要取值，同时又要加入到新矩阵中，混在一起很难判断，</span></span><br><span class="line"><span class="comment">// 所以先将原矩阵的数字按先行后列的顺序取出，得到一个数组，然后再按顺序，加入到目标矩阵的行列中，</span></span><br><span class="line"><span class="comment">// 加入完毕即得到变换后的目标矩阵，返回即可。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; matrixReshape(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;nums, <span class="keyword">int</span> r, <span class="keyword">int</span> c) &#123;</span><br><span class="line">        <span class="keyword">int</span> row = nums.size();</span><br><span class="line">        <span class="keyword">int</span> column = nums[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">if</span> (row * column != r * c)</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tmp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; column; j++) &#123;</span><br><span class="line">                tmp.push_back(nums[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; row_number;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; r; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> numbers = i * c;</span><br><span class="line">            <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; c; j++) &#123;</span><br><span class="line">                index = numbers + j;</span><br><span class="line">                row_number.push_back(tmp[index]);</span><br><span class="line">            &#125;</span><br><span class="line">            result.push_back(row_number);</span><br><span class="line">            row_number.clear();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; nums = &#123;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;,</span><br><span class="line">                                &#123;<span class="number">3</span>, <span class="number">4</span>&#125;&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">1</span>, c = <span class="number">4</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result = solution.matrixReshape(nums, r, c);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; r; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; c; j++) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; result[i][j] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -374,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-167-Two-Sum-Two/" rel="next" title="c_167_Two_Sum_Two">
-                <i class="fa fa-chevron-left"></i> c_167_Two_Sum_Two
+              <a href="/2018/04/16/c-561-Array-Partition-I/" rel="next" title="c_561_Array_Partition_I">
+                <i class="fa fa-chevron-left"></i> c_561_Array_Partition_I
               </a>
             
           </div>
@@ -383,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/c-217-Contains-Duplicate/" rel="prev" title="c_217_Contains_Duplicate">
-                c_217_Contains_Duplicate <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
