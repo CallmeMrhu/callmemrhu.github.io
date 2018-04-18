@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940//// Created by Mr.Hu on 21/03/2018.// leetcode 1 : Two_Sum// 相邻两个值的和为目标结果，则输出该数对//#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;g">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//// Created by Mr.Hu on 2018/4/11.//// leetcode 268 missing number// 问题描述为给定一个数组，数">
 <meta name="keywords" content="Array,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a_1_Two_Sum">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/a-1-Two-Sum/index.html">
+<meta property="og:title" content="c_268_Missing_Number">
+<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-268-Missing-Number/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940//// Created by Mr.Hu on 21/03/2018.// leetcode 1 : Two_Sum// 相邻两个值的和为目标结果，则输出该数对//#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;g">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//// Created by Mr.Hu on 2018/4/11.//// leetcode 268 missing number// 问题描述为给定一个数组，数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:16:44.394Z">
+<meta property="og:updated_time" content="2018-04-16T08:19:23.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="a_1_Two_Sum">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940//// Created by Mr.Hu on 21/03/2018.// leetcode 1 : Two_Sum// 相邻两个值的和为目标结果，则输出该数对//#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;g">
+<meta name="twitter:title" content="c_268_Missing_Number">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//// Created by Mr.Hu on 2018/4/11.//// leetcode 268 missing number// 问题描述为给定一个数组，数">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/a-1-Two-Sum/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-268-Missing-Number/"/>
 
 
 
 
 
-  <title>a_1_Two_Sum | Chan's Blog</title>
+  <title>c_268_Missing_Number | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-1-Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-268-Missing-Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">a_1_Two_Sum</h1>
+          <h1 class="post-title" itemprop="name headline">c_268_Missing_Number</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T14:18:57+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T16:01:53+08:00">
                 2018-04-16
               </time>
             
@@ -342,8 +342,7 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 21/03/2018.</span></span><br><span class="line"><span class="comment">// leetcode 1 : Two_Sum</span></span><br><span class="line"><span class="comment">// 相邻两个值的和为目标结果，则输出该数对</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> target = <span class="number">6</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result = twoSum(nums, target);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">0</span>] &lt;&lt; result[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">    <span class="keyword">long</span> number = nums.size();</span><br><span class="line">    <span class="keyword">bool</span> isRight = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; number; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; number; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                result.push_back(i);</span><br><span class="line">                result.push_back(j);</span><br><span class="line">                isRight = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (isRight)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 学会使用c++容器vector</span></span><br><span class="line"><span class="comment">// 该算法的时间效率还不是最高的</span></span><br></pre></td></tr></table></figure>
-
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/11.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 268 missing number</span></span><br><span class="line"><span class="comment">// 问题描述为给定一个数组，数组由0,1,2,3,...,n组成，但是这个数组当中存在一个数字丢失，</span></span><br><span class="line"><span class="comment">// 请使用线性复杂度、常数量的空间复杂度进行解决</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 已经由四五天没有做题了，清明回家了几天，这几天时间过的好快，让我颇感压力，刷题速度要提高了</span></span><br><span class="line"><span class="comment">// 拿到这一题，最直白的想法就是嵌套循环，从0到n判断，不存在的即为missing number，则输出。</span></span><br><span class="line"><span class="comment">// 但是考虑的题目对时间和空间复杂度的要求，必然不能这么做，于是想到如果要找出missing number，</span></span><br><span class="line"><span class="comment">// 则可以先把给定的数组进行排序，哪个数字不在即为所求；用空间代时间的方式，用一个数组来存储给定数组的值，</span></span><br><span class="line"><span class="comment">// 由于初始化数组所有数默认为0，但是如果恰好是第一个数不存在，则无法区分是不存在还是存在，所以初始化时将第一个数字初始化为-1，或其他不为0的数</span></span><br><span class="line"><span class="comment">// 然后再判断，时间复杂度O(n)。leetcode编译器和本机编译器环境不同，本机需要动态声明数组，而leetcode可以直接用变量设置为数组空间。</span></span><br><span class="line"><span class="comment">// 所以需要注意c++和c各种不同编译版本情况</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 查看了一下执行时间，发现只超过来9%左右，发现自己无法沉下来去想新方法，就去查了一下好的方法</span></span><br><span class="line"><span class="comment">// 查了方法之后，发现原来...如此简单，因为每次只丢失一个数字，那丢失的数字应该就是原连续数组和减去现在的数组和</span></span><br><span class="line"><span class="comment">// ...心酸...这都没想到...</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> *tmp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        tmp[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = nums[i];</span><br><span class="line">            tmp[index] = index;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tmp[i] == <span class="number">0</span> &amp;&amp; i != <span class="number">0</span> || tmp[i] == <span class="number">-1</span>)</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">missingNumber_optimal</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.size();</span><br><span class="line">        <span class="keyword">int</span> std_sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            std_sum += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> std_sum - sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.missingNumber(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">int</span> result_optimal = solution.missingNumber_optimal(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result_optimal &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -375,14 +374,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/16/c-219-Contains-Duplicate-two/" rel="next" title="c_219_Contains_Duplicate_two">
+                <i class="fa fa-chevron-left"></i> c_219_Contains_Duplicate_two
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/a-7-Reverse-Integer/" rel="prev" title="a_7_Reverse_Integer">
-                a_7_Reverse_Integer <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/c-283-Move-Zeroes/" rel="prev" title="c_283_Move_Zeroes">
+                c_283_Move_Zeroes <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

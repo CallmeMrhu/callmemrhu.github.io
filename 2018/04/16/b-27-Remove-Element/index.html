@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940//// Created by Mr.Hu on 21/03/2018.// leetcode 1 : Two_Sum// 相邻两个值的和为目标结果，则输出该数对//#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;g">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 25/03/2018.//// leetcode 27 Remove Element// 在原vector上进行update，设置一个位置变量来记录当前多少位与给定数不相同// 一旦出现不相同，则与记录位进行交换">
 <meta name="keywords" content="Array,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="a_1_Two_Sum">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/a-1-Two-Sum/index.html">
+<meta property="og:title" content="b_27_Remove_Element">
+<meta property="og:url" content="http://mrhu.vip/2018/04/16/b-27-Remove-Element/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940//// Created by Mr.Hu on 21/03/2018.// leetcode 1 : Two_Sum// 相邻两个值的和为目标结果，则输出该数对//#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;g">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 25/03/2018.//// leetcode 27 Remove Element// 在原vector上进行update，设置一个位置变量来记录当前多少位与给定数不相同// 一旦出现不相同，则与记录位进行交换">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:16:44.394Z">
+<meta property="og:updated_time" content="2018-04-16T08:17:13.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="a_1_Two_Sum">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940//// Created by Mr.Hu on 21/03/2018.// leetcode 1 : Two_Sum// 相邻两个值的和为目标结果，则输出该数对//#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;g">
+<meta name="twitter:title" content="b_27_Remove_Element">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 25/03/2018.//// leetcode 27 Remove Element// 在原vector上进行update，设置一个位置变量来记录当前多少位与给定数不相同// 一旦出现不相同，则与记录位进行交换">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/a-1-Two-Sum/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/04/16/b-27-Remove-Element/"/>
 
 
 
 
 
-  <title>a_1_Two_Sum | Chan's Blog</title>
+  <title>b_27_Remove_Element | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/a-1-Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/b-27-Remove-Element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">a_1_Two_Sum</h1>
+          <h1 class="post-title" itemprop="name headline">b_27_Remove_Element</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T14:18:57+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:49:36+08:00">
                 2018-04-16
               </time>
             
@@ -342,8 +342,7 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 21/03/2018.</span></span><br><span class="line"><span class="comment">// leetcode 1 : Two_Sum</span></span><br><span class="line"><span class="comment">// 相邻两个值的和为目标结果，则输出该数对</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> target = <span class="number">6</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result = twoSum(nums, target);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result[<span class="number">0</span>] &lt;&lt; result[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">    <span class="keyword">long</span> number = nums.size();</span><br><span class="line">    <span class="keyword">bool</span> isRight = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; number; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; number; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</span><br><span class="line">                result.push_back(i);</span><br><span class="line">                result.push_back(j);</span><br><span class="line">                isRight = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (isRight)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 学会使用c++容器vector</span></span><br><span class="line"><span class="comment">// 该算法的时间效率还不是最高的</span></span><br></pre></td></tr></table></figure>
-
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 25/03/2018.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 27 Remove Element</span></span><br><span class="line"><span class="comment">// 在原vector上进行update，设置一个位置变量来记录当前多少位与给定数不相同</span></span><br><span class="line"><span class="comment">// 一旦出现不相同，则与记录位进行交换，最终记录位的大小即位与给定数字不相同的上界</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">auto</span> size = nums.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) &#123;</span><br><span class="line">                tmp = nums[count];</span><br><span class="line">                nums[count] = nums[i];</span><br><span class="line">                nums[i] = tmp;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> val = <span class="number">3</span>;</span><br><span class="line">    Solution sol;</span><br><span class="line">    <span class="keyword">int</span> result = sol.removeElement(nums, val);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; result; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; nums[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -375,14 +374,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/16/b-26-Remove-Duplicates/" rel="next" title="b_26_Remove_Duplicates">
+                <i class="fa fa-chevron-left"></i> b_26_Remove_Duplicates
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/a-7-Reverse-Integer/" rel="prev" title="a_7_Reverse_Integer">
-                a_7_Reverse_Integer <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/16/b-35-Insert-Position/" rel="prev" title="b_35_Insert_Position">
+                b_35_Insert_Position <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
