@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 2018/4/5.//// leetcode 217 contains duplicate// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，// 反之则输出">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354//// Created by Mr.Hu on 2018/4/22.//// leetcode 674 longest continuous increasing subsequence//// 题">
 <meta name="keywords" content="Array,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_217_Contains_Duplicate">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-217-Contains-Duplicate/index.html">
+<meta property="og:title" content="c_674_Longest_Continuous_Increasing_Subsequence">
+<meta property="og:url" content="http://mrhu.vip/2018/04/22/c-674-Longest-Continuous-Increasing-Subsequence/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 2018/4/5.//// leetcode 217 contains duplicate// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，// 反之则输出">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354//// Created by Mr.Hu on 2018/4/22.//// leetcode 674 longest continuous increasing subsequence//// 题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:18:57.093Z">
+<meta property="og:image" content="http://mrhu.vip/2018/04/22/c-674-Longest-Continuous-Increasing-Subsequence/question.png">
+<meta property="og:updated_time" content="2018-04-22T13:13:19.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_217_Contains_Duplicate">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 2018/4/5.//// leetcode 217 contains duplicate// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，// 反之则输出">
+<meta name="twitter:title" content="c_674_Longest_Continuous_Increasing_Subsequence">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354//// Created by Mr.Hu on 2018/4/22.//// leetcode 674 longest continuous increasing subsequence//// 题">
+<meta name="twitter:image" content="http://mrhu.vip/2018/04/22/c-674-Longest-Continuous-Increasing-Subsequence/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-217-Contains-Duplicate/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/04/22/c-674-Longest-Continuous-Increasing-Subsequence/"/>
 
 
 
 
 
-  <title>c_217_Contains_Duplicate | Chan's Blog</title>
+  <title>c_674_Longest_Continuous_Increasing_Subsequence | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-217-Contains-Duplicate/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/22/c-674-Longest-Continuous-Increasing-Subsequence/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_217_Contains_Duplicate</h1>
+          <h1 class="post-title" itemprop="name headline">c_674_Longest_Continuous_Increasing_Subsequence</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:59:31+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T21:11:46+08:00">
+                2018-04-22
               </time>
             
 
@@ -342,7 +344,8 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/5.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 217 contains duplicate</span></span><br><span class="line"><span class="comment">// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，</span></span><br><span class="line"><span class="comment">// 反之则输出false，不存在情况。</span></span><br><span class="line"><span class="comment">// 对于这个题目想到昨天解决169题的众数方法，使用map进行存储，一旦当前存储的值在map中，则说明该数字重复，</span></span><br><span class="line"><span class="comment">// 即输出true，否则一直到遍历结束，程序都没有return，则输出false，不存在重复数字的情况。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 需要注意，对于输出false和true的情况，不要弄反了。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it = nums.begin(); it != nums.end(); it++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (result.count(*it) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result[*it] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> result = solution.containsDuplicate(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/04/22/c-674-Longest-Continuous-Increasing-Subsequence/question.png" alt=""></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/22.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 674 longest continuous increasing subsequence</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 题目要求对给定的数组中，找出最长连续递增子序列</span></span><br><span class="line"><span class="comment">// 看到这个题目，就想到之前的一个题目，c_581（要求找出最短的非连续的序列，对这个序列进行排序后，整个序列即有序）</span></span><br><span class="line"><span class="comment">// 受之前那个题目的影响，第一反应以为也是前后两个指针查询，后来看了一下题目后，发现不要需要这么麻烦。</span></span><br><span class="line"><span class="comment">// 从第一个数开始往后遍历，如果满足递增，则tmp++，如果不满足，则比较当前最长子序列的长度与之前最长的情况，然后更新；</span></span><br><span class="line"><span class="comment">// 在做这题的时候出现来两个小错误，第一个就是没有考虑本身就是升序，所以循环结束后加上一个判断，其实在每次是升序加一后</span></span><br><span class="line"><span class="comment">// 就与之前max_subsequence进行对比，也是可以的。</span></span><br><span class="line"><span class="comment">// 另外一个没注意到的地方就是没有考虑到需序列长度为零的情况，之前别的题目都考虑了过这种情况，这次却忘记了...</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findLengthOfLCIS</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> max_subarray = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &lt; nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                tmp++;</span><br><span class="line"><span class="comment">//                if (tmp &gt; max_subarray) &#123;</span></span><br><span class="line"><span class="comment">//                    max_subarray = tmp;</span></span><br><span class="line"><span class="comment">//                &#125;</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (tmp &gt; max_subarray) &#123;</span><br><span class="line">                    max_subarray = tmp;</span><br><span class="line">                &#125;</span><br><span class="line">                tmp = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (tmp &gt; max_subarray) &#123;</span><br><span class="line">            max_subarray = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_subarray;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.findLengthOfLCIS(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -374,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-169-Majority-Element/" rel="next" title="c_169_Majority_Element">
-                <i class="fa fa-chevron-left"></i> c_169_Majority_Element
+              <a href="/2018/04/21/c-661-Image-Smoother/" rel="next" title="c_661_Image_Smoother">
+                <i class="fa fa-chevron-left"></i> c_661_Image_Smoother
               </a>
             
           </div>
@@ -383,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/c-219-Contains-Duplicate-two/" rel="prev" title="c_219_Contains_Duplicate_two">
-                c_219_Contains_Duplicate_two <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
