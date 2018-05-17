@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Clustring,K_Means," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 2018/4/5.//// leetcode 217 contains duplicate// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，// 反之则输出">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263# author:huchengfrom numpy import *def loadDataSet(filePath):    fr = open(filePath">
+<meta name="keywords" content="Clustring,K_Means">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_217_Contains_Duplicate">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-217-Contains-Duplicate/index.html">
+<meta property="og:title" content="K-Means">
+<meta property="og:url" content="http://mrhu.vip/2018/05/17/K-Means/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 2018/4/5.//// leetcode 217 contains duplicate// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，// 反之则输出">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263# author:huchengfrom numpy import *def loadDataSet(filePath):    fr = open(filePath">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:18:57.093Z">
+<meta property="og:updated_time" content="2018-05-17T13:43:19.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_217_Contains_Duplicate">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839//// Created by Mr.Hu on 2018/4/5.//// leetcode 217 contains duplicate// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，// 反之则输出">
+<meta name="twitter:title" content="K-Means">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263# author:huchengfrom numpy import *def loadDataSet(filePath):    fr = open(filePath">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-217-Contains-Duplicate/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/05/17/K-Means/"/>
 
 
 
 
 
-  <title>c_217_Contains_Duplicate | Chan's Blog</title>
+  <title>K-Means | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-217-Contains-Duplicate/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/17/K-Means/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_217_Contains_Duplicate</h1>
+          <h1 class="post-title" itemprop="name headline">K-Means</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:59:31+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T21:41:58+08:00">
+                2018-05-17
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
                   </a>
                 </span>
 
@@ -342,7 +342,7 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/5.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 217 contains duplicate</span></span><br><span class="line"><span class="comment">// 题目给定一个数组，判断数组中是否出现任意重复数字，如果存在重复情况，则输出true，即存在重复情况，</span></span><br><span class="line"><span class="comment">// 反之则输出false，不存在情况。</span></span><br><span class="line"><span class="comment">// 对于这个题目想到昨天解决169题的众数方法，使用map进行存储，一旦当前存储的值在map中，则说明该数字重复，</span></span><br><span class="line"><span class="comment">// 即输出true，否则一直到遍历结束，程序都没有return，则输出false，不存在重复数字的情况。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 需要注意，对于输出false和true的情况，不要弄反了。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">containsDuplicate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it = nums.begin(); it != nums.end(); it++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (result.count(*it) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result[*it] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> result = solution.containsDuplicate(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># author:hucheng</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadDataSet</span><span class="params">(filePath)</span>:</span></span><br><span class="line">    fr = open(filePath)</span><br><span class="line">    dataArr = []</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fr.readlines():</span><br><span class="line">        curLine = line.strip().split(<span class="string">' '</span>)</span><br><span class="line">        arrLine = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> curLine:</span><br><span class="line">            arrLine.append(float(i))</span><br><span class="line">        dataArr.append(arrLine)</span><br><span class="line">    <span class="keyword">return</span> dataArr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calDistance</span><span class="params">(vec1,vec2)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sqrt(sum(power((vec1-vec2),<span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randCent</span><span class="params">(dataSet,k)</span>:</span></span><br><span class="line">    <span class="comment">#获取数据集的列数</span></span><br><span class="line">    n = shape(dataSet)[<span class="number">1</span>]</span><br><span class="line">    <span class="comment">#注册中心质点的矩阵</span></span><br><span class="line">    centroids = mat(zeros((k,n)))</span><br><span class="line">    <span class="comment">#随机取值，生成质点矩阵</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        minJ = min(dataSet[:,j])</span><br><span class="line">        maxJ = max(dataSet[:,j])</span><br><span class="line">        rangeJ = float((maxJ-minJ))</span><br><span class="line">        <span class="comment">#加号后面是使用每列中的数值间距乘上列数个[0,1)的随机数，即保证质点的取值都在数据集类</span></span><br><span class="line">        <span class="comment">#这里是针对于每一列！因为每一列为一个属性！</span></span><br><span class="line">        centroids[:,j] = minJ + rangeJ*random.rand(k,<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> centroids</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kMeans</span><span class="params">(dataset,k,distMeas = calDistance,createCent = randCent)</span>:</span></span><br><span class="line">    m = shape(dataset)[<span class="number">0</span>]</span><br><span class="line">    <span class="comment">#数据集划分矩阵，第一列保存对应行的划分类别&#123;0,1...,k&#125;,第二列记录距离的平方</span></span><br><span class="line">    clusterAssment = mat(zeros((m,<span class="number">2</span>)))</span><br><span class="line">    centroids = createCent(dataset,k)</span><br><span class="line">    clusterChanged = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">while</span> clusterChanged:</span><br><span class="line">        clusterChanged = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            minDist = inf;minIndex = <span class="number">-1</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(k):</span><br><span class="line">                <span class="comment">#对数据集中的每一组数据，计算其与k个质点的距离，取距离最小进行归类</span></span><br><span class="line">                distJI = distMeas(centroids[j,:],dataset[i,:])</span><br><span class="line">                <span class="keyword">if</span> distJI&lt;minDist:</span><br><span class="line">                    minDist = distJI;minIndex = j</span><br><span class="line">            <span class="comment">#这个判断条件??</span></span><br><span class="line">            <span class="comment">#感觉可以不用while循环，直接for循环</span></span><br><span class="line">            <span class="comment">#但是有点不对的地方在于，对于每一次归类后，需要重新更新质点，然后对每个数据再重新进行划分</span></span><br><span class="line">            <span class="keyword">if</span> clusterAssment[i,<span class="number">0</span>] !=  minIndex:</span><br><span class="line">                clusterChanged = <span class="keyword">True</span></span><br><span class="line">                clusterAssment[i,:] = minIndex,minDist**<span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> cent <span class="keyword">in</span> range(k):</span><br><span class="line">            ptsInClust = dataset[nonzero(clusterAssment[:,<span class="number">0</span>].A == cent)[<span class="number">0</span>]]</span><br><span class="line">            centroids[cent,:] = mean(ptsInClust,axis=<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> centroids,clusterAssment</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    data = mat(loadDataSet(<span class="string">'testSet_2.txt'</span>))</span><br><span class="line">    centroids,clusterassment = kMeans(data,<span class="number">4</span>)</span><br><span class="line">    print(centroids)</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,9 +359,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
+            <a href="/tags/Clustring/" rel="tag"># Clustring</a>
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/K-Means/" rel="tag"># K_Means</a>
           
         </div>
       
@@ -374,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-169-Majority-Element/" rel="next" title="c_169_Majority_Element">
-                <i class="fa fa-chevron-left"></i> c_169_Majority_Element
+              <a href="/2018/05/17/DecisionTree/" rel="next" title="DecisionTree">
+                <i class="fa fa-chevron-left"></i> DecisionTree
               </a>
             
           </div>
@@ -383,10 +383,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/c-219-Contains-Duplicate-two/" rel="prev" title="c_219_Contains_Duplicate_two">
-                c_219_Contains_Duplicate_two <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
