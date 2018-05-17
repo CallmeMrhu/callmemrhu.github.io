@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Classification,DecisionTree," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta name="keywords" content="Classification,DecisionTree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DecisionTree">
+<meta property="og:url" content="http://mrhu.vip/2018/05/17/DecisionTree/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-17T13:36:14.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DecisionTree">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mrhu.vip/2018/05/17/DecisionTree/"/>
+
+
+
+
+
+  <title>DecisionTree | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">CallMe胡先生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/17/DecisionTree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DecisionTree</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T21:33:10+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> log</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建数据集和标签</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">creatDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    dataSet = [ [<span class="number">1</span>,<span class="number">1</span>,<span class="string">'yes'</span>],</span><br><span class="line">                [<span class="number">1</span>,<span class="number">1</span>,<span class="string">'yes'</span>],</span><br><span class="line">                [<span class="number">1</span>,<span class="number">0</span>,<span class="string">'no'</span>],</span><br><span class="line">                [<span class="number">0</span>,<span class="number">1</span>,<span class="string">'no'</span>],</span><br><span class="line">                [<span class="number">0</span>,<span class="number">1</span>,<span class="string">'no'</span>]]</span><br><span class="line">    labels = [<span class="string">'no surfacing'</span>,<span class="string">'flippers'</span>]</span><br><span class="line">    <span class="keyword">return</span> dataSet,labels</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算信息熵</span></span><br><span class="line"><span class="comment">#首先对测试数据集中的类别进行划分，并分类存储其出现次数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caluShannonEnt</span><span class="params">(dataset)</span>:</span></span><br><span class="line">    numEntries = len(dataset)</span><br><span class="line">    labelCounts = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> featVec <span class="keyword">in</span> dataset:</span><br><span class="line">        currentLabel = featVec[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">if</span> currentLabel <span class="keyword">not</span> <span class="keyword">in</span> labelCounts.keys():</span><br><span class="line">            labelCounts[currentLabel]=<span class="number">0</span></span><br><span class="line">        labelCounts[currentLabel]+=<span class="number">1</span></span><br><span class="line"><span class="comment">#计算每个label出现的概率，使用信息熵公式进行计算</span></span><br><span class="line">    shannonEnt = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> labelCounts:</span><br><span class="line">        prob = float(labelCounts[key])/numEntries</span><br><span class="line">        shannonEnt -= prob*log(prob,<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> shannonEnt</span><br><span class="line"></span><br><span class="line"><span class="comment">#按照给定的特征及其特征值对数据集进行划分，返回满足条件的数据集</span></span><br><span class="line"><span class="comment">#此处只能返回包含指定特征值特征的数据集</span></span><br><span class="line"><span class="comment">#所以此方法会被多次调用，即对于相同的axis，value不同</span></span><br><span class="line"><span class="comment">#取出划分后的多个数据子集并做后续的信息熵计算</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">splitDataSet</span><span class="params">(dataset,axis,value)</span>:</span></span><br><span class="line">    retDataSet = []</span><br><span class="line">    <span class="keyword">for</span> featVec <span class="keyword">in</span> dataset:</span><br><span class="line">        <span class="keyword">if</span> featVec[axis] == value:</span><br><span class="line">            reduceFeatVec = featVec[:axis]</span><br><span class="line">            reduceFeatVec.extend(featVec[axis+<span class="number">1</span>:])</span><br><span class="line">            retDataSet.append(reduceFeatVec)</span><br><span class="line">    <span class="keyword">return</span> retDataSet</span><br><span class="line"></span><br><span class="line"><span class="comment">#选择最划分特征</span></span><br><span class="line"><span class="comment">#通过计算各个信息熵，选择出最好的特特征划分方式</span></span><br><span class="line"><span class="comment">#首先获取数据集的特征种类</span></span><br><span class="line"><span class="comment">#计算数据集的信息熵</span></span><br><span class="line"><span class="comment">#初始化最好信息增益和最有特征</span></span><br><span class="line"><span class="comment">#循环遍历数据集中的每个特征</span></span><br><span class="line"><span class="comment">#在对每个特征进行遍历的过程中，获取单个特征的取值集合</span></span><br><span class="line"><span class="comment">#对单个特征值的取值集合进行遍历，即进行数据集划分，取出相应的子集，计算其信息熵和概率的乘积</span></span><br><span class="line"><span class="comment">#得到划分后的信息熵，计算信息增益</span></span><br><span class="line"><span class="comment">#判断当前信息增益与原信息增益的大小，取最大值，并将此时的特征作为最优划分特征</span></span><br><span class="line"><span class="comment">#直到遍历完整个特征集，返回最优划分</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chooseBestFeatureToSplit</span><span class="params">(dataset)</span>:</span></span><br><span class="line">    numFeatures = len(dataset[<span class="number">0</span>])<span class="number">-1</span></span><br><span class="line">    baseShannonEnt = caluShannonEnt(dataset)</span><br><span class="line">    bestInfoGain = <span class="number">0.0</span></span><br><span class="line">    bestFeature = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numFeatures):</span><br><span class="line">        featList = [example[i] <span class="keyword">for</span> example <span class="keyword">in</span> dataset]</span><br><span class="line">        uniqueVals = set(featList)</span><br><span class="line">        newEntropy = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</span><br><span class="line">            subDateSet = splitDataSet(dataset,i,value)</span><br><span class="line">            prob = len(subDateSet)/float(len(dataset))</span><br><span class="line">            newEntropy+=prob*caluShannonEnt(subDateSet)</span><br><span class="line">        infoGain = baseShannonEnt-newEntropy</span><br><span class="line">        <span class="keyword">if</span> infoGain&gt;bestInfoGain:</span><br><span class="line">            bestInfoGain = infoGain</span><br><span class="line">            bestFeature = i</span><br><span class="line">    <span class="keyword">return</span> bestFeature</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果递归到最后一类，还存在多个结果</span></span><br><span class="line"><span class="comment">#则对该类的结果集进行排序，选出出现次数最多的项作为最终的结果</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">majorityCnt</span><span class="params">(classList)</span>:</span></span><br><span class="line">    classCount=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> vote <span class="keyword">in</span> classList:</span><br><span class="line">        <span class="keyword">if</span> vote <span class="keyword">not</span> <span class="keyword">in</span> classList.key():</span><br><span class="line">            classCount[vote] = <span class="number">0</span></span><br><span class="line">        classCount+=<span class="number">1</span></span><br><span class="line">    sortedClassCount = sorted(classCount.item(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#生成决策树</span></span><br><span class="line"><span class="comment">#首先计算数据集中的类别，如果结果集属于同一类，则直接返回该类别，即叶子节点</span></span><br><span class="line"><span class="comment">#若数据集中指含有一类，即只有一列，此时选择数据中出现此处最多的象作为结果，即叶子节点</span></span><br><span class="line"><span class="comment">#使用选择最优划分特征方法，得到最优特征并获取该特征的label，将该lable放入myTree元组中国</span></span><br><span class="line"><span class="comment">#获取该特征所有的取值情况，将该特征不同取值下的不同子集进行递归的构建决策树，即 将最优特征的分支数据集重复上述操作</span></span><br><span class="line"><span class="comment">#最终生成决策树myTree</span></span><br><span class="line"><span class="comment">#其中需要主要的是，如何使得递归结束，即如何将节点归为叶子节点！！！</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">creatTree</span><span class="params">(dataset,lables)</span>:</span></span><br><span class="line">    classList = [example[<span class="number">-1</span>] <span class="keyword">for</span> example <span class="keyword">in</span> dataset]</span><br><span class="line">    <span class="keyword">if</span> classList.count(classList[<span class="number">0</span>])==len(classList):</span><br><span class="line">        <span class="keyword">return</span> classList[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> len(dataset[<span class="number">0</span>])==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> majorityCnt(classList)</span><br><span class="line">    bestFeature = chooseBestFeatureToSplit(dataset)</span><br><span class="line">    bestFeatureLable = lables[bestFeature]</span><br><span class="line">    myTree = &#123;bestFeatureLable: &#123;&#125;&#125;</span><br><span class="line">    <span class="keyword">del</span>(lables[bestFeature])</span><br><span class="line">    featValue = [example[bestFeature] <span class="keyword">for</span> example <span class="keyword">in</span> dataset]</span><br><span class="line">    values = set(featValue)</span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> values:</span><br><span class="line">        sublables = lables[:]</span><br><span class="line">        myTree[bestFeatureLable][value]=creatTree(splitDataSet(dataset,bestFeature,value),sublables)</span><br><span class="line">    <span class="keyword">return</span> myTree</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    myDat,labels= creatDataSet()</span><br><span class="line">    print(creatTree(myDat,labels))</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
+          
+            <a href="/tags/DecisionTree/" rel="tag"># DecisionTree</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/15/c-204-Count-Primes/" rel="next" title="c_204_Count_Primes">
+                <i class="fa fa-chevron-left"></i> c_204_Count_Primes
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
