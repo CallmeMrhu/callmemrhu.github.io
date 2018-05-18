@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Classification,Naive_Bayesian," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#基于概率论的分类方法：朴素贝叶斯from numpy">
+<meta name="keywords" content="Classification,Naive_Bayesian">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Naive_Bayesian">
+<meta property="og:url" content="http://mrhu.vip/2018/05/17/Naive-Bayesian/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#基于概率论的分类方法：朴素贝叶斯from numpy">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-17T13:52:34.493Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Naive_Bayesian">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#基于概率论的分类方法：朴素贝叶斯from numpy">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mrhu.vip/2018/05/17/Naive-Bayesian/"/>
+
+
+
+
+
+  <title>Naive_Bayesian | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">CallMe胡先生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/17/Naive-Bayesian/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Naive_Bayesian</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T21:51:08+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#基于概率论的分类方法：朴素贝叶斯</span></span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="comment">#数据集，label为人工标记</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    postingList = [[<span class="string">'my'</span>,<span class="string">'dog'</span>,<span class="string">'has'</span>,<span class="string">'flea'</span>,<span class="string">'problem'</span>,<span class="string">'help'</span>,<span class="string">'please'</span>],</span><br><span class="line">                   [<span class="string">'maybe'</span>,<span class="string">'not'</span>,<span class="string">'take'</span>,<span class="string">'him'</span>,<span class="string">'to'</span>,<span class="string">'dog'</span>,<span class="string">'park'</span>,<span class="string">'stupid'</span>],</span><br><span class="line">                   [<span class="string">'my'</span>,<span class="string">'dalmation'</span>,<span class="string">'is'</span>,<span class="string">'so'</span>,<span class="string">'cute'</span>,<span class="string">'I'</span>,<span class="string">'love'</span>,<span class="string">'him'</span>],</span><br><span class="line">                   [<span class="string">'stop'</span>,<span class="string">'posting'</span>,<span class="string">'stupid'</span>,<span class="string">'worthless'</span>,<span class="string">'garbage'</span>],</span><br><span class="line">                   [<span class="string">'mr'</span>,<span class="string">'licks'</span>,<span class="string">'ate'</span>,<span class="string">'my'</span>,<span class="string">'steak'</span>,<span class="string">'how'</span>,<span class="string">'to'</span>,<span class="string">'stop'</span>,<span class="string">'him'</span>],</span><br><span class="line">                   [<span class="string">'quit'</span>,<span class="string">'buying'</span>,<span class="string">'worthless'</span>,<span class="string">'dog'</span>,<span class="string">'food'</span>,<span class="string">'stupid'</span>]]</span><br><span class="line">    classVec = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> postingList,classVec</span><br><span class="line"></span><br><span class="line"><span class="comment">#从文档中收集并创建单词列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createVocabList</span><span class="params">(dataset)</span>:</span></span><br><span class="line">    vocabSet = set([])</span><br><span class="line">    <span class="keyword">for</span> doucument <span class="keyword">in</span> dataset:</span><br><span class="line">        vocabSet = vocabSet | set(doucument)</span><br><span class="line">    <span class="keyword">return</span> list(vocabSet)</span><br><span class="line"><span class="comment">#将目标文档转换为词向量的形式</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setOfwords2Vec</span><span class="params">(vocabList,inputList)</span>:</span></span><br><span class="line">    returnVec = [<span class="number">0</span>]*len(vocabList)</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> inputList:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> vocabList:</span><br><span class="line">            <span class="comment">#returnVec[vocabList.index(word)] = 1</span></span><br><span class="line">            <span class="comment">#此处为词袋模型(bag-of-words model)</span></span><br><span class="line">            <span class="comment">#原式只是记录词是否出现过，但是多次出现所内藏的含义将不能用是否出现替代</span></span><br><span class="line">            <span class="comment">#所以此处更新为每次出现，即增加一次</span></span><br><span class="line">            returnVec[vocabList.index(word)] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'the word %s is not in vocabList'</span> % word)</span><br><span class="line">    <span class="keyword">return</span> returnVec</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">trainNBO</span><span class="params">(trainMatrix,trainCatagory)</span>:</span></span><br><span class="line">    <span class="comment">#文档的个数</span></span><br><span class="line">    numTrainDocs = len(trainMatrix)</span><br><span class="line">    <span class="comment">#词向量的维度</span></span><br><span class="line">    numWords = len(trainMatrix[<span class="number">0</span>])</span><br><span class="line">    <span class="comment">#侮辱性文档（class=1）所占比例</span></span><br><span class="line">    pAbusive = sum(trainCatagory)/float(numTrainDocs)</span><br><span class="line">    <span class="comment">#class=1/class=0的词向量初始化,为避免一个不出现为0，在后续的多值概率乘积时影响到其他词的概率，初始值设为1</span></span><br><span class="line">    <span class="comment">#class=0/class=1的总词量（含重复）</span></span><br><span class="line">    p0Num = ones(numWords)</span><br><span class="line">    p1Num = ones(numWords)</span><br><span class="line">    <span class="comment">#计算不同类别文档中单词的出现情况，集中到各类统一的词向量中,对于重复单词，其对应的值从1--&gt;2--&gt;...</span></span><br><span class="line">    <span class="comment">#计算不同类别文档中单词的总量，记录到各类对应的变量中</span></span><br><span class="line">    p0Denom = <span class="number">2.0</span>;p1Denom=<span class="number">2.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTrainDocs):</span><br><span class="line">        <span class="keyword">if</span> trainCatagory[i] == <span class="number">1</span>:</span><br><span class="line">            p1Num +=trainMatrix[i]</span><br><span class="line">            p1Denom += sum(trainMatrix[i])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            p0Num += trainMatrix[i]</span><br><span class="line">            p0Denom += sum(trainMatrix[i])</span><br><span class="line">    <span class="comment">#计算每个词在该类文档 所有词中出现的频率</span></span><br><span class="line">    <span class="comment">#p1Vect = p1Num/p1Denom</span></span><br><span class="line">    p1Vect = log(p1Num/p1Denom)</span><br><span class="line">    <span class="comment">#p0Vect = p0Num/p0Denom</span></span><br><span class="line">    p0Vect = log(p0Num/p0Denom)</span><br><span class="line">    <span class="keyword">return</span> p0Vect,p1Vect,pAbusive</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyNB</span><span class="params">(vec2Classify,p0Vec,p1Vec,pclass1)</span>:</span></span><br><span class="line">    <span class="comment">#注意此处的乘法，为对应位置的数相乘，然后使用sum方法对各个数字进行求和</span></span><br><span class="line">    <span class="comment">#并加上对应类别概率取对数值</span></span><br><span class="line">    <span class="comment">#由于在trainNBO中对每个词出现的频率取来对数，所以在次对类别概率取对数然后相加</span></span><br><span class="line">    <span class="comment">#其本质其实是将测试数据中词出现的频率乘该词在训练集中出现的频率乘该类别出现的频率，其积取对数</span></span><br><span class="line">    p1 = sum(vec2Classify*p1Vec)+log(pclass1)</span><br><span class="line">    p0 = sum(vec2Classify*p0Vec)+log(<span class="number">1</span>-pclass1)</span><br><span class="line">    <span class="keyword">if</span> p1&gt;p0:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testNB</span><span class="params">()</span>:</span></span><br><span class="line">    postingList, classVec = loadDataSet()</span><br><span class="line">    vocabList = createVocabList(postingList)</span><br><span class="line">    <span class="comment"># 训练数据对应的词向量矩阵</span></span><br><span class="line">    trainMat = []</span><br><span class="line">    <span class="keyword">for</span> posting <span class="keyword">in</span> postingList:</span><br><span class="line">        trainMat.append(setOfwords2Vec(vocabList, posting))</span><br><span class="line">    p0V, p1V, pAb = trainNBO(trainMat, classVec)</span><br><span class="line">    testEntry = [<span class="string">'love'</span>,<span class="string">'my'</span>,<span class="string">'dalmation'</span>]</span><br><span class="line">    <span class="comment">#将测试实例转换为词向量,setOfword2Vec返回值为list属性，所以需要array来进行类型转换</span></span><br><span class="line">    thisDOC = array(setOfwords2Vec(vocabList,testEntry))</span><br><span class="line">    print(<span class="string">"doc:"</span>,testEntry,<span class="string">"is classify:"</span>,classifyNB(thisDOC,p0V,p1V,pAb))</span><br><span class="line">    testEntry = [<span class="string">'stupid'</span>,<span class="string">'garbage'</span>]</span><br><span class="line">    thisDOC = array(setOfwords2Vec(vocabList,testEntry))</span><br><span class="line">    print(<span class="string">"doc:"</span>,testEntry,<span class="string">"is classify:"</span>,classifyNB(thisDOC,p0V,p1V,pAb))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">    testNB()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
+          
+            <a href="/tags/Naive-Bayesian/" rel="tag"># Naive_Bayesian</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/Logistic-Regression/" rel="next" title="Logistic_Regression">
+                <i class="fa fa-chevron-left"></i> Logistic_Regression
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/18/c-242-Valid-Anagram/" rel="prev" title="c_242_Valid_Anagram">
+                c_242_Valid_Anagram <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
