@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="math," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536//// Created by Mr.Hu on 2018/4/15.//// leetcode 561 array partition I// 题目给出2n大小的数组，要求形成n个pair，使得所有pair中最小的数字的和最大。//// 拿到这个题目后，分析来一下，要想所">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/4/2.//// Q：给定数字n，计算其n！的结果末尾有多少个0？// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow// 所以观察发现，n！结果中尾数0的个数，来源于2x5// 所以只需要观察有多少个n！中有多少个2x5即可// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数">
+<meta name="keywords" content="math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_561_Array_Partition_I">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-561-Array-Partition-I/index.html">
+<meta property="og:title" content="Zero_Number_N_Factorial">
+<meta property="og:url" content="http://mrhu.vip/2018/05/29/Zero-Number-N-Factorial/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536//// Created by Mr.Hu on 2018/4/15.//// leetcode 561 array partition I// 题目给出2n大小的数组，要求形成n个pair，使得所有pair中最小的数字的和最大。//// 拿到这个题目后，分析来一下，要想所">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/4/2.//// Q：给定数字n，计算其n！的结果末尾有多少个0？// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow// 所以观察发现，n！结果中尾数0的个数，来源于2x5// 所以只需要观察有多少个n！中有多少个2x5即可// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:50:28.707Z">
+<meta property="og:updated_time" content="2018-05-29T08:54:37.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_561_Array_Partition_I">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536//// Created by Mr.Hu on 2018/4/15.//// leetcode 561 array partition I// 题目给出2n大小的数组，要求形成n个pair，使得所有pair中最小的数字的和最大。//// 拿到这个题目后，分析来一下，要想所">
+<meta name="twitter:title" content="Zero_Number_N_Factorial">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/4/2.//// Q：给定数字n，计算其n！的结果末尾有多少个0？// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow// 所以观察发现，n！结果中尾数0的个数，来源于2x5// 所以只需要观察有多少个n！中有多少个2x5即可// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-561-Array-Partition-I/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/05/29/Zero-Number-N-Factorial/"/>
 
 
 
 
 
-  <title>c_561_Array_Partition_I | Chan's Blog</title>
+  <title>Zero_Number_N_Factorial | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-561-Array-Partition-I/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/29/Zero-Number-N-Factorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_561_Array_Partition_I</h1>
+          <h1 class="post-title" itemprop="name headline">Zero_Number_N_Factorial</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T16:05:56+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-29T16:53:55+08:00">
+                2018-05-29
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Routine/" itemprop="url" rel="index">
+                    <span itemprop="name">Routine</span>
                   </a>
                 </span>
 
@@ -342,7 +342,8 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/15.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 561 array partition I</span></span><br><span class="line"><span class="comment">// 题目给出2n大小的数组，要求形成n个pair，使得所有pair中最小的数字的和最大。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 拿到这个题目后，分析来一下，要想所有pair中最小的数字加起来和最大，则说明每个pair中较大的数字不能大于下一个pair，</span></span><br><span class="line"><span class="comment">// 因为如果大于下一个pair，则说明下一个pair中较小的数字被削弱了，那么和一定不是最大的，局部最优最终可达到全局最优。</span></span><br><span class="line"><span class="comment">// 因此只需要将连续大小的数组成数对，则所有较小的值就不会存在被削弱的情况，最终的和也是组合最大的情况。</span></span><br><span class="line"><span class="comment">// 于是就先使用sort函数对vector进行排序，然后遍历一次，每次取下下一位加入到和中，最终可得到所有pair中最小的数字的和最大。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">arrayPairSum</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">auto</span> size = nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i=i+<span class="number">2</span>)&#123;</span><br><span class="line">            sum_max += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum_max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">-1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.arrayPairSum(nums);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;result;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>//<br>// Created by Mr.Hu on 2018/4/2.<br>//<br>// Q：给定数字n，计算其n！的结果末尾有多少个0？<br>// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow<br>// 所以观察发现，n！结果中尾数0的个数，来源于2x5<br>// 所以只需要观察有多少个n！中有多少个2x5即可<br>// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数字分解为因数包含5；<br>// 很明显含2的多，所以我们只需要判断，n！中，可以提取出多少个5就可以了，因为一定存在相对数量的2，来与5相乘。<br>// 所以我就对每个数进行判断，判断其模5后余数为不为0，为0则结果+1，然后判断剩下的因数是否还包含；<br>// 不包含则对下一个乘数进行上述判断。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">zeroNumber</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">int</span> zero_Number = zeroNumber(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; zero_Number &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">zeroNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> m = i;</span><br><span class="line">        <span class="keyword">while</span> (m % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            result++;</span><br><span class="line">            m /= <span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,9 +360,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/math/" rel="tag"># math</a>
           
         </div>
       
@@ -374,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-532-K-diff-Pairs-in-an-Array/" rel="next" title="c_532_K_diff_Pairs_in_an_Array">
-                <i class="fa fa-chevron-left"></i> c_532_K_diff_Pairs_in_an_Array
+              <a href="/2018/05/29/Buy-with-Which-method/" rel="next" title="Buy_with_Which_method">
+                <i class="fa fa-chevron-left"></i> Buy_with_Which_method
               </a>
             
           </div>
@@ -383,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/17/c-566-Reshape-the-Matrix/" rel="prev" title="c_566_Reshape_the_Matrix">
-                c_566_Reshape_the_Matrix <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
