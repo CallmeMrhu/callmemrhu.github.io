@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="推荐那点事儿 依据推荐结果是否因人而异：主要分为大众化推荐和个性化推荐   依据推荐方法的不同      1.基于人口统计学的推荐 (Demographic-based Recommendation)      2.基于规则的推荐 (Rule-based Recommendation)      3.基于内容的推荐 (Content-based Recommendation)      4.基于协">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-25T07:39:37.896Z">
+<meta property="og:updated_time" content="2018-05-25T07:41:16.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐那点事儿">
 <meta name="twitter:description" content="推荐那点事儿 依据推荐结果是否因人而异：主要分为大众化推荐和个性化推荐   依据推荐方法的不同      1.基于人口统计学的推荐 (Demographic-based Recommendation)      2.基于规则的推荐 (Rule-based Recommendation)      3.基于内容的推荐 (Content-based Recommendation)      4.基于协">
@@ -385,7 +385,7 @@
 
     h. 基于集成学习方法和混合推荐： 梯度提升决策树(Gradient Boosting Decision Tree ,GBDT)等;
 </code></pre><p>关于音乐推荐：</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. "Exploiting Music Play Sequence for Music Recommendation." Twenty-Sixth International Joint Conference on Artificial Intelligence 2017:3654-3660. 使用最基本的MF(Matrix Factorixation) 结合 Song2vec Music Similarity，即通过word2vec的思想，将playlist看作context中的sentence，使用SDNS(the skip-gram negative sampling)的采样方法来学习歌曲中间的相似度，最后在MF（x_&#123;ij&#125;-p_u q_i）的基础上加上(s_&#123;i,j&#125;-q_i^&#123;T&#125;q_j)^2，最后minimize损失函数，训练得到user和item的embedding表示。</span><br><span class="line"></span><br><span class="line">2、基于Playlist：Chua, Tat Seng, et al. "Embedding Factorization Models for Jointly Recommending Items and User Generated Lists." International ACM SIGIR Conference on Research and Development in Information Retrieval ACM, 2017:585-594. 提出embdding factorization models，使用user-item interaction（user-item-list），item-item interaction（item-item-list）两种关系矩阵，其中list作为side-information。使用sentence to vector的方法，对playlist进行向量化，即考虑某首music的上下相关music集以及其所在的playlist，主要包括words in the context of a sentence 和 words and a sentence in the context of a word。最后提出了两个模型，第一个为EFM-Side：主要包括<span class="tag">\<span class="name">sigma</span></span>(<span class="tag">\<span class="name">hat</span></span> x_&#123;uij&#125;)，<span class="tag">\<span class="name">sigma</span></span>(<span class="tag">\<span class="name">hat</span></span> m_&#123;ijt&#125;)，第一个表示user-item，第二个表示item-item；第二个位EFM-Joint：模型主要包含三个部分<span class="tag">\<span class="name">sigma</span></span>(<span class="tag">\<span class="name">hat</span></span> x_&#123;uij&#125;)，<span class="tag">\<span class="name">sigma</span></span>(<span class="tag">\<span class="name">hat</span></span> y_&#123;uij&#125;)，<span class="tag">\<span class="name">sigma</span></span>(<span class="tag">\<span class="name">hat</span></span> r_&#123;ijt&#125;)。第一个表示user-item，第二个表示user-list，第三个表示item-item-list的关系。最后可以达到个性化推荐，由于歌曲所属playlist也参与其中，在new music进入时，通过其归属的playlist可以进行很好的推荐，从而有效解决cold start；而且可以提供item和list两种推荐模式。</span><br><span class="line"></span><br><span class="line">3、基于user-song interaction：这种类型的模型主要是使用协同过来（collaborative filtering），上面已经列出来多种CF方法。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. &quot;Exploiting Music Play Sequence for Music Recommendation.&quot; Twenty-Sixth International Joint Conference on Artificial Intelligence 2017:3654-3660. 使用最基本的MF(Matrix Factorixation) 结合 Song2vec Music Similarity，即通过word2vec的思想，将playlist看作context中的sentence，使用SDNS(the skip-gram negative sampling)的采样方法来学习歌曲中间的相似度，最后在MF（x_&#123;ij&#125;-p_u q_i）的基础上加上(s_&#123;i,j&#125;-q_i^&#123;T&#125;q_j)^2，最后minimize损失函数，训练得到user和item的embedding表示。</span><br><span class="line"></span><br><span class="line">2、基于Playlist：Chua, Tat Seng, et al. &quot;Embedding Factorization Models for Jointly Recommending Items and User Generated Lists.&quot; International ACM SIGIR Conference on Research and Development in Information Retrieval ACM, 2017:585-594. 提出embdding factorization models，使用user-item interaction（user-item-list），item-item interaction（item-item-list）两种关系矩阵，其中list作为side-information。使用sentence to vector的方法，对playlist进行向量化，即考虑某首music的上下相关music集以及其所在的playlist，主要包括words in the context of a sentence 和 words and a sentence in the context of a word。最后提出了两个模型，第一个为EFM-Side：主要包括\sigma(\hat x_&#123;uij&#125;)，\sigma(\hat m_&#123;ijt&#125;)，第一个表示user-item，第二个表示item-item；第二个位EFM-Joint：模型主要包含三个部分\sigma(\hat x_&#123;uij&#125;)，\sigma(\hat y_&#123;uij&#125;)，\sigma(\hat r_&#123;ijt&#125;)。第一个表示user-item，第二个表示user-list，第三个表示item-item-list的关系。最后可以达到个性化推荐，由于歌曲所属playlist也参与其中，在new music进入时，通过其归属的playlist可以进行很好的推荐，从而有效解决cold start；而且可以提供item和list两种推荐模式。</span><br><span class="line"></span><br><span class="line">3、基于user-song interaction：这种类型的模型主要是使用协同过来（collaborative filtering），上面已经列出来多种CF方法。</span><br></pre></td></tr></table></figure>
 <p>对于item的推荐：</p>
 <pre><code>当前对于item的推荐系统，主要研究是Learning to Rank 和 Rating Prediction，即推荐Top-N和用户打分估计。当然还有其他的方面，如点击率预估（CTR），兴趣点估计（POI），点过程（Point Processes）
 </code></pre><p>关于时序推荐</p>
@@ -430,6 +430,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/29/c-350-Intersection-of-Two-Arrays-2/" rel="prev" title="c_350_Intersection_of_Two_Arrays_2">
+                c_350_Intersection_of_Two_Arrays_2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -497,7 +501,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
