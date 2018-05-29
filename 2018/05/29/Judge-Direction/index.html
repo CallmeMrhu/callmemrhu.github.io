@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="math," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/27.//// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）//// 题目要求对给定的矩阵，判断是">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 27/03/2018.//// Netease 2018// 小明初始方向为N(北)，L为左转，R为右转// 第一行输入N，表示转动次数，N不大于1000// 第二行为字符串，LR组成，表示每次的转动方向// 最后输出小明转动后所面对的方向// 123456789101112131415161718192021222324252627#includ">
+<meta name="keywords" content="math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_766_Toeplitz_Matrix">
-<meta property="og:url" content="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/index.html">
+<meta property="og:title" content="Judge_Direction">
+<meta property="og:url" content="http://mrhu.vip/2018/05/29/Judge-Direction/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/27.//// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）//// 题目要求对给定的矩阵，判断是">
+<meta property="og:description" content="//// Created by Mr.Hu on 27/03/2018.//// Netease 2018// 小明初始方向为N(北)，L为左转，R为右转// 第一行输入N，表示转动次数，N不大于1000// 第二行为字符串，LR组成，表示每次的转动方向// 最后输出小明转动后所面对的方向// 123456789101112131415161718192021222324252627#includ">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/question.png">
-<meta property="og:updated_time" content="2018-04-27T08:50:11.877Z">
+<meta property="og:updated_time" content="2018-05-29T08:59:17.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_766_Toeplitz_Matrix">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/27.//// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）//// 题目要求对给定的矩阵，判断是">
-<meta name="twitter:image" content="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/question.png">
+<meta name="twitter:title" content="Judge_Direction">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 27/03/2018.//// Netease 2018// 小明初始方向为N(北)，L为左转，R为右转// 第一行输入N，表示转动次数，N不大于1000// 第二行为字符串，LR组成，表示每次的转动方向// 最后输出小明转动后所面对的方向// 123456789101112131415161718192021222324252627#includ">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/05/29/Judge-Direction/"/>
 
 
 
 
 
-  <title>c_766_Toeplitz_Matrix | Chan's Blog</title>
+  <title>Judge_Direction | Chan's Blog</title>
   
 
 
@@ -255,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/29/Judge-Direction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_766_Toeplitz_Matrix</h1>
+          <h1 class="post-title" itemprop="name headline">Judge_Direction</h1>
         
 
         <div class="post-meta">
@@ -284,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-27T16:48:44+08:00">
-                2018-04-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-29T16:55:14+08:00">
+                2018-05-29
               </time>
             
 
@@ -307,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/InterviewQ/" itemprop="url" rel="index">
+                    <span itemprop="name">InterviewQ</span>
                   </a>
                 </span>
 
@@ -344,8 +342,9 @@
       
 
       
-        <p><img src="/2018/04/27/c-766-Toeplitz-Matrix/question.png" alt=""></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/27.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 题目要求对给定的矩阵，判断是否为常对角矩阵，即nums[i][j]==nums[i+1][j+1]==....</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 这个题目思想很简单，遍历的过程中判断是否和最开始的值相等，不相等则return false；</span></span><br><span class="line"><span class="comment">// 最主要的就是细心，特别是在对行列index值做加法的时候，我刚开始提交错误就是在循环里面对</span></span><br><span class="line"><span class="comment">// ++i，然后循环的时候还要i++，这就跳过了一行，应该是用一个tmp来保存i，然后后面对tmp++；</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isToeplitzMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = matrix.size();</span><br><span class="line">        <span class="keyword">int</span> column = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = i;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">            <span class="keyword">while</span> (++tmp &lt; row &amp;&amp; ++j &lt; column) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[tmp][j] != num) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; column; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = j;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">            <span class="keyword">while</span> (++i &lt; row &amp;&amp; ++tmp &lt; column) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][tmp] != num) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; nums = &#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">                                &#123;<span class="number">4</span>, <span class="number">0</span>, <span class="number">2</span>&#125;&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> result = solution.isToeplitzMatrix(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>//<br>// Created by Mr.Hu on 27/03/2018.<br>//<br>// Netease 2018<br>// 小明初始方向为N(北)，L为左转，R为右转<br>// 第一行输入N，表示转动次数，N不大于1000<br>// 第二行为字符串，LR组成，表示每次的转动方向<br>// 最后输出小明转动后所面对的方向<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">char</span> direction[<span class="number">1001</span>];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; direction;</span><br><span class="line">    <span class="comment">// L:+1 R:-1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (direction[i] == <span class="string">'L'</span>)</span><br><span class="line">            count++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            count--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> result = count % <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">-3</span> <span class="keyword">or</span> result == <span class="number">1</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"W"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-2</span> <span class="keyword">or</span> result == <span class="number">2</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"S"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">-1</span> <span class="keyword">or</span> result == <span class="number">3</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"E"</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"N"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -362,9 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/math/" rel="tag"># math</a>
           
         </div>
       
@@ -377,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/c-665-Non-decreasing-Array/" rel="next" title="c_665_Non_decreasing_Array">
-                <i class="fa fa-chevron-left"></i> c_665_Non_decreasing_Array
+              <a href="/2018/05/29/Zero-Number-N-Factorial/" rel="next" title="Zero_Number_N_Factorial">
+                <i class="fa fa-chevron-left"></i> Zero_Number_N_Factorial
               </a>
             
           </div>
@@ -387,8 +384,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/27/c-746-Min-Cost-Climbing-Stairs/" rel="prev" title="c_746_Min_Cost_Climbing_Stairs">
-                c_746_Min_Cost_Climbing_Stairs <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/29/Judge-Square/" rel="prev" title="Judge_Square">
+                Judge_Square <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
