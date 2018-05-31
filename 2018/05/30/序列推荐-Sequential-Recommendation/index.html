@@ -101,10 +101,11 @@
 <meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru3.png">
 <meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rum1.png">
 <meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rum2.png">
+<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/cmn_score.png">
 <meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/cmn.png">
 <meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/ksr1.png">
 <meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/ksr2.png">
-<meta property="og:updated_time" content="2018-05-31T06:46:26.214Z">
+<meta property="og:updated_time" content="2018-05-31T06:53:13.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序列推荐(Sequential Recommendation)">
 <meta name="twitter:description" content="###序列推荐 花了三天时间系统性看了一下推荐系统中关于“序列推荐”相关的八篇论文。其中七篇论文来源于SIGIR2018上关于Knowledge-Enhanced Memory Netwroks论文的related work。所有论文时间跨度为2010-2018，基本上是sequential recommendation这方面的主要成果。趁热打铁赶紧记录一下对每篇论文的理解以及一些思考。 1、（2">
@@ -402,10 +403,11 @@
 <p>(b)表示feature-level RUM：Read Operation即：memory matrix采用key-value memory neural network，首先存储一个global latent feature tableuser preference（GLFT）来存储feature embedding，然后不同的feature embedding与当前的item embedding进行计算，采用softmax的方式计算attention的值，即图(b)中z，相应的attention z值与M(u)中对应的item embedding进行相乘后累加即可得到user memory embedding。Write Operation即：根据neural turing machine（NTM）的思想，论文提出了erase vector和add vector的两个步骤来更新M(t)。(这个步骤的可解释性不强…)</p>
 <p><img src="/2018/05/30/序列推荐-Sequential-Recommendation/rum2.png" alt=""></p>
 <p>7、（2018 CMN）Ebesu, Travis, B. Shen, and Y. Fang. “Collaborative Memory Network for Recommendation Systems.” (2018).</p>
-<p>该论文使用user-based collabrative filtering和memory network想结合的方式进行建模。如下图(a)所示，m_u为user u的embedding，e_i为item i的embedding，M为所有用户的embedding，通过q_uiv = m_u·m_v+e_i·m_v得到the similarity of the target user u’s level of agreement with user u in the neighborhood give item i，即与user u共同给item i打过分的相似度。通过对q_uiv使用softmax可以得到neighborhood attention，与C进行相乘得到final neighborhood representation，C为与user u存在相关性的user embedding，称为external memory。最后联合neighborhood representation，current user embedding，current item embedding来计算最终的output。图(b)则是增加层数，即在得到o_ui之后再加入activation function来生成新的attention值，向下一层输入。</p>
+<p>该论文使用user-based collabrative filtering和memory network想结合的方式进行建模。如下图(a)所示，m_u为user u的embedding，e_i为item i的embedding，M为所有用户的embedding，通过q_uiv = m_u·m_v+e_i·m_v得到the similarity of the target user u’s level of agreement with user u in the neighborhood give item i，即与user u共同给item i打过分的相似度。通过对q_uiv使用softmax可以得到neighborhood attention，与C进行相乘得到final neighborhood representation，C为与user u存在相关性的user embedding，称为external memory。最后联合neighborhood representation，current user embedding，current item embedding来计算最终的output。如公式(10)。图(b)则是增加层数，即在得到o_ui之后再加入activation function来生成新的attention值，向下一层输入。论文最后使用BPR来作为objective function来更新参数。</p>
+<p><img src="/2018/05/30/序列推荐-Sequential-Recommendation/cmn_score.png" alt=""></p>
 <p><img src="/2018/05/30/序列推荐-Sequential-Recommendation/cmn.png" alt=""></p>
 <p>8、（2018 KSR）Improving Sequential Recommendation with Knowledge-Enhanced Memory Networks </p>
-<p>KSR本质上是对feature-level RUM的扩展，并结合knowledge-based infotmation。论文使用BPR来进行pre-train得到item embedding，在学习的过程中item embedding为固定值。通过RNN-GRU来训练得到sequential preference representation。Read Operation即：memory network采用key-value memory neural network，其中key vector为KB中的relation embedding，而value vector为entity embedding。通过sequential preference representation（Hidden layer h(t)），结合key-value使用softmax得到attention值，attention值与value-vector可以得到attribute-based preference representation。sequential preference representation+attribute-based preference representation即可得到user representation p_u，而q_i+e_i·p_u即可得到最终的item reprenetation q_i，其中e_i为entity embedding。最后对p_u和q_i分别使用MLP（多层感知机）后相乘得到最后user u对item i的打分。Writing Operation即：结合KB information与value vector，对其乘积采用sigmoid得到权重值，再对value vector进行update。图2似乎更能够解读这样一个过程。</p>
+<p>KSR本质上是对feature-level RUM的扩展，并结合knowledge-based infotmation。论文使用BPR来进行pre-train得到item embedding，在学习的过程中item embedding为固定值。通过RNN-GRU来训练得到sequential preference representation。Read Operation即：memory network采用key-value memory neural network，其中key vector为KB中的relation embedding，而value vector为entity embedding。通过sequential preference representation（Hidden layer h(t)），结合key-value使用softmax得到attention值，attention值与value-vector可以得到attribute-based preference representation。sequential preference representation+attribute-based preference representation即可得到user representation p_u，而q_i+e_i·p_u即可得到最终的item reprenetation q_i，其中e_i为entity embedding。最后对p_u和q_i分别使用MLP（多层感知机）后相乘得到最后user u对item i的打分。Writing Operation即：结合KB information与value vector，对其乘积采用sigmoid得到权重值，再对value vector进行update。图2似乎更能够解读这样一个过程。论文最后使用BPR来作为objective function来更新参数。</p>
 <p><img src="/2018/05/30/序列推荐-Sequential-Recommendation/ksr1.png" alt=""></p>
 <p><img src="/2018/05/30/序列推荐-Sequential-Recommendation/ksr2.png" alt=""></p>
 <hr>
@@ -413,7 +415,7 @@
 <p>1、sequential recommendation的方法的发展可以归纳为：MC、Representation Model、RNN、RNN_LSTM、RNN_GRU、Attention+Memory Network…</p>
 <p>2、阅读了这八篇文章，一方面对进行sequential recommendtaion的方法有了一定的了解：sequential behavior、user taste相结合能更好的表述用户的特征。另一方面对RNN如果进行sequential recommendation应用更加清晰：1、单个user单个item作为input layer；2、以basket representation作为input layer，basket representation可以使用max pooling、average pooling的item representation计算得到。在这种情况下，user可以为static（HRM）和dynamic（DREAM）两种情况。</p>
 <p>3、在写这篇文章的过程中，最难下手描述的地方可以说是memory network中的writing operation，因为如果直接描述公式似乎有点苍白，但是对其解释却难以找到理论支撑。我一直在思考：这里为什么要这么做？为什么要erase？为什么要add？</p>
-<p>4、对这些文章的理解还有一些不够全面的地方，之后通过实验来深入理解，并完善这篇文章。</p>
+<p>4、只有写出来，才能发现自己对论文理解中的模糊点。而且对这些文章的理解还有一些不够全面的地方，之后通过实验来深入理解，并完善这篇文章。</p>
 
       
     </div>
