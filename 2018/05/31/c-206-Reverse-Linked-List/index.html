@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Leetcode,Linked_List," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//// Created by Mr.Hu on 2018/4/4.//// leetcode 169 Majority Element// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/5/31.//// leetcode 206 reverse linked list//// 题目要求对给定的链表进行反转。//// 该题解法有递归和迭代两种方式：这里先采用递归的方法// 要想将链表进行反转，则需要从最后一个位置开始。因为如果从开头开始，则会丢失next的地址信息。// 最后一位的next要等于其上一位，即A-&amp;gt;">
+<meta name="keywords" content="Leetcode,Linked_List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_169_Majority_Element">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-169-Majority-Element/index.html">
+<meta property="og:title" content="c_206_Reverse_Linked_List">
+<meta property="og:url" content="http://mrhu.vip/2018/05/31/c-206-Reverse-Linked-List/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//// Created by Mr.Hu on 2018/4/4.//// leetcode 169 Majority Element// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/5/31.//// leetcode 206 reverse linked list//// 题目要求对给定的链表进行反转。//// 该题解法有递归和迭代两种方式：这里先采用递归的方法// 要想将链表进行反转，则需要从最后一个位置开始。因为如果从开头开始，则会丢失next的地址信息。// 最后一位的next要等于其上一位，即A-&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:18:49.577Z">
+<meta property="og:image" content="http://mrhu.vip/2018/05/31/c-206-Reverse-Linked-List/question.png">
+<meta property="og:updated_time" content="2018-05-31T12:01:03.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_169_Majority_Element">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//// Created by Mr.Hu on 2018/4/4.//// leetcode 169 Majority Element// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个">
+<meta name="twitter:title" content="c_206_Reverse_Linked_List">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/5/31.//// leetcode 206 reverse linked list//// 题目要求对给定的链表进行反转。//// 该题解法有递归和迭代两种方式：这里先采用递归的方法// 要想将链表进行反转，则需要从最后一个位置开始。因为如果从开头开始，则会丢失next的地址信息。// 最后一位的next要等于其上一位，即A-&amp;gt;">
+<meta name="twitter:image" content="http://mrhu.vip/2018/05/31/c-206-Reverse-Linked-List/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-169-Majority-Element/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/05/31/c-206-Reverse-Linked-List/"/>
 
 
 
 
 
-  <title>c_169_Majority_Element | Chan's Blog</title>
+  <title>c_206_Reverse_Linked_List | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-169-Majority-Element/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/31/c-206-Reverse-Linked-List/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_169_Majority_Element</h1>
+          <h1 class="post-title" itemprop="name headline">c_206_Reverse_Linked_List</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:58:47+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-31T19:59:20+08:00">
+                2018-05-31
               </time>
             
 
@@ -342,7 +344,9 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/4.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 169 Majority Element</span></span><br><span class="line"><span class="comment">// 题目给定一组数字，求众数(其实不是众数，可以理解为特殊的众数)，假设众数只有一个，且出现次数大于n/2。</span></span><br><span class="line"><span class="comment">// 这个题目很扯，需要找出现次数最多的数字，就想到用map的key-value来操作，</span></span><br><span class="line"><span class="comment">// key值为具体的element，value值为出现的次数。</span></span><br><span class="line"><span class="comment">// 于是想对所有数字遍历完后，来找出value最大值所对应的key，</span></span><br><span class="line"><span class="comment">// 但是由于对map不是很熟悉，所以在网上查了一些资料，发现要重写模板方法，懒得搞，</span></span><br><span class="line"><span class="comment">// 突然想到题目说Majority Element出现的次数要大于n/2，那我在进行遍历的时候就可以判断某个element的value值，</span></span><br><span class="line"><span class="comment">// 一旦大于n/2，则该element就是majority element，return出来就欧科了...</span></span><br><span class="line"><span class="comment">// submit之后，accepted了，哈哈哈，但是...我将代码copy到Clion下，map的find方法出现异常，指向不明...但是可以执行。</span></span><br><span class="line"><span class="comment">// 使用另外一种方法，count方法，element_map.count(element)，可以判断element是否出现，这里就是key值是否存在，输出1则说明存在，0则为不存在。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; element_map;</span><br><span class="line">        <span class="keyword">auto</span> size = nums.size();</span><br><span class="line">        <span class="keyword">if</span> (size &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> element = nums[i];</span><br><span class="line">            <span class="keyword">if</span> (element_map.count(element) &gt; <span class="number">0</span>) &#123;</span><br><span class="line"><span class="comment">//            if (element_map.find(element) != element_map.end()) &#123;</span></span><br><span class="line">                element_map[element]++;</span><br><span class="line">                <span class="keyword">if</span> (element_map[element] &gt; size / <span class="number">2</span>)</span><br><span class="line">                    <span class="keyword">return</span> element;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                element_map[element] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> element = solution.majorityElement(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; element &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/05/31/c-206-Reverse-Linked-List/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/5/31.<br>//<br>// leetcode 206 reverse linked list<br>//<br>// 题目要求对给定的链表进行反转。<br>//<br>// 该题解法有递归和迭代两种方式：这里先采用递归的方法<br>// 要想将链表进行反转，则需要从最后一个位置开始。因为如果从开头开始，则会丢失next的地址信息。<br>// 最后一位的next要等于其上一位，即A-&gt;next-&gt;next = A;<br>// 操作完之后，上一位A-&gt;next = NULL，用于存储其A的上一位，还是上面这个步骤。<br>// 所以我们递归的调用reevesList方法，每次传递head-&gt;next，直到转递到倒数第二位停止：<br>// 所以有判断条件nullptr == head || nullptr == head-&gt;next，前者是排除掉最后一位的next，后者是排除掉最后一位；<br>// 因为想要reverse，必须要最后一位和倒数第二位，而单向链表只能向前，所以只有直到前一位地址，才能当前位与前一位进行反转。<br>//<br>// 由于对递归不熟悉，这个题目通过查阅答案后才完成。后续对递归、回溯这样的方法要进行深入学习。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Definition for singly-linked list.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">reverseList</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="literal">nullptr</span> == head || <span class="literal">nullptr</span> == head-&gt;next) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode *p = reverseList(head-&gt;next);</span><br><span class="line">        head-&gt;next-&gt;next = head;</span><br><span class="line">        head-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ListNode one = ListNode(<span class="number">1</span>);</span><br><span class="line">    ListNode two = ListNode(<span class="number">2</span>);</span><br><span class="line">    ListNode three = ListNode(<span class="number">3</span>);</span><br><span class="line">    ListNode four = ListNode(<span class="number">4</span>);</span><br><span class="line">    one.next = &amp;two;</span><br><span class="line">    two.next = &amp;three;</span><br><span class="line">    three.next = &amp;four;</span><br><span class="line">    Solution solution;</span><br><span class="line">    ListNode *result = solution.reverseList(&amp;one);</span><br><span class="line">    <span class="keyword">while</span> (result != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; result-&gt;val &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        result = result-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,9 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/Linked-List/" rel="tag"># Linked_List</a>
           
         </div>
       
@@ -374,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-167-Two-Sum-Two/" rel="next" title="c_167_Two_Sum_Two">
-                <i class="fa fa-chevron-left"></i> c_167_Two_Sum_Two
+              <a href="/2018/05/30/序列推荐-Sequential-Recommendation/" rel="next" title="序列推荐(Sequential Recommendation)">
+                <i class="fa fa-chevron-left"></i> 序列推荐(Sequential Recommendation)
               </a>
             
           </div>
@@ -383,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/c-217-Contains-Duplicate/" rel="prev" title="c_217_Contains_Duplicate">
-                c_217_Contains_Duplicate <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
