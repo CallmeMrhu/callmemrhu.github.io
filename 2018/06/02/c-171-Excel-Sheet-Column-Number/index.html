@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,String," />
+  <meta name="keywords" content="Math," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//// Created by Mr.Hu on 2018/5/23.//// leetcode 38 count and say//// 刚看这个题目，一脸懵逼.">
-<meta name="keywords" content="Leetcode,String">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/2.//// leetcode 171 excel sheet column number//// 题目要求将excel中表示行的字符串转换为对应的数字：规则为A-&amp;gt;1,…,Z-&amp;gt;26,AA-&amp;gt;27，AB-&amp;gt;28//// 更加规则可以得到，这其实就是将一个26进制的数转换为10进制的数字，其中26进制数的每一">
+<meta name="keywords" content="Math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b_38_Count_and_Say">
-<meta property="og:url" content="http://mrhu.vip/2018/05/23/b-38-Count-and-Say/index.html">
+<meta property="og:title" content="c_171_Excel_Sheet_Column_Number">
+<meta property="og:url" content="http://mrhu.vip/2018/06/02/c-171-Excel-Sheet-Column-Number/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//// Created by Mr.Hu on 2018/5/23.//// leetcode 38 count and say//// 刚看这个题目，一脸懵逼.">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/2.//// leetcode 171 excel sheet column number//// 题目要求将excel中表示行的字符串转换为对应的数字：规则为A-&amp;gt;1,…,Z-&amp;gt;26,AA-&amp;gt;27，AB-&amp;gt;28//// 更加规则可以得到，这其实就是将一个26进制的数转换为10进制的数字，其中26进制数的每一">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/05/23/b-38-Count-and-Say/question.png">
-<meta property="og:updated_time" content="2018-05-23T13:26:54.601Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/02/c-171-Excel-Sheet-Column-Number/question.png">
+<meta property="og:updated_time" content="2018-06-02T02:29:24.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="b_38_Count_and_Say">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//// Created by Mr.Hu on 2018/5/23.//// leetcode 38 count and say//// 刚看这个题目，一脸懵逼.">
-<meta name="twitter:image" content="http://mrhu.vip/2018/05/23/b-38-Count-and-Say/question.png">
+<meta name="twitter:title" content="c_171_Excel_Sheet_Column_Number">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/2.//// leetcode 171 excel sheet column number//// 题目要求将excel中表示行的字符串转换为对应的数字：规则为A-&amp;gt;1,…,Z-&amp;gt;26,AA-&amp;gt;27，AB-&amp;gt;28//// 更加规则可以得到，这其实就是将一个26进制的数转换为10进制的数字，其中26进制数的每一">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/02/c-171-Excel-Sheet-Column-Number/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/05/23/b-38-Count-and-Say/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/02/c-171-Excel-Sheet-Column-Number/"/>
 
 
 
 
 
-  <title>b_38_Count_and_Say | Chan's Blog</title>
+  <title>c_171_Excel_Sheet_Column_Number | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/23/b-38-Count-and-Say/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/02/c-171-Excel-Sheet-Column-Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">b_38_Count_and_Say</h1>
+          <h1 class="post-title" itemprop="name headline">c_171_Excel_Sheet_Column_Number</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T21:24:59+08:00">
-                2018-05-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-02T10:27:35+08:00">
+                2018-06-02
               </time>
             
 
@@ -344,8 +344,9 @@
       
 
       
-        <p><img src="/2018/05/23/b-38-Count-and-Say/question.png" alt=""></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/5/23.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 38 count and say</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 刚看这个题目，一脸懵逼...然后看了一下别人对这个题目的评价，三千多的down。内心得到了安慰。</span></span><br><span class="line"><span class="comment">// 观察这个题目，其实就是对给定数字进行朗读，朗读的内容包括数字的个数和数字本身，</span></span><br><span class="line"><span class="comment">// 连续相同的数字则统一读取：如1，则读为一个一，然后数字化后为11。</span></span><br><span class="line"><span class="comment">// 当前数字阅读的内容就是接下来的数字，即下一个数字为11。然后对这个数字进行读取，两个一，即</span></span><br><span class="line"><span class="comment">// 下一个数字为21...以此类推。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 对这个问题进行抽象化就是给定一个初始值"1"，下一个数字即为当前数字的读取结果，且连续相同的数字</span></span><br><span class="line"><span class="comment">// 用其连续个数以及其本身来表示。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 具体的实现的方法就是从n=1开始，此时say"one 1"；然后计算下一个，下一个的计算就是对数字从左到右</span></span><br><span class="line"><span class="comment">// 进行读取，判断连续情况，然后转换为string</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 在做这个题目的时候，几个地方出现来错误，第一个就是string中取某一位与数字进行比较，</span></span><br><span class="line"><span class="comment">// string中取一位得到的为char，需要先转换为int才能比较。需要使用int(init[j]-'0')</span></span><br><span class="line"><span class="comment">// 第二个地方就是对每个数循环完之后，由于循环完之后并没有对最后一段数字加当下一个数字中，所以</span></span><br><span class="line"><span class="comment">// 在循环结束后还要再加一次。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 这个解法效率不够高...</span></span><br><span class="line"><span class="comment">// 活用string类是多么的重要...</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> init = <span class="string">"1"</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">string</span> tmp = <span class="string">""</span>;</span><br><span class="line">            <span class="keyword">int</span> size = init.length();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">int</span>(init[j] - <span class="string">'0'</span>) == (number)) &#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (count != <span class="number">0</span>) &#123;</span><br><span class="line">                        tmp = tmp + to_string(count) + to_string(number);</span><br><span class="line">                    &#125;</span><br><span class="line">                    number = <span class="keyword">int</span>(init[j] - <span class="string">'0'</span>);</span><br><span class="line">                    count = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp = tmp + to_string(count) + to_string(number);</span><br><span class="line">            init = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> init;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">4</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">string</span> result = solution.countAndSay(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/02/c-171-Excel-Sheet-Column-Number/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/2.<br>//<br>// leetcode 171 excel sheet column number<br>//<br>// 题目要求将excel中表示行的字符串转换为对应的数字：规则为A-&gt;1,…,Z-&gt;26,AA-&gt;27，AB-&gt;28<br>//<br>// 更加规则可以得到，这其实就是将一个26进制的数转换为10进制的数字，其中26进制数的每一位是用大写字母来表示。但也是存在与数字的对应关系。<br>// 直到了26进制这一关系，接下来我们要做的就是将字母转换为数字，而这里就想到其实每个字母在计算机环境下是存在一个数字表示的，即ASCII码。<br>// 所以我们现在需要从string中提取char，根据之前的经验，s[i]-‘\0’即可得到相应的字母，其与数字进行计算则默认转换为其ASCII码。<br>// 值得注意的是，转换成ASCII码之后，与其在excel中所表示的数字还是存在一个常量差值，即A的ASCII为65，在excel中表示1，差值即为64。<br>// 而ASCII码的递增情况和excel中的递增情况一样，都是以一为单位递增。所以我们在得到每一个字母的ASCII码之后，减去64即转换为该字母在excel中所对应的数字。<br>//<br>// 找出了进制关系，并得到了每个字母在excel中对应数字的提取办法，剩下的就是对每个字母进行遍历，乘以进制关系，然后累加。<br>//<br>// 下面给出了两种方法，一种是对每个数字分别算进制关系，第二种是每增加一位，则在增加前先乘上进制关系再累加。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">titleToNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = s.size();</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = s[i] - <span class="string">'\0'</span> - <span class="number">64</span>;</span><br><span class="line">            result += tmp * <span class="built_in">pow</span>(<span class="number">26</span>, (length - i - <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">titleToNumber_two</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = s.size();</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = s[i] - <span class="string">'\0'</span> - <span class="number">64</span>;</span><br><span class="line">            result = result * <span class="number">26</span> + tmp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">"ABCD"</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.titleToNumber(s);</span><br><span class="line">    <span class="keyword">int</span> result_2 = solution.titleToNumber_two(s);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span> &lt;&lt; result_2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -362,9 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
-          
-            <a href="/tags/String/" rel="tag"># String</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
         </div>
       
@@ -377,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/21/c-349-Intersection-of-Two-Arrays/" rel="next" title="c_349_Intersection_of_Two_Arrays">
-                <i class="fa fa-chevron-left"></i> c_349_Intersection_of_Two_Arrays
+              <a href="/2018/05/31/c-206-Reverse-Linked-List/" rel="next" title="c_206_Reverse_Linked_List">
+                <i class="fa fa-chevron-left"></i> c_206_Reverse_Linked_List
               </a>
             
           </div>
@@ -386,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/24/b-83-Remove-Duplicates-From-Sorted-List/" rel="prev" title="b_83_Remove_Duplicates_From_Sorted_List">
-                b_83_Remove_Duplicates_From_Sorted_List <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
