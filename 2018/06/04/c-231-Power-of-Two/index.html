@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,Array," />
+  <meta name="keywords" content="Math,Leetcode," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/27.//// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）//// 题目要求对给定的矩阵，判断是">
-<meta name="keywords" content="Leetcode,Array">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/4.//// leetcode 231 power of two//// 题目要求判断整数n是否为2的乘方，即2的m次方能否等于n//// 这个题目的思路基本就是先判断数字的范围，&amp;lt;0则直接return false;// 大于0，则进行循环，每次判断n是否能整除2，即if(n%2==0)，能整除则更新n=n/2，继续该循环。/">
+<meta name="keywords" content="Math,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_766_Toeplitz_Matrix">
-<meta property="og:url" content="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/index.html">
+<meta property="og:title" content="c_231_Power_of_Two">
+<meta property="og:url" content="http://mrhu.vip/2018/06/04/c-231-Power-of-Two/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/27.//// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）//// 题目要求对给定的矩阵，判断是">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/4.//// leetcode 231 power of two//// 题目要求判断整数n是否为2的乘方，即2的m次方能否等于n//// 这个题目的思路基本就是先判断数字的范围，&amp;lt;0则直接return false;// 大于0，则进行循环，每次判断n是否能整除2，即if(n%2==0)，能整除则更新n=n/2，继续该循环。/">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/question.png">
-<meta property="og:updated_time" content="2018-04-27T08:50:11.877Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/04/c-231-Power-of-Two/question.png">
+<meta property="og:updated_time" content="2018-06-04T11:09:28.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_766_Toeplitz_Matrix">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253//// Created by Mr.Hu on 2018/4/27.//// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）//// 题目要求对给定的矩阵，判断是">
-<meta name="twitter:image" content="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/question.png">
+<meta name="twitter:title" content="c_231_Power_of_Two">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/4.//// leetcode 231 power of two//// 题目要求判断整数n是否为2的乘方，即2的m次方能否等于n//// 这个题目的思路基本就是先判断数字的范围，&amp;lt;0则直接return false;// 大于0，则进行循环，每次判断n是否能整除2，即if(n%2==0)，能整除则更新n=n/2，继续该循环。/">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/04/c-231-Power-of-Two/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/04/c-231-Power-of-Two/"/>
 
 
 
 
 
-  <title>c_766_Toeplitz_Matrix | Chan's Blog</title>
+  <title>c_231_Power_of_Two | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/27/c-766-Toeplitz-Matrix/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/04/c-231-Power-of-Two/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_766_Toeplitz_Matrix</h1>
+          <h1 class="post-title" itemprop="name headline">c_231_Power_of_Two</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-27T16:48:44+08:00">
-                2018-04-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-04T19:07:22+08:00">
+                2018-06-04
               </time>
             
 
@@ -344,8 +344,9 @@
       
 
       
-        <p><img src="/2018/04/27/c-766-Toeplitz-Matrix/question.png" alt=""></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/27.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 766 toeplitz matrix （常对角矩阵、特普利茨矩阵）</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 题目要求对给定的矩阵，判断是否为常对角矩阵，即nums[i][j]==nums[i+1][j+1]==....</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 这个题目思想很简单，遍历的过程中判断是否和最开始的值相等，不相等则return false；</span></span><br><span class="line"><span class="comment">// 最主要的就是细心，特别是在对行列index值做加法的时候，我刚开始提交错误就是在循环里面对</span></span><br><span class="line"><span class="comment">// ++i，然后循环的时候还要i++，这就跳过了一行，应该是用一个tmp来保存i，然后后面对tmp++；</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isToeplitzMatrix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = matrix.size();</span><br><span class="line">        <span class="keyword">int</span> column = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = i;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">            <span class="keyword">while</span> (++tmp &lt; row &amp;&amp; ++j &lt; column) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[tmp][j] != num) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; column; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = j;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">            <span class="keyword">while</span> (++i &lt; row &amp;&amp; ++tmp &lt; column) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][tmp] != num) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; nums = &#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">                                &#123;<span class="number">4</span>, <span class="number">0</span>, <span class="number">2</span>&#125;&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> result = solution.isToeplitzMatrix(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/04/c-231-Power-of-Two/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/4.<br>//<br>// leetcode 231 power of two<br>//<br>// 题目要求判断整数n是否为2的乘方，即2的m次方能否等于n<br>//<br>// 这个题目的思路基本就是先判断数字的范围，&lt;0则直接return false;<br>// 大于0，则进行循环，每次判断n是否能整除2，即if(n%2==0)，能整除则更新n=n/2，继续该循环。<br>// 如果不能整除，则说明无法用2的乘方来进行表示，即return false；<br>// 循环判断的条件即为n==1，如果n不断除以2后，最后等于1，说明最后一步为n=2/2，<br>// 即n是可以表示为2的乘方形式，则结束循环，最后return true<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (n != <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                n = n / <span class="number">2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">32</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> isornot = solution.isPowerOfTwo(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; isornot &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -362,9 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
         </div>
       
@@ -377,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/c-665-Non-decreasing-Array/" rel="next" title="c_665_Non_decreasing_Array">
-                <i class="fa fa-chevron-left"></i> c_665_Non_decreasing_Array
+              <a href="/2018/06/02/c-171-Excel-Sheet-Column-Number/" rel="next" title="c_171_Excel_Sheet_Column_Number">
+                <i class="fa fa-chevron-left"></i> c_171_Excel_Sheet_Column_Number
               </a>
             
           </div>
@@ -386,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/27/c-746-Min-Cost-Climbing-Stairs/" rel="prev" title="c_746_Min_Cost_Climbing_Stairs">
-                c_746_Min_Cost_Climbing_Stairs <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
