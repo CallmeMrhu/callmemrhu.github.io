@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="推荐那点事儿 依据推荐结果是否因人而异：主要分为大众化推荐和个性化推荐   依据推荐方法的不同      1.基于人口统计学的推荐 (Demographic-based Recommendation)      2.基于规则的推荐 (Rule-based Recommendation)      3.基于内容的推荐 (Content-based Recommendation)      4.基于协">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-07T08:16:25.711Z">
+<meta property="og:updated_time" content="2018-06-08T04:46:56.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐那点事儿">
 <meta name="twitter:description" content="推荐那点事儿 依据推荐结果是否因人而异：主要分为大众化推荐和个性化推荐   依据推荐方法的不同      1.基于人口统计学的推荐 (Demographic-based Recommendation)      2.基于规则的推荐 (Rule-based Recommendation)      3.基于内容的推荐 (Content-based Recommendation)      4.基于协">
@@ -384,8 +384,10 @@
     g. 用隐语义模型做协同过滤：主要是基于NLP，涉及对用户行为的语义分析来做评分推荐，主要有隐语义分析(LSA)和隐含狄利克雷分布(LDA)等。
 
     h. 基于集成学习方法和混合推荐： 梯度提升决策树(Gradient Boosting Decision Tree ,GBDT)等;
-</code></pre><p>当前推荐场景：</p>
-<pre><code>当前对于item的推荐系统，主要研究是Learning to Rank 和 Rating Prediction，即推荐Top-N和用户打分估计。当然还有其他的方面，如点击率预估（CTR），兴趣点估计（POI），点过程（Point Processes）等。
+</code></pre><p>矩阵分解（协同过滤）扩展（item co-occurrence）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user-item的关系矩阵进行分解得到user和item的latent feature representation，但是受限与user-item pair，item与item之间存在的关联性无法显性的去刻画，所以现在很多算法聚焦于item-item。其主要思想是构建basket或者是session，basket和session中的itemA与itemB同时出现，存在着相似度，而这个相似度可以用SPPMI或者其他数据挖掘中计算相似度的方法计算得到，得到这个相似度Sij后，一种方法：矩阵分解得到的qi·qj==Sij，从而使得qi、qj中也包含了其相似度关系，即添加了item-item的情况。</span><br></pre></td></tr></table></figure>
+<p>当前推荐场景：</p>
+<pre><code>当前对于item的推荐系统，主要研究是Learning to Rank 和 Rating Prediction，即推荐Top-N和用户打分估计。当然还有其他的方面，如点击率预估（CTR），兴趣点估计（POI），股票预估(使用点过程（Point Processes））等。
 </code></pre>
       
     </div>
