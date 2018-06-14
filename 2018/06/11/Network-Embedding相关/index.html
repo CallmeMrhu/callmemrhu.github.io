@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="Network Embedding &amp;amp; Graph Embedding 背景：由于当前很多系统背后都以网络的形式呈现，如social networks、biological networks、information networks。网络数据的复杂性首先就要求我们去找到有效的network data representation。传统的表示方法为graph embedding，而由于其高计">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-11T02:34:57.294Z">
+<meta property="og:updated_time" content="2018-06-14T07:16:33.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Network Embedding相关">
 <meta name="twitter:description" content="Network Embedding &amp;amp; Graph Embedding 背景：由于当前很多系统背后都以网络的形式呈现，如social networks、biological networks、information networks。网络数据的复杂性首先就要求我们去找到有效的network data representation。传统的表示方法为graph embedding，而由于其高计">
@@ -349,6 +349,10 @@
 <p>Network Embedding：主要分为三大类：1、structure and property preserving network embedding；2、network embedding with side information；3、advanced information preserving netwrok embedding（supervised method）。主要的方法：Matrix Factorization、Random Walk、Deep Neural Networks等。</p>
 <p>Major difference：两者在目标和假设上都存在明显的不同。目标上：Graph Embedding的目标函数是能够进行图的重建（reconstruction），而Network Embedding的目标函数是reconstructing original networks 并且 support network inference（即在embedding空间中也要保留图的其他特性）。假设上：Graph Embedding实施在包含了各种特征的图数据上，每个节点之间的亲密度已经在边的权重和本来的特征空间中，而Network Embedding可以使用在各种不同的图上，节点之间的亲密程度并没有显示的表现出来，需要专门的分析以及依赖于特点的环境，因此需要联合各种信息，network structure、properties、side information、advanced information等。（个人理解：一个force on 节点之间的距离，一个force on 节点之间的关系程度）</p>
 <p>network properties主要是网络节点的转移性</p>
+<p>相关论文：</p>
+<p>DeepWalk (2014)：Perozzi, Bryan, Rami Al-Rfou, and Steven Skiena. “Deepwalk: Online learning of social representations.” <em>Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining</em>. ACM, 2014.</p>
+<p>Node2Vec (2016)：Grover, Aditya, and Jure Leskovec. “node2vec: Scalable feature learning for networks.” <em>Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining</em>. ACM, 2016.</p>
+<p>Struc2Vec (2017)：Ribeiro, Leonardo FR, Pedro HP Saverese, and Daniel R. Figueiredo. “struc2vec: Learning node representations from structural identity.” <em>Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>. ACM, 2017.</p>
 
       
     </div>
@@ -459,7 +463,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

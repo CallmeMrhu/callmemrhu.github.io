@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Math,Leetcode," />
+  <meta name="keywords" content="Leetcode,Linked_List," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/6/4.//// leetcode 172 factorial trailing zeros//// 题目要求对于给定的整数n，求其阶乘结果后面0的个数//// 这个题目之前和qy交流的时候做过，当时的想法是既然要 求 末位0的个数，那么就是在阶乘中10出现的次数// 又分析发现要找出10出现的个数，就是要找出2*5的个数，而2在数字中">
-<meta name="keywords" content="Math,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
+<meta name="keywords" content="Leetcode,Linked_List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_172_Factorial_Trailing_Zeroes">
-<meta property="og:url" content="http://mrhu.vip/2018/06/04/c-172-Factorial-Trailing-Zeroes/index.html">
+<meta property="og:title" content="c_237_Delete_Node_in_a_Linked_List">
+<meta property="og:url" content="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/4.//// leetcode 172 factorial trailing zeros//// 题目要求对于给定的整数n，求其阶乘结果后面0的个数//// 这个题目之前和qy交流的时候做过，当时的想法是既然要 求 末位0的个数，那么就是在阶乘中10出现的次数// 又分析发现要找出10出现的个数，就是要找出2*5的个数，而2在数字中">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/06/04/c-172-Factorial-Trailing-Zeroes/question.png">
-<meta property="og:updated_time" content="2018-06-04T11:56:01.042Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/question.png">
+<meta property="og:updated_time" content="2018-06-14T12:25:50.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_172_Factorial_Trailing_Zeroes">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/4.//// leetcode 172 factorial trailing zeros//// 题目要求对于给定的整数n，求其阶乘结果后面0的个数//// 这个题目之前和qy交流的时候做过，当时的想法是既然要 求 末位0的个数，那么就是在阶乘中10出现的次数// 又分析发现要找出10出现的个数，就是要找出2*5的个数，而2在数字中">
-<meta name="twitter:image" content="http://mrhu.vip/2018/06/04/c-172-Factorial-Trailing-Zeroes/question.png">
+<meta name="twitter:title" content="c_237_Delete_Node_in_a_Linked_List">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/06/04/c-172-Factorial-Trailing-Zeroes/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/"/>
 
 
 
 
 
-  <title>c_172_Factorial_Trailing_Zeroes | Chan's Blog</title>
+  <title>c_237_Delete_Node_in_a_Linked_List | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/04/c-172-Factorial-Trailing-Zeroes/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_172_Factorial_Trailing_Zeroes</h1>
+          <h1 class="post-title" itemprop="name headline">c_237_Delete_Node_in_a_Linked_List</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-04T19:54:44+08:00">
-                2018-06-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T20:24:07+08:00">
+                2018-06-14
               </time>
             
 
@@ -344,9 +344,9 @@
       
 
       
-        <p><img src="/2018/06/04/c-172-Factorial-Trailing-Zeroes/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/6/4.<br>//<br>// leetcode 172 factorial trailing zeros<br>//<br>// 题目要求对于给定的整数n，求其阶乘结果后面0的个数<br>//<br>// 这个题目之前和qy交流的时候做过，当时的想法是既然要 求 末位0的个数，那么就是在阶乘中10出现的次数<br>// 又分析发现要找出10出现的个数，就是要找出2*5的个数，而2在数字中出现的次数一定多于5出现的次数，<br>// 所以我们只需要判断5在所有数字中以因子的形式出现了多少次，即阶乘结果尾数有多少个0；<br>// 于是有了trailingZeroes_one的解法，这个方法在n比较小的时候还是可以用，但是数字大则相当耗时，<br>// 我们可以发现，我们对每一个数字求其因子中含有多少个5，复杂度位O(nlogn)<br>//<br>// 而题目要求复杂度为O(logn)<br>// 所以我去查了一下别人的解法：首先对n = n/5，结果即为有多少个数字包含一个因子5，<br>// 然后对得到的结果n继续n=n/5，结果即为有多少个数字包含两个因子5，此处为包含第二个因子5<br>// 然后对得到的结果n继续n=n/5，结果即为有多少个数字包含三个因子5，此处为包含第三个因子5<br>// 重复这一操作，每次的商叠加到result商，直到商不大于5，则循环结束。这种方式的复杂度明显为O(logn)<br>//<br>// 对第一种方法和第二种方法进行了关联，第一种方法的逆过程其实就是第二种方法。<br>// 第二种方法值得学习和深思<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trailingZeroes_one</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = i;</span><br><span class="line">            <span class="keyword">while</span> (m % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                result++;</span><br><span class="line">                m /= <span class="number">5</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">4</span>) &#123;</span><br><span class="line">            result += n /= <span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">10000001</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = solution.trailingZeroes(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/14/c-237-Delete-Node-in-a-Linked-List/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/14.<br>//<br>// 题目要求将给定的节点从单链表中删除<br>//<br>// 当当前node的val和next都用node-&gt;next的val和next来赋值<br>// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，<br>// 因为经过上一步操作，node-&gt;next已经是其原来的next-&gt;next，所以我们在刚开始使用auto next来保存这个位置<br>// 最后直接delete这个ListNode next单独的节点就行。<br>//<br>// 这种手动delete，即清理内存的方式是一种很好的习惯。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>) &#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode *node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> next = node-&gt;next;</span><br><span class="line">        node-&gt;val = next-&gt;val;</span><br><span class="line">        node-&gt;next = next-&gt;next;</span><br><span class="line">        <span class="comment">// *node = *next;</span></span><br><span class="line">        <span class="keyword">delete</span> next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ListNode <span class="title">a</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">b</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">c</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">d</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    a.next = &amp;b;</span><br><span class="line">    b.next = &amp;c;</span><br><span class="line">    c.next = &amp;d;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a.next-&gt;val&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    solution.deleteNode(&amp;b);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a.next-&gt;val&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -363,9 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
-          
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/Linked-List/" rel="tag"># Linked_List</a>
           
         </div>
       
@@ -378,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/04/c-231-Power-of-Two/" rel="next" title="c_231_Power_of_Two">
-                <i class="fa fa-chevron-left"></i> c_231_Power_of_Two
+              <a href="/2018/06/14/c-141-Linked-List-Cycle/" rel="next" title="c_141_Linked_List_Cycle">
+                <i class="fa fa-chevron-left"></i> c_141_Linked_List_Cycle
               </a>
             
           </div>
@@ -387,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/04/c-326-Power-of-Three/" rel="prev" title="c_326_Power_of_Three">
-                c_326_Power_of_Three <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
