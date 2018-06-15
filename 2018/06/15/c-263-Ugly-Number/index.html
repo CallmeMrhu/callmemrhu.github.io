@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Math,Leetcode," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556//// Created by Mr.Hu on 2018/4/4.//// leetcode 167 Two Sum two// 题目给出升序数列，以及目标值，要求输出两个数的索引值，这两个数">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/15.//// leetcode 263 ugly number//// 题目定一个了一种数字：ugly，其因子只包含2、3、5//// 这个题目的解法比较直观，先判断数字是否为小于等于0的数字，是则返回false；// 否则，判断数字能否被2、3、5整除，如果能整除，则将该数调整为除以2、3、5后的结果// 如果最后不等于1或-1">
+<meta name="keywords" content="Math,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_167_Two_Sum_Two">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-167-Two-Sum-Two/index.html">
+<meta property="og:title" content="c_263_Ugly_Number">
+<meta property="og:url" content="http://mrhu.vip/2018/06/15/c-263-Ugly-Number/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556//// Created by Mr.Hu on 2018/4/4.//// leetcode 167 Two Sum two// 题目给出升序数列，以及目标值，要求输出两个数的索引值，这两个数">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/15.//// leetcode 263 ugly number//// 题目定一个了一种数字：ugly，其因子只包含2、3、5//// 这个题目的解法比较直观，先判断数字是否为小于等于0的数字，是则返回false；// 否则，判断数字能否被2、3、5整除，如果能整除，则将该数调整为除以2、3、5后的结果// 如果最后不等于1或-1">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:18:42.565Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/15/c-263-Ugly-Number/question.png">
+<meta property="og:updated_time" content="2018-06-15T14:19:36.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_167_Two_Sum_Two">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556//// Created by Mr.Hu on 2018/4/4.//// leetcode 167 Two Sum two// 题目给出升序数列，以及目标值，要求输出两个数的索引值，这两个数">
+<meta name="twitter:title" content="c_263_Ugly_Number">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/15.//// leetcode 263 ugly number//// 题目定一个了一种数字：ugly，其因子只包含2、3、5//// 这个题目的解法比较直观，先判断数字是否为小于等于0的数字，是则返回false；// 否则，判断数字能否被2、3、5整除，如果能整除，则将该数调整为除以2、3、5后的结果// 如果最后不等于1或-1">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/15/c-263-Ugly-Number/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-167-Two-Sum-Two/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/15/c-263-Ugly-Number/"/>
 
 
 
 
 
-  <title>c_167_Two_Sum_Two | Chan's Blog</title>
+  <title>c_263_Ugly_Number | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-167-Two-Sum-Two/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/15/c-263-Ugly-Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_167_Two_Sum_Two</h1>
+          <h1 class="post-title" itemprop="name headline">c_263_Ugly_Number</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:57:53+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-15T22:18:14+08:00">
+                2018-06-15
               </time>
             
 
@@ -342,7 +344,9 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/4.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 167 Two Sum two</span></span><br><span class="line"><span class="comment">// 题目给出升序数列，以及目标值，要求输出两个数的索引值，这两个数的和即为目标值，</span></span><br><span class="line"><span class="comment">// 且第一个值的索引值比第二个值的索引值小，并且要求数列中的每个数只能使用一次。且不考虑无解情况。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 第一想法是蛮力，得改掉这种坏习惯。当我看到每个element can't be used twice，就知道蛮力法肯定不行</span></span><br><span class="line"><span class="comment">// 既然数组是有序的，而且一定有解，而且肯定是一个小点的数加大点的数字，何不从数组中最小数和最大数的匹配开始，</span></span><br><span class="line"><span class="comment">// 如果结果比target要大，说明大数偏大，把大数字的指针往后移动(变小的方向)，</span></span><br><span class="line"><span class="comment">// 反之则说明小点的数偏小，则把小数字的指针往前移动(变大的方向)。直到存在结果等于target即结束且输出。</span></span><br><span class="line"><span class="comment">// 这个题目在输出的时候要谨慎，因为题目给的例子index是从1开始的，如果按照常规的想法，index从0开始，那么结果中的两个数字都比实际的值小1。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 在写这个方案的时候突然产生了一个疑惑，题目中要求的每个数字不能被用两次，那我现在已经accepted的方案中，一旦结果和target不相等，</span></span><br><span class="line"><span class="comment">// 那么一个数字移动另一个数字不移动，则不移动的数字在下一次判断的过程中有重新使用，这算不算使用多次呢？</span></span><br><span class="line"><span class="comment">// 如果这都算，那我只能加一个tmp变量去临时保存那个值了...但是这可能只是形式上的没有使用第二次...去找找别人的方案。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 好吧，大家都是这么写的，Greedy Algorithm 解法。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;numbers, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; index;</span><br><span class="line">        <span class="keyword">int</span> size = numbers.size();</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = size - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; index1 &lt; index2;) &#123;</span><br><span class="line">            <span class="keyword">int</span> result = numbers[index1] + numbers[index2];</span><br><span class="line">            <span class="keyword">if</span> (result == target) &#123;</span><br><span class="line">                index.push_back(index1 + <span class="number">1</span>);</span><br><span class="line">                index.push_back(index2 + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (result &lt; target) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                index2--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; numbers = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> target = <span class="number">17</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; index = solution.twoSum(numbers, target);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span> (it = index.begin(); it != index.end(); it++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/15/c-263-Ugly-Number/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/15.<br>//<br>// leetcode 263 ugly number<br>//<br>// 题目定一个了一种数字：ugly，其因子只包含2、3、5<br>//<br>// 这个题目的解法比较直观，先判断数字是否为小于等于0的数字，是则返回false；<br>// 否则，判断数字能否被2、3、5整除，如果能整除，则将该数调整为除以2、3、5后的结果<br>// 如果最后不等于1或-1，则继续判断，如果数字不能被2、3、5整除，则return false；<br>// 如果能一直被2、3、5整除，直到最后结果为1，则结束循环，return true；<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (num != <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                    num /= <span class="number">2</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">3</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                    num /= <span class="number">3</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                    num /= <span class="number">5</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">1111000</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> isugly = solution.isUgly(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; isugly &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,7 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
@@ -374,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-122-Buy-Sell-Stock-two/" rel="next" title="c_122_Buy_Sell_Stock_two">
-                <i class="fa fa-chevron-left"></i> c_122_Buy_Sell_Stock_two
+              <a href="/2018/06/15/c-415-Add-Strings/" rel="next" title="c_415_Add_Strings">
+                <i class="fa fa-chevron-left"></i> c_415_Add_Strings
               </a>
             
           </div>
@@ -383,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/c-169-Majority-Element/" rel="prev" title="c_169_Majority_Element">
-                c_169_Majority_Element <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
