@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,Hash_Table," />
+  <meta name="keywords" content="Math,Leetcode," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/6/6.//// leetcode 387 first unique character in a string//// 这个题目要求对于给定的字符串，寻找第一个只出现一次的字符，返回其index，如果不存在，则返回-1//// 刚来是想这个题目的时候，想用双层循环去每个字符判断，但是复杂度会达到O(n*n)，// 因为每个字符必须与其">
-<meta name="keywords" content="Leetcode,Hash_Table">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/18.//// leetcode 441 arranging coins//// 题目要求对于给定的n个coins，用来摆出楼梯形状，第k行又k个coins，求最多能够摆出多少行。//// 第一个想法就是用高斯求和的方法k*(k+1)/2&amp;gt;n来判断，我使用了一个很大的数字（大概一千万左右），执行出来没问题，// 本以为这样没问">
+<meta name="keywords" content="Math,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_387_First_Unique_Character_in_a_String">
-<meta property="og:url" content="http://mrhu.vip/2018/06/06/c-387-First-Unique-Character-in-a-String/index.html">
+<meta property="og:title" content="c_441_Arranging_Coins">
+<meta property="og:url" content="http://mrhu.vip/2018/06/18/c-441-Arranging-Coins/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/6.//// leetcode 387 first unique character in a string//// 这个题目要求对于给定的字符串，寻找第一个只出现一次的字符，返回其index，如果不存在，则返回-1//// 刚来是想这个题目的时候，想用双层循环去每个字符判断，但是复杂度会达到O(n*n)，// 因为每个字符必须与其">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/18.//// leetcode 441 arranging coins//// 题目要求对于给定的n个coins，用来摆出楼梯形状，第k行又k个coins，求最多能够摆出多少行。//// 第一个想法就是用高斯求和的方法k*(k+1)/2&amp;gt;n来判断，我使用了一个很大的数字（大概一千万左右），执行出来没问题，// 本以为这样没问">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/06/06/c-387-First-Unique-Character-in-a-String/question.png">
-<meta property="og:updated_time" content="2018-06-06T01:55:30.814Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/18/c-441-Arranging-Coins/question.png">
+<meta property="og:updated_time" content="2018-06-18T12:19:20.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_387_First_Unique_Character_in_a_String">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/6.//// leetcode 387 first unique character in a string//// 这个题目要求对于给定的字符串，寻找第一个只出现一次的字符，返回其index，如果不存在，则返回-1//// 刚来是想这个题目的时候，想用双层循环去每个字符判断，但是复杂度会达到O(n*n)，// 因为每个字符必须与其">
-<meta name="twitter:image" content="http://mrhu.vip/2018/06/06/c-387-First-Unique-Character-in-a-String/question.png">
+<meta name="twitter:title" content="c_441_Arranging_Coins">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/18.//// leetcode 441 arranging coins//// 题目要求对于给定的n个coins，用来摆出楼梯形状，第k行又k个coins，求最多能够摆出多少行。//// 第一个想法就是用高斯求和的方法k*(k+1)/2&amp;gt;n来判断，我使用了一个很大的数字（大概一千万左右），执行出来没问题，// 本以为这样没问">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/18/c-441-Arranging-Coins/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/06/06/c-387-First-Unique-Character-in-a-String/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/18/c-441-Arranging-Coins/"/>
 
 
 
 
 
-  <title>c_387_First_Unique_Character_in_a_String | Chan's Blog</title>
+  <title>c_441_Arranging_Coins | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/06/c-387-First-Unique-Character-in-a-String/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/18/c-441-Arranging-Coins/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_387_First_Unique_Character_in_a_String</h1>
+          <h1 class="post-title" itemprop="name headline">c_441_Arranging_Coins</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-06T09:34:04+08:00">
-                2018-06-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-18T20:17:52+08:00">
+                2018-06-18
               </time>
             
 
@@ -344,9 +344,9 @@
       
 
       
-        <p><img src="/2018/06/06/c-387-First-Unique-Character-in-a-String/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/6/6.<br>//<br>// leetcode 387 first unique character in a string<br>//<br>// 这个题目要求对于给定的字符串，寻找第一个只出现一次的字符，返回其index，如果不存在，则返回-1<br>//<br>// 刚来是想这个题目的时候，想用双层循环去每个字符判断，但是复杂度会达到O(n*n)，<br>// 因为每个字符必须与其他所有字符进行比较，所以果断放弃这种方法。<br>//<br>// 然后回归到hash table中，对字符串遍历一次，使用map&lt;char,int&gt;记录每个字符出现的次数，<br>// 然后再重新遍历一次，每次在hash table中去查询当前字符出现的次数，如果次数等于1，<br>// 则将index值赋值为当前的位置，break，结束循环，return index;<br>// 代码已经accpted，但是执行时间上只超过来百分之二十多的结果。原因就在于使用map的key来查询value值是一个很慢的过程。<br>// 所以想到能否用list来作为存储对象，但是list的index必须为int型，所以遇到了难题…<br>//<br>// 查了一下别人的solution，发现是可以用list来存储对象的，因为字符串中都是小写字母，而小写字母的个数是有限的，<br>// 即26个，所以我们可以将小写字母的ASCII码值映射到0-25，即小写字母的ASCII码值减去a的ASCII码值97即可。<br>// 这种方式的执行效率就超过了百分之八十多的结果。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> m:s) &#123;</span><br><span class="line">            result[m]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (result[s[i]] == <span class="number">1</span>) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">firstUniqChar_optimal</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result[<span class="number">26</span>] = &#123;&#125;;</span><br><span class="line">        <span class="keyword">int</span> c;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> m:s) &#123;</span><br><span class="line">            c = m - <span class="number">97</span>;</span><br><span class="line">            result[c]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            c = s[i] - <span class="number">97</span>;</span><br><span class="line">            <span class="keyword">if</span> (result[c] == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">"loveyouloveyou"</span>;</span><br><span class="line">    <span class="built_in">string</span> q = <span class="string">"aabbccd"</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> index_s = solution.firstUniqChar(s);</span><br><span class="line">    <span class="keyword">int</span> index_q = solution.firstUniqChar_optimal(q);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; index_s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; index_q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/18/c-441-Arranging-Coins/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/18.<br>//<br>// leetcode 441 arranging coins<br>//<br>// 题目要求对于给定的n个coins，用来摆出楼梯形状，第k行又k个coins，求最多能够摆出多少行。<br>//<br>// 第一个想法就是用高斯求和的方法k*(k+1)/2&gt;n来判断，我使用了一个很大的数字（大概一千万左右），执行出来没问题，<br>// 本以为这样没问题就说明可以了，但是提交之后还是提示error，当n取MAX_INT时报错；<br>// 所以我就用n每次去减去增加的那一行，即k个coins，来循环，这样下来越到最后n的值越小，就不会出现越界的情况，<br>// 而且减法运算相比乘除法快的多，所以有了一下code，accteped<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">arrangeCoins</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n - k &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            n -= k;</span><br><span class="line">            ++k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> --k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">111111111</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> k = solution.arrangeCoins(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; k &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -363,9 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
-            <a href="/tags/Hash-Table/" rel="tag"># Hash_Table</a>
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
         </div>
       
@@ -378,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/05/c-258-Add-Digits/" rel="next" title="c_258_Add_Digits">
-                <i class="fa fa-chevron-left"></i> c_258_Add_Digits
+              <a href="/2018/06/18/c-160-Intersection-of-Two-Linked-Lists/" rel="next" title="c_160_Intersection_of_Two_Linked_Lists">
+                <i class="fa fa-chevron-left"></i> c_160_Intersection_of_Two_Linked_Lists
               </a>
             
           </div>
@@ -387,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/07/c-389-Find-the-Difference/" rel="prev" title="c_389_Find_the_Difference">
-                c_389_Find_the_Difference <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
