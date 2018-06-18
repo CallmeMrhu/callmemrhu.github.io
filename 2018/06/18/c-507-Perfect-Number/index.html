@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Math,Leetcode," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//// Created by Mr.Hu on 26/03/2018.//// leedcode 66 plus one// 题目刚开始没看懂，查了一些别人的讲解才理解！// 题目是一个非负数的各位数用vector表示，高位在前，个位在">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/18.//// leetcode 507 perfect number//// 题目定义了perfect number的概念，即对于非负数，除其自身外，所有因数的和等于其本身的数，即为perfect number//// 所以我们得找出其所有的因数，并将所有的因数累加然后判断其与num是否相等。// 而找出所有的因数，我们直到只需要">
+<meta name="keywords" content="Math,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b_66_Plus_One">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/b-66-Plus-One/index.html">
+<meta property="og:title" content="c_507_Perfect_Number">
+<meta property="og:url" content="http://mrhu.vip/2018/06/18/c-507-Perfect-Number/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//// Created by Mr.Hu on 26/03/2018.//// leedcode 66 plus one// 题目刚开始没看懂，查了一些别人的讲解才理解！// 题目是一个非负数的各位数用vector表示，高位在前，个位在">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/18.//// leetcode 507 perfect number//// 题目定义了perfect number的概念，即对于非负数，除其自身外，所有因数的和等于其本身的数，即为perfect number//// 所以我们得找出其所有的因数，并将所有的因数累加然后判断其与num是否相等。// 而找出所有的因数，我们直到只需要">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:17:36.352Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/18/c-507-Perfect-Number/question.png">
+<meta property="og:updated_time" content="2018-06-18T12:40:28.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="b_66_Plus_One">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445//// Created by Mr.Hu on 26/03/2018.//// leedcode 66 plus one// 题目刚开始没看懂，查了一些别人的讲解才理解！// 题目是一个非负数的各位数用vector表示，高位在前，个位在">
+<meta name="twitter:title" content="c_507_Perfect_Number">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/18.//// leetcode 507 perfect number//// 题目定义了perfect number的概念，即对于非负数，除其自身外，所有因数的和等于其本身的数，即为perfect number//// 所以我们得找出其所有的因数，并将所有的因数累加然后判断其与num是否相等。// 而找出所有的因数，我们直到只需要">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/18/c-507-Perfect-Number/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/b-66-Plus-One/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/18/c-507-Perfect-Number/"/>
 
 
 
 
 
-  <title>b_66_Plus_One | Chan's Blog</title>
+  <title>c_507_Perfect_Number | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/b-66-Plus-One/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/18/c-507-Perfect-Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">b_66_Plus_One</h1>
+          <h1 class="post-title" itemprop="name headline">c_507_Perfect_Number</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T15:51:57+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-18T20:38:58+08:00">
+                2018-06-18
               </time>
             
 
@@ -342,7 +344,9 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 26/03/2018.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leedcode 66 plus one</span></span><br><span class="line"><span class="comment">// 题目刚开始没看懂，查了一些别人的讲解才理解！</span></span><br><span class="line"><span class="comment">// 题目是一个非负数的各位数用vector表示，高位在前，个位在后</span></span><br><span class="line"><span class="comment">// 给这个数字个位加一，需要判断进位，以及一直进位下去需要在开头添加一个新数字的情况</span></span><br><span class="line"><span class="comment">// 先考虑不进位的情况，加了之后直接返回结果</span></span><br><span class="line"><span class="comment">// 对于进位的情况，则将当前位更新为0，此时则变成了对高一位加一操作的判断，有点迭代的味道</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; plusOne(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;digits) &#123;</span><br><span class="line">        <span class="keyword">auto</span> size = digits.size();</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span> (i = size - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (digits[i] + <span class="number">1</span> != <span class="number">10</span>) &#123;</span><br><span class="line">                digits[i] += <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span> digits;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                digits[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">-1</span>) &#123;</span><br><span class="line">            digits.insert(digits.begin(), <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> digits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; digits = &#123;<span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">9</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    digits = solution.plusOne(digits);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span> (it = digits.begin(); it != digits.end(); it++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/18/c-507-Perfect-Number/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/18.<br>//<br>// leetcode 507 perfect number<br>//<br>// 题目定义了perfect number的概念，即对于非负数，除其自身外，所有因数的和等于其本身的数，即为perfect number<br>//<br>// 所以我们得找出其所有的因数，并将所有的因数累加然后判断其与num是否相等。<br>// 而找出所有的因数，我们直到只需要循环判断num%i==0的情况，并且i的取值范围只需要是[1,sqrt(num)]<br>// 所以只要num%i==0成立，则result = result + i + num / i;<br>// 由于题目要求求和部分不能包含num本身，而result是包含了num自身的，所以我们在最后判断的过程中需要对num*2。<br>//<br>// 题目还有一个坑，就是非负数判断，以及1的判断，1并不属于perfect number！<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">checkPerfectNumber</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> middle = <span class="keyword">int</span>(<span class="built_in">sqrt</span>(num));</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= middle; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num % i == <span class="number">0</span>) &#123;</span><br><span class="line">                result = result + i + num / i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result == num * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">1020103</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> isPerfect = solution.checkPerfectNumber(num);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; isPerfect &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,7 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
@@ -374,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/b-53-Maximum-Subarray/" rel="next" title="b_53_Maximum_Subarray">
-                <i class="fa fa-chevron-left"></i> b_53_Maximum_Subarray
+              <a href="/2018/06/18/c-441-Arranging-Coins/" rel="next" title="c_441_Arranging_Coins">
+                <i class="fa fa-chevron-left"></i> c_441_Arranging_Coins
               </a>
             
           </div>
@@ -383,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/b-88-Merge-Sorted-Array/" rel="prev" title="b_88_Merge_Sorted_Array">
-                b_88_Merge_Sorted_Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
