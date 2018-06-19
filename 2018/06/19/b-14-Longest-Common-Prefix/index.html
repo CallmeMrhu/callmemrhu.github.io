@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Survey," />
+  <meta name="keywords" content="Leetcode,String," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="Network Embedding &amp;amp; Graph Embedding 背景：由于当前很多系统背后都以网络的形式呈现，如social networks、biological networks、information networks。网络数据的复杂性首先就要求我们去找到有效的network data representation。传统的表示方法为graph embedding，而由于其高计">
-<meta name="keywords" content="Survey">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/19.//// leetcode 14 longest common prefix//// 题目要求识别出给定字符串集合中，所有字符串共有的最长前缀，如果不存在，则返回””//// 这个题目就是要逐个去筛选，而在筛选的过程中，如果我们从字串长度为1开始逐个递加，// 则每次需要判断长度是否大于当前最短字符串的长度，并且还要将当前最长">
+<meta name="keywords" content="Leetcode,String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Network Embedding相关">
-<meta property="og:url" content="http://mrhu.vip/2018/06/11/Network-Embedding相关/index.html">
+<meta property="og:title" content="b_14_Longest_Common_Prefix">
+<meta property="og:url" content="http://mrhu.vip/2018/06/19/b-14-Longest-Common-Prefix/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="Network Embedding &amp;amp; Graph Embedding 背景：由于当前很多系统背后都以网络的形式呈现，如social networks、biological networks、information networks。网络数据的复杂性首先就要求我们去找到有效的network data representation。传统的表示方法为graph embedding，而由于其高计">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/19.//// leetcode 14 longest common prefix//// 题目要求识别出给定字符串集合中，所有字符串共有的最长前缀，如果不存在，则返回””//// 这个题目就是要逐个去筛选，而在筛选的过程中，如果我们从字串长度为1开始逐个递加，// 则每次需要判断长度是否大于当前最短字符串的长度，并且还要将当前最长">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-14T07:16:33.194Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/19/b-14-Longest-Common-Prefix/question.png">
+<meta property="og:updated_time" content="2018-06-19T01:00:37.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Network Embedding相关">
-<meta name="twitter:description" content="Network Embedding &amp;amp; Graph Embedding 背景：由于当前很多系统背后都以网络的形式呈现，如social networks、biological networks、information networks。网络数据的复杂性首先就要求我们去找到有效的network data representation。传统的表示方法为graph embedding，而由于其高计">
+<meta name="twitter:title" content="b_14_Longest_Common_Prefix">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/19.//// leetcode 14 longest common prefix//// 题目要求识别出给定字符串集合中，所有字符串共有的最长前缀，如果不存在，则返回””//// 这个题目就是要逐个去筛选，而在筛选的过程中，如果我们从字串长度为1开始逐个递加，// 则每次需要判断长度是否大于当前最短字符串的长度，并且还要将当前最长">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/19/b-14-Longest-Common-Prefix/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/06/11/Network-Embedding相关/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/19/b-14-Longest-Common-Prefix/"/>
 
 
 
 
 
-  <title>Network Embedding相关 | Chan's Blog</title>
+  <title>b_14_Longest_Common_Prefix | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/11/Network-Embedding相关/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/19/b-14-Longest-Common-Prefix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Network Embedding相关</h1>
+          <h1 class="post-title" itemprop="name headline">b_14_Longest_Common_Prefix</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T10:34:57+08:00">
-                2018-06-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-19T08:58:33+08:00">
+                2018-06-19
               </time>
             
 
@@ -305,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Recommender-System/" itemprop="url" rel="index">
-                    <span itemprop="name">Recommender System</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
 
@@ -342,18 +344,9 @@
       
 
       
-        <p>Network Embedding &amp; Graph Embedding</p>
-<p>背景：由于当前很多系统背后都以网络的形式呈现，如social networks、biological networks、information networks。网络数据的复杂性首先就要求我们去找到有效的network data representation。传统的表示方法为graph embedding，而由于其高计算复杂度、低并行、以及无法适用于机器学习方法，使得这种依赖于边的表示方法在大数据处理上出现瓶颈。因此出现了有效的network embedding的方法。</p>
-<p>network embedding 和 graph embedding都是将图embed到低维的向量空间进行表示，得到每个点的向量表示之后可以进行后续的link prediction、identifying important nodes、inferring node labels（classification）。</p>
-<p>Graph Embedding：主要是研究降维技术。1、Isomap：通过计算节点之间的distance，使用KNN算法，得到每个点之间最近的距离，构成一个distance matrix，然后使用典型的multidimensional scaling methos（MDS）来反推出每个node的向量表示。2、Locally Linear embedding（LLE）3、Laplacian eigenmaps（LE）</p>
-<p>Network Embedding：主要分为三大类：1、structure and property preserving network embedding；2、network embedding with side information；3、advanced information preserving netwrok embedding（supervised method）。主要的方法：Matrix Factorization、Random Walk、Deep Neural Networks等。</p>
-<p>Major difference：两者在目标和假设上都存在明显的不同。目标上：Graph Embedding的目标函数是能够进行图的重建（reconstruction），而Network Embedding的目标函数是reconstructing original networks 并且 support network inference（即在embedding空间中也要保留图的其他特性）。假设上：Graph Embedding实施在包含了各种特征的图数据上，每个节点之间的亲密度已经在边的权重和本来的特征空间中，而Network Embedding可以使用在各种不同的图上，节点之间的亲密程度并没有显示的表现出来，需要专门的分析以及依赖于特点的环境，因此需要联合各种信息，network structure、properties、side information、advanced information等。（个人理解：一个force on 节点之间的距离，一个force on 节点之间的关系程度）</p>
-<p>network properties主要是网络节点的转移性</p>
-<p>相关论文：</p>
-<p>DeepWalk (2014)：Perozzi, Bryan, Rami Al-Rfou, and Steven Skiena. “Deepwalk: Online learning of social representations.” <em>Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining</em>. ACM, 2014.</p>
-<p>Node2Vec (2016)：Grover, Aditya, and Jure Leskovec. “node2vec: Scalable feature learning for networks.” <em>Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining</em>. ACM, 2016.</p>
-<p>Struc2Vec (2017)：Ribeiro, Leonardo FR, Pedro HP Saverese, and Daniel R. Figueiredo. “struc2vec: Learning node representations from structural identity.” <em>Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>. ACM, 2017.</p>
-
+        <p><img src="/2018/06/19/b-14-Longest-Common-Prefix/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/19.<br>//<br>// leetcode 14 longest common prefix<br>//<br>// 题目要求识别出给定字符串集合中，所有字符串共有的最长前缀，如果不存在，则返回””<br>//<br>// 这个题目就是要逐个去筛选，而在筛选的过程中，如果我们从字串长度为1开始逐个递加，<br>// 则每次需要判断长度是否大于当前最短字符串的长度，并且还要将当前最长的进行保存，用于下一次最长判断。<br>// 所以我在这里就先将所有字符串中最小长度minimize_size筛选出来，然后以此长度来得到所有字符串的字串进行比较，<br>// 如果不相同，–minimize_size；如果相同，则当前最串为最长公共字串。<br>// 另外需要考虑字符串集合为空集的情况，直接返回””<br>//<br>// 这个题目让我复习来vector的长度使用vectorname.size()来计算<br>// vector中最小最大的数字使用auto smallest = min_element(max_element)(vectorname.begin(),vectorname.end())<br>// 最大最小值为：<em>biggest、</em>smallest<br>// vector中找到最小最大数字的索引位置 distance(vectorname.begin(),smallest)<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; &amp;strs)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; word_size;</span><br><span class="line">        <span class="keyword">int</span> word_number = strs.size();</span><br><span class="line">        <span class="keyword">if</span> (word_number == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word_number; ++i) &#123;</span><br><span class="line">            word_size.push_back(strs[i].size());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> min_size = min_element(word_size.begin(), word_size.end());</span><br><span class="line">        <span class="keyword">int</span> minimize_size = *min_size;</span><br><span class="line">        <span class="built_in">string</span> tmp;</span><br><span class="line">        <span class="keyword">bool</span> is_same_prefix;</span><br><span class="line">        <span class="keyword">while</span> (minimize_size &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            tmp = strs[<span class="number">0</span>].substr(<span class="number">0</span>, minimize_size);</span><br><span class="line">            is_same_prefix = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; word_number; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (strs[i].substr(<span class="number">0</span>, minimize_size) != tmp) &#123;</span><br><span class="line">                    is_same_prefix = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (is_same_prefix) &#123;</span><br><span class="line">                <span class="keyword">return</span> tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            --minimize_size;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; strs;</span><br><span class="line">    strs.push_back(<span class="string">"flower"</span>);</span><br><span class="line">    strs.push_back(<span class="string">"flow"</span>);</span><br><span class="line">    strs.push_back(<span class="string">"flight"</span>);</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">string</span> common_prefix = solution.longestCommonPrefix(strs);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; common_prefix &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -370,7 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Survey/" rel="tag"># Survey</a>
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/String/" rel="tag"># String</a>
           
         </div>
       
@@ -383,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/10/c-447-Number-of-Boomerangs/" rel="next" title="c_447_Number_of_Boomerangs">
-                <i class="fa fa-chevron-left"></i> c_447_Number_of_Boomerangs
+              <a href="/2018/06/18/c-507-Perfect-Number/" rel="next" title="c_507_Perfect_Number">
+                <i class="fa fa-chevron-left"></i> c_507_Perfect_Number
               </a>
             
           </div>
@@ -392,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/12/Mac远程访问Jupyter-Notebook/" rel="prev" title="Mac远程访问linux服务器上Jupyter-Notebook">
-                Mac远程访问linux服务器上Jupyter-Notebook <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
