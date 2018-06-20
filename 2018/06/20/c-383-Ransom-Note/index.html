@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Array,Leetcode," />
+  <meta name="keywords" content="Leetcode,String," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748//// Created by Mr.Hu on 2018/4/14.//// leetcode 485 max consecutive ones//// 题目要求找到给定数组中最大的连续1的个数，数组中只包含0和1；// 刚">
-<meta name="keywords" content="Array,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/20.//// leetcode 383 ransom note//// 题目要求判断ransomNote是否能从给定的字符串中magazine得到，字符种类和个数不能超过magazine中情况//// 对magazine中出现的字符进行统计，用vector进行存储，index即为字符的顺序。// 然后对ransomNote进行遍历">
+<meta name="keywords" content="Leetcode,String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_485_Max_Consecutive_Ones">
-<meta property="og:url" content="http://mrhu.vip/2018/04/16/c-485-Max-Consecutive-Ones/index.html">
+<meta property="og:title" content="c_383_Ransom_Note">
+<meta property="og:url" content="http://mrhu.vip/2018/06/20/c-383-Ransom-Note/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748//// Created by Mr.Hu on 2018/4/14.//// leetcode 485 max consecutive ones//// 题目要求找到给定数组中最大的连续1的个数，数组中只包含0和1；// 刚">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/20.//// leetcode 383 ransom note//// 题目要求判断ransomNote是否能从给定的字符串中magazine得到，字符种类和个数不能超过magazine中情况//// 对magazine中出现的字符进行统计，用vector进行存储，index即为字符的顺序。// 然后对ransomNote进行遍历">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T08:19:36.452Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/20/c-383-Ransom-Note/question.png">
+<meta property="og:updated_time" content="2018-06-20T08:10:52.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_485_Max_Consecutive_Ones">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748//// Created by Mr.Hu on 2018/4/14.//// leetcode 485 max consecutive ones//// 题目要求找到给定数组中最大的连续1的个数，数组中只包含0和1；// 刚">
+<meta name="twitter:title" content="c_383_Ransom_Note">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/20.//// leetcode 383 ransom note//// 题目要求判断ransomNote是否能从给定的字符串中magazine得到，字符种类和个数不能超过magazine中情况//// 对magazine中出现的字符进行统计，用vector进行存储，index即为字符的顺序。// 然后对ransomNote进行遍历">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/20/c-383-Ransom-Note/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/04/16/c-485-Max-Consecutive-Ones/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/20/c-383-Ransom-Note/"/>
 
 
 
 
 
-  <title>c_485_Max_Consecutive_Ones | Chan's Blog</title>
+  <title>c_383_Ransom_Note | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/04/16/c-485-Max-Consecutive-Ones/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/20/c-383-Ransom-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_485_Max_Consecutive_Ones</h1>
+          <h1 class="post-title" itemprop="name headline">c_383_Ransom_Note</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T16:04:31+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-20T16:09:26+08:00">
+                2018-06-20
               </time>
             
 
@@ -342,7 +344,9 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// Created by Mr.Hu on 2018/4/14.</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// leetcode 485 max consecutive ones</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 题目要求找到给定数组中最大的连续1的个数，数组中只包含0和1；</span></span><br><span class="line"><span class="comment">// 刚拿到这一题想到可以设置一个bool变量来作为辅助判断，是否为连续，但是着手去coding，</span></span><br><span class="line"><span class="comment">// 发现并需要这个辅助变量，设置一个结果记录变量result就可以了，遇到0则把记录变量变为0，遇到1则++，但是此时就有一个问题，之前出现的最大连续数怎么办，</span></span><br><span class="line"><span class="comment">// 于是需要另一个变量max，初始化为INT_MIN，方便第一次比较，其实赋值为0最好，最后的判断也就不需要了。</span></span><br><span class="line"><span class="comment">// 每次对result进行++操作后，判断result与max的大小，如果result比max大，则对max进行更新。</span></span><br><span class="line"><span class="comment">// 如果遇到0，则把result变为0，用于接下来可能的连续1记录。</span></span><br><span class="line"><span class="comment">// 直到遍历完成后，输出max即可。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = nums.size();</span><br><span class="line">        <span class="keyword">int</span> max = INT_MIN;</span><br><span class="line"><span class="comment">//        int max = 0;</span></span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// bool isConsecutive = true;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">1</span>) &#123;</span><br><span class="line">                result++;</span><br><span class="line">                <span class="keyword">if</span> (result &gt; max) &#123;</span><br><span class="line">                    max = result;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max &gt; result ? max : result;</span><br><span class="line"><span class="comment">//        return max;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> maxNumber = solution.findMaxConsecutiveOnes(nums);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; maxNumber &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/20/c-383-Ransom-Note/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/20.<br>//<br>// leetcode 383 ransom note<br>//<br>// 题目要求判断ransomNote是否能从给定的字符串中magazine得到，字符种类和个数不能超过magazine中情况<br>//<br>// 对magazine中出现的字符进行统计，用vector进行存储，index即为字符的顺序。<br>// 然后对ransomNote进行遍历，对vector进行–操作，如果vector中存在负，则返回false，否则最后返回true。<br>//<br>// 注：刚开始用int数组来初始化所有字符出现的情况，但是初始化结果并不都是0，所以一直报错，改用vector后不再出现问题。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canConstruct</span><span class="params">(<span class="built_in">string</span> ransomNote, <span class="built_in">string</span> magazine)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; magaz(<span class="number">26</span>);</span><br><span class="line">        <span class="keyword">int</span> tmp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; magazine.size(); ++i) &#123;</span><br><span class="line">            tmp = magazine[i] - <span class="number">97</span>;</span><br><span class="line">            magaz[tmp]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; ransomNote.size(); ++j) &#123;</span><br><span class="line">            tmp = ransomNote[j] - <span class="number">97</span>;</span><br><span class="line">            magaz[tmp]--;</span><br><span class="line">            <span class="keyword">if</span> (magaz[tmp] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> ransomNote = <span class="string">"ab"</span>;</span><br><span class="line">    <span class="built_in">string</span> magazine = <span class="string">"ab"</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> result = solution.canConstruct(ransomNote, magazine);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,9 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/String/" rel="tag"># String</a>
           
         </div>
       
@@ -374,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/16/c-448-Fine-All-Numbers-Missing/" rel="next" title="c_448_Fine_All_Numbers_Missing">
-                <i class="fa fa-chevron-left"></i> c_448_Fine_All_Numbers_Missing
+              <a href="/2018/06/20/c-345-Reverse-Vowels-of-a-String/" rel="next" title="c_345_Reverse_Vowels_of_a_String">
+                <i class="fa fa-chevron-left"></i> c_345_Reverse_Vowels_of_a_String
               </a>
             
           </div>
@@ -383,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/16/c-532-K-diff-Pairs-in-an-Array/" rel="prev" title="c_532_K_diff_Pairs_in_an_Array">
-                c_532_K_diff_Pairs_in_an_Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
