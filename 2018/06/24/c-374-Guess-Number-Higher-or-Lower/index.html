@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,Linked_List," />
+  <meta name="keywords" content="Leetcode,Binary_Search," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
-<meta name="keywords" content="Leetcode,Linked_List">
+<meta name="description" content="//// Created by Mr.Hu on 2018/6/24.//// leetcode 374 Guess Number Higher or Lower//// 题目给出了一个我们日常生活中玩的一个游戏，猜选择的数字，如果猜的比原来的大，则返回-1，如果猜的比原来小，则返回1，相同，则返回0。//// 这是一个典型的二分查找的题目，思路就是定义letf和right，然后每次判断mid与">
+<meta name="keywords" content="Leetcode,Binary_Search">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_237_Delete_Node_in_a_Linked_List">
-<meta property="og:url" content="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/index.html">
+<meta property="og:title" content="c_374_Guess_Number_Higher_or_Lower">
+<meta property="og:url" content="http://mrhu.vip/2018/06/24/c-374-Guess-Number-Higher-or-Lower/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/24.//// leetcode 374 Guess Number Higher or Lower//// 题目给出了一个我们日常生活中玩的一个游戏，猜选择的数字，如果猜的比原来的大，则返回-1，如果猜的比原来小，则返回1，相同，则返回0。//// 这是一个典型的二分查找的题目，思路就是定义letf和right，然后每次判断mid与">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/question.png">
-<meta property="og:updated_time" content="2018-06-14T13:11:53.368Z">
+<meta property="og:image" content="http://mrhu.vip/2018/06/24/c-374-Guess-Number-Higher-or-Lower/question.png">
+<meta property="og:updated_time" content="2018-06-24T04:08:00.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_237_Delete_Node_in_a_Linked_List">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
-<meta name="twitter:image" content="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/question.png">
+<meta name="twitter:title" content="c_374_Guess_Number_Higher_or_Lower">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/24.//// leetcode 374 Guess Number Higher or Lower//// 题目给出了一个我们日常生活中玩的一个游戏，猜选择的数字，如果猜的比原来的大，则返回-1，如果猜的比原来小，则返回1，相同，则返回0。//// 这是一个典型的二分查找的题目，思路就是定义letf和right，然后每次判断mid与">
+<meta name="twitter:image" content="http://mrhu.vip/2018/06/24/c-374-Guess-Number-Higher-or-Lower/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/06/24/c-374-Guess-Number-Higher-or-Lower/"/>
 
 
 
 
 
-  <title>c_237_Delete_Node_in_a_Linked_List | Chan's Blog</title>
+  <title>c_374_Guess_Number_Higher_or_Lower | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/06/24/c-374-Guess-Number-Higher-or-Lower/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_237_Delete_Node_in_a_Linked_List</h1>
+          <h1 class="post-title" itemprop="name headline">c_374_Guess_Number_Higher_or_Lower</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T20:24:07+08:00">
-                2018-06-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-24T12:04:39+08:00">
+                2018-06-24
               </time>
             
 
@@ -344,9 +344,9 @@
       
 
       
-        <p><img src="/2018/06/14/c-237-Delete-Node-in-a-Linked-List/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/6/14.<br>//<br>// 题目要求将给定的节点从单链表中删除<br>//<br>// 当当前node的val和next都用node-&gt;next的val和next来赋值<br>// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，<br>// 因为经过上一步操作，node-&gt;next已经是其原来的next-&gt;next，所以我们在刚开始使用auto next来保存这个位置<br>// 最后直接delete这个ListNode next单独的节点就行。<br>//<br>// delete似乎会报错，将这个指针赋值为nullptr吧。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>) &#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode *node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> next = node-&gt;next;</span><br><span class="line">        node-&gt;val = next-&gt;val;</span><br><span class="line">        node-&gt;next = next-&gt;next;</span><br><span class="line">        <span class="comment">// *node = *next;</span></span><br><span class="line">        <span class="keyword">delete</span> next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ListNode <span class="title">a</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">b</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">c</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">d</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    a.next = &amp;b;</span><br><span class="line">    b.next = &amp;c;</span><br><span class="line">    c.next = &amp;d;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a.next-&gt;val&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    solution.deleteNode(&amp;b);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a.next-&gt;val&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/06/24/c-374-Guess-Number-Higher-or-Lower/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/6/24.<br>//<br>// leetcode 374 Guess Number Higher or Lower<br>//<br>// 题目给出了一个我们日常生活中玩的一个游戏，猜选择的数字，如果猜的比原来的大，则返回-1，如果猜的比原来小，则返回1，相同，则返回0。<br>//<br>// 这是一个典型的二分查找的题目，思路就是定义letf和right，然后每次判断mid与真是结果的差别，对letf和right进行更新。<br>// 其中有一个坑，就是最大值可以选择INT_MAX，所以在定义left、right、mid时，将其定义为long型最合适，方式越界。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">// Forward declaration of guess API.</span></span><br><span class="line"><span class="comment">// @param num, your guess</span></span><br><span class="line"><span class="comment">// @return -1 if my number is lower, 1 if my number is higher, otherwise return 0</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">guess</span><span class="params">(<span class="keyword">int</span> num)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">guessNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> right = n;</span><br><span class="line">        <span class="keyword">long</span> mid,guess_right;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">            mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">            guess_right = guess(mid);</span><br><span class="line">            <span class="keyword">if</span>(guess_right == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(guess_right == <span class="number">1</span>)&#123;</span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                right = mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -365,7 +365,7 @@
           
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
-            <a href="/tags/Linked-List/" rel="tag"># Linked_List</a>
+            <a href="/tags/Binary-Search/" rel="tag"># Binary_Search</a>
           
         </div>
       
@@ -378,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/14/c-141-Linked-List-Cycle/" rel="next" title="c_141_Linked_List_Cycle">
-                <i class="fa fa-chevron-left"></i> c_141_Linked_List_Cycle
+              <a href="/2018/06/24/c-367-Valid-Perfect-Square/" rel="next" title="c_367_Valid_Perfect_Square">
+                <i class="fa fa-chevron-left"></i> c_367_Valid_Perfect_Square
               </a>
             
           </div>
@@ -387,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/14/c-203-Remove-Linked-List-Elements/" rel="prev" title="c_203_Remove_Linked_List_Elements">
-                c_203_Remove_Linked_List_Elements <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
