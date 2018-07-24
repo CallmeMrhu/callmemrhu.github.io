@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Math," />
+  <meta name="keywords" content="Linked_List," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/4/2.//// Q：给定数字n，计算其n！的结果末尾有多少个0？// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow// 所以观察发现，n！结果中尾数0的个数，来源于2x5// 所以只需要观察有多少个n！中有多少个2x5即可// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数">
-<meta name="keywords" content="Math">
+<meta name="description" content="//// Created by Mr.Hu on 2018/7/23.//// 知识点：将一个单链表反向翻转//// 核心：用两个临时链表节点指针保存当前left和right指针// 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&amp;lt;iostrea">
+<meta name="keywords" content="Linked_List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Zero_Number_N_Factorial">
-<meta property="og:url" content="http://mrhu.vip/2018/05/29/Zero-Number-N-Factorial/index.html">
+<meta property="og:title" content="reverse_single_linked_list">
+<meta property="og:url" content="http://mrhu.vip/2018/07/24/reverse-single-linked-list/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/4/2.//// Q：给定数字n，计算其n！的结果末尾有多少个0？// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow// 所以观察发现，n！结果中尾数0的个数，来源于2x5// 所以只需要观察有多少个n！中有多少个2x5即可// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/7/23.//// 知识点：将一个单链表反向翻转//// 核心：用两个临时链表节点指针保存当前left和right指针// 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&amp;lt;iostrea">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-29T09:02:12.247Z">
+<meta property="og:updated_time" content="2018-07-24T12:04:42.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zero_Number_N_Factorial">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/4/2.//// Q：给定数字n，计算其n！的结果末尾有多少个0？// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow// 所以观察发现，n！结果中尾数0的个数，来源于2x5// 所以只需要观察有多少个n！中有多少个2x5即可// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数">
+<meta name="twitter:title" content="reverse_single_linked_list">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/7/23.//// 知识点：将一个单链表反向翻转//// 核心：用两个临时链表节点指针保存当前left和right指针// 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include&amp;lt;iostrea">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/05/29/Zero-Number-N-Factorial/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/07/24/reverse-single-linked-list/"/>
 
 
 
 
 
-  <title>Zero_Number_N_Factorial | Chan's Blog</title>
+  <title>reverse_single_linked_list | Chan's Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/29/Zero-Number-N-Factorial/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/07/24/reverse-single-linked-list/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Zero_Number_N_Factorial</h1>
+          <h1 class="post-title" itemprop="name headline">reverse_single_linked_list</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-29T16:53:55+08:00">
-                2018-05-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-24T20:03:29+08:00">
+                2018-07-24
               </time>
             
 
@@ -342,8 +342,8 @@
       
 
       
-        <p>//<br>// Created by Mr.Hu on 2018/4/2.<br>//<br>// Q：给定数字n，计算其n！的结果末尾有多少个0？<br>// 阶乘的结果一般都特别大，所以如果直接算，n稍微大一点就会overflow<br>// 所以观察发现，n！结果中尾数0的个数，来源于2x5<br>// 所以只需要观察有多少个n！中有多少个2x5即可<br>// 但是判断2x5也不是一件容易的事情，对于2和5而言，将数字分解为因数包含2，和将数字分解为因数包含5；<br>// 很明显含2的多，所以我们只需要判断，n！中，可以提取出多少个5就可以了，因为一定存在相对数量的2，来与5相乘。<br>// 所以我就对每个数进行判断，判断其模5后余数为不为0，为0则结果+1，然后判断剩下的因数是否还包含；<br>// 不包含则对下一个乘数进行上述判断。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">zeroNumber</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">int</span> zero_Number = zeroNumber(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; zero_Number &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">zeroNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> m = i;</span><br><span class="line">        <span class="keyword">while</span> (m % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            result++;</span><br><span class="line">            m /= <span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>//<br>// Created by Mr.Hu on 2018/7/23.<br>//<br>// 知识点：将一个单链表反向翻转<br>//<br>// 核心：用两个临时链表节点指针保存当前left和right指针<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line"></span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode *<span class="title">reverse_linked_list</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">    ListNode *head_left = head;</span><br><span class="line">    ListNode *head_right = head-&gt;next;</span><br><span class="line">    head_left-&gt;next = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span> (head_right-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode *tmp_left = head_right;</span><br><span class="line">        ListNode *tmp_right = head_right-&gt;next;</span><br><span class="line">        head_right-&gt;next = head_left;</span><br><span class="line">        head_left = tmp_left;</span><br><span class="line">        head_right = tmp_right;</span><br><span class="line">    &#125;</span><br><span class="line">    head_right-&gt;next = head_left;</span><br><span class="line">    <span class="keyword">return</span> head_right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ListNode <span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">b</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">c</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">d</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">e</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">    a.next = &amp;b;</span><br><span class="line">    b.next = &amp;c;</span><br><span class="line">    c.next = &amp;d;</span><br><span class="line">    d.next = &amp;e;</span><br><span class="line">    ListNode *head = &amp;a;</span><br><span class="line">    <span class="keyword">while</span> (head-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; head-&gt;val &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        head = head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; head-&gt;val &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    head = reverse_linked_list(&amp;a);</span><br><span class="line">    <span class="keyword">while</span> (head-&gt;next != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; head-&gt;val &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        head = head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; head-&gt;val;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -360,7 +360,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
+            <a href="/tags/Linked-List/" rel="tag"># Linked_List</a>
           
         </div>
       
@@ -373,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/29/Buy-with-Which-method/" rel="next" title="Buy_with_Which_method">
-                <i class="fa fa-chevron-left"></i> Buy_with_Which_method
+              <a href="/2018/07/24/c-836-Rectangle-Overlap/" rel="next" title="c_836_Rectangle_Overlap">
+                <i class="fa fa-chevron-left"></i> c_836_Rectangle_Overlap
               </a>
             
           </div>
@@ -382,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/29/Judge-Direction/" rel="prev" title="Judge_Direction">
-                Judge_Direction <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
