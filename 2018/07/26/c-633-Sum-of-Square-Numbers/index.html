@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/7/24.//// leetcode 836 rectangle overlap//// 题目要求判读两个长方形是否存储重合部分，给定两个长方形的左下点和右上点的坐标。//// 这个题目的思想就是去寻找两个长方形满足重叠情况时坐标点的关系；// 而如果直接去判断重叠条件是比较麻烦的，因为存在很多种情况，可以考虑相反情况，即两个长方形不重">
+<meta name="description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
 <meta name="keywords" content="Math,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_836_Rectangle_Overlap">
-<meta property="og:url" content="http://mrhu.vip/2018/07/24/c-836-Rectangle-Overlap/index.html">
+<meta property="og:title" content="c_633_Sum_of_Square_Numbers">
+<meta property="og:url" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/7/24.//// leetcode 836 rectangle overlap//// 题目要求判读两个长方形是否存储重合部分，给定两个长方形的左下点和右上点的坐标。//// 这个题目的思想就是去寻找两个长方形满足重叠情况时坐标点的关系；// 而如果直接去判断重叠条件是比较麻烦的，因为存在很多种情况，可以考虑相反情况，即两个长方形不重">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/07/24/c-836-Rectangle-Overlap/question.png">
-<meta property="og:updated_time" content="2018-07-24T11:59:06.079Z">
+<meta property="og:image" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/question.png">
+<meta property="og:updated_time" content="2018-07-26T13:04:37.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_836_Rectangle_Overlap">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/7/24.//// leetcode 836 rectangle overlap//// 题目要求判读两个长方形是否存储重合部分，给定两个长方形的左下点和右上点的坐标。//// 这个题目的思想就是去寻找两个长方形满足重叠情况时坐标点的关系；// 而如果直接去判断重叠条件是比较麻烦的，因为存在很多种情况，可以考虑相反情况，即两个长方形不重">
-<meta name="twitter:image" content="http://mrhu.vip/2018/07/24/c-836-Rectangle-Overlap/question.png">
+<meta name="twitter:title" content="c_633_Sum_of_Square_Numbers">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
+<meta name="twitter:image" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/07/24/c-836-Rectangle-Overlap/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/"/>
 
 
 
 
 
-  <title>c_836_Rectangle_Overlap | Chan's Blog</title>
+  <title>c_633_Sum_of_Square_Numbers | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/07/24/c-836-Rectangle-Overlap/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_836_Rectangle_Overlap</h1>
+          <h1 class="post-title" itemprop="name headline">c_633_Sum_of_Square_Numbers</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-24T19:58:03+08:00">
-                2018-07-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-26T21:03:27+08:00">
+                2018-07-26
               </time>
             
 
@@ -344,9 +344,9 @@
       
 
       
-        <p><img src="/2018/07/24/c-836-Rectangle-Overlap/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/7/24.<br>//<br>// leetcode 836 rectangle overlap<br>//<br>// 题目要求判读两个长方形是否存储重合部分，给定两个长方形的左下点和右上点的坐标。<br>//<br>// 这个题目的思想就是去寻找两个长方形满足重叠情况时坐标点的关系；<br>// 而如果直接去判断重叠条件是比较麻烦的，因为存在很多种情况，可以考虑相反情况，即两个长方形不重叠的情况。<br>// 两个长方形如果不重叠，即rec2在rec1的左边，右边，上边，下边这四种情况<br>// rec2在rec1的左边，则rec2.x2&lt;=rec1.x1;<br>// rec2在rec1的右边，则rec2.x1&gt;=rec1.x2;<br>// rec2在rec1的上边，则rec2.y1&gt;=rec1.y2;<br>// rec2在rec1的下边，则rec2.y2&lt;=rec1.y1;<br>// 不满足以上四种情况，则说明存在重复情况。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isRectangleOverlap</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; rec1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; rec2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(rec2[<span class="number">2</span>]&lt;=rec1[<span class="number">0</span>] || rec2[<span class="number">0</span>]&gt;=rec1[<span class="number">2</span>] || rec2[<span class="number">1</span>]&gt;=rec1[<span class="number">3</span>] || rec2[<span class="number">3</span>]&lt;=rec1[<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rec1,rec2;</span><br><span class="line">    rec1.emplace_back(<span class="number">0</span>);</span><br><span class="line">    rec1.emplace_back(<span class="number">0</span>);</span><br><span class="line">    rec1.emplace_back(<span class="number">1</span>);</span><br><span class="line">    rec1.emplace_back(<span class="number">1</span>);</span><br><span class="line">    rec2.emplace_back(<span class="number">1</span>);</span><br><span class="line">    rec2.emplace_back(<span class="number">0</span>);</span><br><span class="line">    rec2.emplace_back(<span class="number">2</span>);</span><br><span class="line">    rec2.emplace_back(<span class="number">1</span>);</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> isoverlap = solution.isRectangleOverlap(rec1,rec2);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;isoverlap&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/07/26/c-633-Sum-of-Square-Numbers/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/7/26.<br>//<br>// 题目要求判断一个数能否被写成两个数的平方和形式<br>//<br>// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，<br>// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，<br>// 当两个数的平方和大于c，则–end;小于c，++begin；<br>// 为什么在–end之后，不需要考虑比begin小的值呢？因为–end说明结果&gt;c，考虑比begin小的值只会更小；<br>// 对++begin不需要考虑比end大的值原因相同<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>, end = <span class="built_in">sqrt</span>(c);</span><br><span class="line">        <span class="keyword">long</span> result;</span><br><span class="line">        <span class="keyword">while</span> (begin &lt;= end) &#123;</span><br><span class="line">            result = begin * begin + end * end;</span><br><span class="line">            <span class="keyword">if</span> (result == c) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result &gt; c) &#123;</span><br><span class="line">                --end;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ++begin;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Solution solution;</span><br><span class="line"><span class="comment">//    bool result = solution.judgeSquareSum(12345678);</span></span><br><span class="line">    <span class="keyword">bool</span> result = solution.judgeSquareSum(<span class="number">4</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -378,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/24/c-168-Excel-Sheet-Column-Title/" rel="next" title="c_168_Excel_Sheet_Column_Title">
-                <i class="fa fa-chevron-left"></i> c_168_Excel_Sheet_Column_Title
+              <a href="/2018/07/26/c-594-Longest-Harmonious-Subsequence/" rel="next" title="c_594_Longest_Harmonious_Subsequence">
+                <i class="fa fa-chevron-left"></i> c_594_Longest_Harmonious_Subsequence
               </a>
             
           </div>
@@ -387,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/24/reverse-single-linked-list/" rel="prev" title="reverse_single_linked_list">
-                reverse_single_linked_list <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
