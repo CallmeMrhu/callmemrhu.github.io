@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Leetcode,Graph,DFS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="//// Created by Mr.Hu on 2018/7/30.//// leetcode 332 reconstruct itinerary//// 题目给定多个航班信息，要求从”JFK”开始，飞往下一个航班，将所有航班呢飞完，求满足航班信息在字符上最小的航班线路//// 这个题目是一个关于图的题目，给定的tickets信息能够构成一张有向图，需要在有向图进行求解。// 对于每一条航班路">
+<meta name="keywords" content="Leetcode,Graph,DFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c_332_Reconstruct_Itinerary">
+<meta property="og:url" content="http://mrhu.vip/2018/07/30/c-332-Reconstruct-Itinerary/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/7/30.//// leetcode 332 reconstruct itinerary//// 题目给定多个航班信息，要求从”JFK”开始，飞往下一个航班，将所有航班呢飞完，求满足航班信息在字符上最小的航班线路//// 这个题目是一个关于图的题目，给定的tickets信息能够构成一张有向图，需要在有向图进行求解。// 对于每一条航班路">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://mrhu.vip/2018/07/30/c-332-Reconstruct-Itinerary/question.png">
+<meta property="og:updated_time" content="2018-07-30T09:29:22.335Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c_332_Reconstruct_Itinerary">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/7/30.//// leetcode 332 reconstruct itinerary//// 题目给定多个航班信息，要求从”JFK”开始，飞往下一个航班，将所有航班呢飞完，求满足航班信息在字符上最小的航班线路//// 这个题目是一个关于图的题目，给定的tickets信息能够构成一张有向图，需要在有向图进行求解。// 对于每一条航班路">
+<meta name="twitter:image" content="http://mrhu.vip/2018/07/30/c-332-Reconstruct-Itinerary/question.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mrhu.vip/2018/07/30/c-332-Reconstruct-Itinerary/"/>
+
+
+
+
+
+  <title>c_332_Reconstruct_Itinerary | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">CallMe胡先生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/07/30/c-332-Reconstruct-Itinerary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">c_332_Reconstruct_Itinerary</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-30T17:27:43+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/07/30/c-332-Reconstruct-Itinerary/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/7/30.<br>//<br>// leetcode 332 reconstruct itinerary<br>//<br>// 题目给定多个航班信息，要求从”JFK”开始，飞往下一个航班，将所有航班呢飞完，求满足航班信息在字符上最小的航班线路<br>//<br>// 这个题目是一个关于图的题目，给定的tickets信息能够构成一张有向图，需要在有向图进行求解。<br>// 对于每一条航班路线，就是从”JFK”节点开始，向下进行遍历直到叶子节点，所经过的所有节点构成线路，<br>// 并且遍历采用深度优先（DFS）。所以我们做这个题目第一步就是要建图，使用邻接链表或邻接矩阵构建节点之间的关系，<br>// 但是在在使用DFS上与我们平时使用的方法并不相同：平时我们是遍历所有节点，因此遍历过的节点我们就标记为true，不再访问，<br>// 在这里，当我们每次访问完一条路径后，需要重新选择上一个节点的另外一种情况，所以我们需要每次得到一条路径并与原路径进行对比，<br>// 进行回溯操作后，之前访问过的节点还是需要继续访问。<br>//<br>// 第二种方法：既然题目指出每一组票一定有一组正确的解答，而又需要航班信息在字符组合上最小，<br>// 用一个map来点与点之间的关系，想到与邻接链表，key值为from信息，value是to信息，而这里的to有多种信息，且可能相同，<br>// 而且题目又要求航班信息字符组合最小，所以我们使用multiset这样的数据结构来存储to信息，可以重复，且自动排序为从小到大，<br>// 图建完之后，我们从stack来存储路径当前所到达的节点，当stack不为空时，则说明还没有将所有tickets使用完，<br>// 如果当前节点的value值不为空，则说明还有结下的路可以走，而为了满足路径字符最小，所以我们去value.begin()的节点信息，往下继续走；<br>// 如果当前节点的value值为空，则说明路径已经规划完成，将stack.top()加入itinerary中，stack.pop()，继续循环。<br>// 循环结束后，将加入itinerary进行reverse即得到满足条件的路径。<br>// 这种解法妙在只需要一次遍历，就可以得到最终的结果，这是基于结果一定存在，且每次加入的节点都是字符最小的节点，这要归功于set，<br>// 这种方法可以避免使用回溯和手动去比较字符串大小。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; findItinerary(<span class="built_in">vector</span>&lt;pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;&gt; tickets) &#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">multiset</span>&lt;<span class="built_in">string</span>&gt;&gt; graph;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; itinerary;</span><br><span class="line">        <span class="keyword">if</span> (tickets.size() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> itinerary;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> ticket:tickets) &#123;</span><br><span class="line">            graph[ticket.first].insert(ticket.second);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; dfs;</span><br><span class="line">        dfs.push(<span class="string">"JFK"</span>);</span><br><span class="line">        <span class="keyword">while</span> (!dfs.empty()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (graph[dfs.top()].empty()) &#123;</span><br><span class="line">                itinerary.push_back(dfs.top());</span><br><span class="line">                dfs.pop();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">string</span> tmp = *(graph[dfs.top()].begin());</span><br><span class="line">                <span class="comment">//erase</span></span><br><span class="line">                graph[dfs.top()].erase(graph[dfs.top()].begin());</span><br><span class="line">                <span class="comment">// add</span></span><br><span class="line">                dfs.push(tmp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(itinerary.begin(), itinerary.end());</span><br><span class="line">        <span class="keyword">return</span> itinerary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;&gt; tickets;</span><br><span class="line">    pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; a(<span class="string">"MUC"</span>, <span class="string">"LHR"</span>);</span><br><span class="line">    pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; b(<span class="string">"JFK"</span>, <span class="string">"MUC"</span>);</span><br><span class="line">    pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; c(<span class="string">"SFO"</span>, <span class="string">"SJC"</span>);</span><br><span class="line">    pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; d(<span class="string">"LHR"</span>, <span class="string">"SFO"</span>);</span><br><span class="line">    tickets.emplace_back(a);</span><br><span class="line">    tickets.emplace_back(b);</span><br><span class="line">    tickets.emplace_back(c);</span><br><span class="line">    tickets.emplace_back(d);</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; itinerary = solution.findItinerary(tickets);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;n:itinerary) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/Graph/" rel="tag"># Graph</a>
+          
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/29/b-80-Remove-Duplicated-From-Sorted-Array-II/" rel="next" title="b_80_Remove_Duplicated_From_Sorted_Array_II">
+                <i class="fa fa-chevron-left"></i> b_80_Remove_Duplicated_From_Sorted_Array_II
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">126</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
