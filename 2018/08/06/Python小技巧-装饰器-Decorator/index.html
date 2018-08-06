@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Program_Language," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="装饰器：Decorator今天看了一个关于python中decorator的讲解，第一次接触这个概念，写一篇文章来捋捋自己的理解。 talk is cheap，show me the code： 1234567891011121314151617181920212223242526# 这段代码是一个最简单版本的判断质数的方法，并且输出所有质数和所花费的时间# 判断某个返回内质数可以有更加简单的方式">
+<meta name="keywords" content="Program_Language">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python小技巧:装饰器(Decorator)">
+<meta property="og:url" content="http://mrhu.vip/2018/08/06/Python小技巧-装饰器-Decorator/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="装饰器：Decorator今天看了一个关于python中decorator的讲解，第一次接触这个概念，写一篇文章来捋捋自己的理解。 talk is cheap，show me the code： 1234567891011121314151617181920212223242526# 这段代码是一个最简单版本的判断质数的方法，并且输出所有质数和所花费的时间# 判断某个返回内质数可以有更加简单的方式">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-06T01:29:54.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python小技巧:装饰器(Decorator)">
+<meta name="twitter:description" content="装饰器：Decorator今天看了一个关于python中decorator的讲解，第一次接触这个概念，写一篇文章来捋捋自己的理解。 talk is cheap，show me the code： 1234567891011121314151617181920212223242526# 这段代码是一个最简单版本的判断质数的方法，并且输出所有质数和所花费的时间# 判断某个返回内质数可以有更加简单的方式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mrhu.vip/2018/08/06/Python小技巧-装饰器-Decorator/"/>
+
+
+
+
+
+  <title>Python小技巧:装饰器(Decorator) | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">CallMe胡先生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/08/06/Python小技巧-装饰器-Decorator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python小技巧:装饰器(Decorator)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-06T08:48:26+08:00">
+                2018-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="装饰器：Decorator"><a href="#装饰器：Decorator" class="headerlink" title="装饰器：Decorator"></a>装饰器：Decorator</h3><p>今天看了一个关于python中decorator的讲解，第一次接触这个概念，写一篇文章来捋捋自己的理解。</p>
+<p><em>talk is cheap，show me the code</em>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这段代码是一个最简单版本的判断质数的方法，并且输出所有质数和所花费的时间</span></span><br><span class="line"><span class="comment"># 判断某个返回内质数可以有更加简单的方式，使用一个一维数组来表示各个数是否为质数，从2开始，2*2,2*3，</span></span><br><span class="line"><span class="comment"># 2*4...然后3*3,3*4,3*5...，然后n*(n+1),n*(n+2)...n的范围为nums的平方根，然后遍历一遍一维数组</span></span><br><span class="line"><span class="comment"># 输出所有数组状态为true的值，即为所有的质数。</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> num&lt;<span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">   <span class="keyword">elif</span> num == <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,num):</span><br><span class="line">         <span class="keyword">if</span> num%i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime_nums</span><span class="params">()</span>:</span></span><br><span class="line">    t1 = time.time()</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">10000</span>):</span><br><span class="line">      <span class="keyword">if</span> is_prime(i):</span><br><span class="line">         print(i)</span><br><span class="line">    t2 = time.time()</span><br><span class="line">    print(t2-t1)</span><br><span class="line"></span><br><span class="line">prime_nums()</span><br></pre></td></tr></table></figure>
+<p>在上面这段代码中，不难发现，如果存在多个方法中需要用到时间记录，就需要写很多重复的t1，t2，t2-t1的操作，这显得很不简洁，所以我们想要将计时部分和逻辑部分分离开来。这里就需要使用装饰器（decorator）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建decorator，参数就是我们想要运行的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">display_time</span><span class="params">(func)</span>:</span></span><br><span class="line">   <span class="comment"># 再定一个wrapper方法，wrapper表示运行func时需要运行哪些内容；</span></span><br><span class="line">   <span class="comment"># 在这个例子中我们需要先取开始时间，然后调用func函数，然后再取结束时间，并输出</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></span><br><span class="line">      t1 = time.time()</span><br><span class="line">      func()</span><br><span class="line">      t2 = time.time()</span><br><span class="line">      print(t2-t1)</span><br><span class="line">   <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> num&lt;<span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">   <span class="keyword">elif</span> num == <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,num):</span><br><span class="line">         <span class="keyword">if</span> num%i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@display_time</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime_nums</span><span class="params">()</span>:</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">10000</span>):</span><br><span class="line">      <span class="keyword">if</span> is_prime(i):</span><br><span class="line">         print(i)</span><br><span class="line"></span><br><span class="line">prime_nums()</span><br></pre></td></tr></table></figure>
+<p>在创建好装饰器后，想要调用装饰器，则需要在prime_nums()方法上加一个@display_time，这样当调用prime_nums()时，会去调用display_time(func)方法，并将prime_nums()函数传入display_time(func)的参数func中，然后会调用warpper，按照里面定义的执行顺序进行运行。这里的prime_nums()时没有参数返回的，如果有返回该，即现在prime_nums()的目标是统计存在多少个质数，并返回。如何更改decorator呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># func中存在返回值，func中return值不会在wrapper中返回</span></span><br><span class="line"><span class="comment"># 需要在wrapper中获取func的返回值，然后手动return这个值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">display_time_return</span><span class="params">(func)</span>:</span></span><br><span class="line">   <span class="comment"># 运行func时需要运行哪些内容</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">()</span>:</span></span><br><span class="line">      t1 = time.time()</span><br><span class="line">      result = func()</span><br><span class="line">      t2 = time.time()</span><br><span class="line">      print(t2-t1)</span><br><span class="line">      <span class="keyword">return</span> result</span><br><span class="line">   <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> num&lt;<span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">   <span class="keyword">elif</span> num == <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,num):</span><br><span class="line">         <span class="keyword">if</span> num%i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@display_time_return</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_prime_nums</span><span class="params">()</span>:</span></span><br><span class="line">   count = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">10000</span>):</span><br><span class="line">      <span class="keyword">if</span> is_prime(i):</span><br><span class="line">         count = count+<span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line">count_1 = count_prime_nums()</span><br><span class="line">print(count_1)</span><br></pre></td></tr></table></figure>
+<p>以上code就是在func存在返回值时，decorator的定义情况。在调用func时，由于其存在返回值，但是wrapper中并没有将这个返回值进行保留，所以我们需要在wrapper中手动获取这个返回值，即用一个变量result = func()，然后在warpper中返回result，这样在执行count_prime_nums()方法，调用完decorator，会返回func()原本会返回的值。这样就解决了方法中存在返回值的情况。如果方法存在参数怎么办？当前是固定了10000这个值，但是我们想用参数的形式来传入这个值，这样我们想求多少以内的质数个数只需要更改传入参数就可以了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">display_time_return_args</span><span class="params">(func)</span>:</span></span><br><span class="line">   <span class="comment"># 运行func时需要运行哪些内容</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args)</span>:</span></span><br><span class="line">      t1 = time.time()</span><br><span class="line">      result = func(*args)</span><br><span class="line">      t2 = time.time()</span><br><span class="line">      print(t2-t1)</span><br><span class="line">      <span class="keyword">return</span> result</span><br><span class="line">   <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span><span class="params">(num)</span>:</span></span><br><span class="line">   <span class="keyword">if</span> num&lt;<span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">   <span class="keyword">elif</span> num == <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,num):</span><br><span class="line">         <span class="keyword">if</span> num%i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@display_time_return_args</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_prime_nums_args</span><span class="params">(maxnum)</span>:</span></span><br><span class="line">   count = <span class="number">0</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,maxnum):</span><br><span class="line">      <span class="keyword">if</span> is_prime(i):</span><br><span class="line">         count = count+<span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line">count_2 = count_prime_nums_args(<span class="number">20000</span>)</span><br><span class="line">print(count_2)</span><br></pre></td></tr></table></figure>
+<p>上面的代码就是count_prime_nums_args(arg)存在参数时使用decorator的方式，在wrapper(*args)加上*args表示传入的参数，这个参数可以是一个或者多个，当执行count_prime_nums_args时调用装饰器，方法中的参数会传入decorator中的*args，在func(*args)也加上这些参数的表示，这样就能将有参方法的参数传入到warpper中。</p>
+<h4 id="装饰器可以有效的解决逻辑部分和计时部分-或其他辅助功能-进行分离，这样做就可以使得代码更加简洁，无需重复使用相同的一段代码。"><a href="#装饰器可以有效的解决逻辑部分和计时部分-或其他辅助功能-进行分离，这样做就可以使得代码更加简洁，无需重复使用相同的一段代码。" class="headerlink" title="装饰器可以有效的解决逻辑部分和计时部分(或其他辅助功能)进行分离，这样做就可以使得代码更加简洁，无需重复使用相同的一段代码。"></a>装饰器可以有效的解决逻辑部分和计时部分(或其他辅助功能)进行分离，这样做就可以使得代码更加简洁，无需重复使用相同的一段代码。</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Program-Language/" rel="tag"># Program_Language</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/05/Max-Duplication-Area-Number/" rel="next" title="Max_Duplication_Area_Number">
+                <i class="fa fa-chevron-left"></i> Max_Duplication_Area_Number
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">134</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#装饰器：Decorator"><span class="nav-number">1.</span> <span class="nav-text">装饰器：Decorator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#装饰器可以有效的解决逻辑部分和计时部分-或其他辅助功能-进行分离，这样做就可以使得代码更加简洁，无需重复使用相同的一段代码。"><span class="nav-number">1.1.</span> <span class="nav-text">装饰器可以有效的解决逻辑部分和计时部分(或其他辅助功能)进行分离，这样做就可以使得代码更加简洁，无需重复使用相同的一段代码。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
