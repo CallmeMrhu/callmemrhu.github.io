@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="《数据结构与算法》重学数据结构与算法 第二章、线性结构线性结构有两种表示形式。1、线性表：顺序表示（数组）；2、链表：链接表示（单向链表、单向循环链表、双向链表、双向循环链表，注意头节点的设置，以及其与首节点的区别） 第三章、栈与队列栈：基于数组实现、基于链表实现；共享栈（同一栈空间存储多个栈信息，两个栈相向设置） 队列：基于数组实现（循环队列）、基于链表实现 优先队列：每个节点存在一个优先级，每">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-14T14:01:02.339Z">
+<meta property="og:updated_time" content="2018-08-16T08:35:04.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《数据结构与算法》知识点回顾">
 <meta name="twitter:description" content="《数据结构与算法》重学数据结构与算法 第二章、线性结构线性结构有两种表示形式。1、线性表：顺序表示（数组）；2、链表：链接表示（单向链表、单向循环链表、双向链表、双向循环链表，注意头节点的设置，以及其与首节点的区别） 第三章、栈与队列栈：基于数组实现、基于链表实现；共享栈（同一栈空间存储多个栈信息，两个栈相向设置） 队列：基于数组实现（循环队列）、基于链表实现 优先队列：每个节点存在一个优先级，每">
@@ -351,8 +351,11 @@
 <h3 id="第四章、串"><a href="#第四章、串" class="headerlink" title="第四章、串"></a>第四章、串</h3><p>串的存储也可以从两种方法来考虑：1、顺序方式，2、链式方式；由于常常操作的对象是连续的字符子序，所以多数情况下，串的存储采用顺序存储方式最为方便。</p>
 <p>串的基本操作：串的长度、串相等、赋值操作、定位操作、求子串操作、插入操作、删除操作等。C++中已经已经提供了string.h串库，其中比较常用的有strcmp、strcpy、memcpy等，同时也提供了标准string类。</p>
 <p>重点需要了解是字符串的模式匹配，即查找子串在主串中第一次出现的位置。主要有两种方法：1、BF（Brute-Force）算法，即保留求解方法，时间复杂度为O(m*n)；2、KMP（Knuth-Morris-Pratt）算法，时间复杂度可为O(m+n)。</p>
-<p>重点讲解KMP算法的思想：简而言之就是让子串在不匹配的情况下无需回到初始位置，从而减少不必要的匹配。核心实现思想就是最长前缀串。</p>
-
+<p>重点讲解KMP算法的思想：</p>
+<p>​    由于BF方法存在一个明显的缺陷，当每次匹配不成功时，主串中的下标就要回退到本次模式匹配开始字符的下一个字符位置。KMP算法就是让子串在不匹配的情况下无需回到顺序递增的下一位，从而减少不必要的匹配。核心实现思想就是最长前缀串。</p>
+<p>​    在KMP算法中，主串指针i不会减小（即不回溯），是一个很大的优点，尤其是在硬盘中寻找模式的时候。使用BF算法进行模式匹配时，一旦匹配失败需要进行回溯，但是如果是主串在外存中，很可能之前的信息已经被覆盖，需要重新读取；而KMP算法只会移动模式串的指针j到其前一位并与主串当前失配点进行匹配，如果相同则将模式串当前的指针移动到最前面的前缀串位置，然后进行继续i++,j++匹配。这个操作就需要一个前提：计算出模式串中每个节点的最长前缀串最初的位置。</p>
+<p>​    代码实现：</p>
+<h3 id="树及二叉树"><a href="#树及二叉树" class="headerlink" title="树及二叉树"></a>树及二叉树</h3>
       
     </div>
     
@@ -526,7 +529,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《数据结构与算法》"><span class="nav-number">1.</span> <span class="nav-text">《数据结构与算法》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章、线性结构"><span class="nav-number">1.1.</span> <span class="nav-text">第二章、线性结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章、栈与队列"><span class="nav-number">1.2.</span> <span class="nav-text">第三章、栈与队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章、串"><span class="nav-number">1.3.</span> <span class="nav-text">第四章、串</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《数据结构与算法》"><span class="nav-number">1.</span> <span class="nav-text">《数据结构与算法》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二章、线性结构"><span class="nav-number">1.1.</span> <span class="nav-text">第二章、线性结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三章、栈与队列"><span class="nav-number">1.2.</span> <span class="nav-text">第三章、栈与队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四章、串"><span class="nav-number">1.3.</span> <span class="nav-text">第四章、串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树及二叉树"><span class="nav-number">1.4.</span> <span class="nav-text">树及二叉树</span></a></li></ol></li></ol></div>
             
 
           </div>
