@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Math,Leetcode," />
+  <meta name="keywords" content="Survey," />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
-<meta name="keywords" content="Math,Leetcode">
+<meta name="description" content="Matrix Factorization 与 Representation Learning 2018.6.6 之前自己课题研究相关工作中提了MF和RL，对它们之间的关系有点困惑😖。 两者本质都是Embedding，为什么要分开来呢？ 其实，MF是对user-item矩阵进行分解，只关心现有的打分矩阵； 而RL是存在一个上下文关系的，其来源于NLP中word embedding，在2013年wo">
+<meta name="keywords" content="Survey">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_633_Sum_of_Square_Numbers">
-<meta property="og:url" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/index.html">
+<meta property="og:title" content="关于Matrix Facorization和Representation Learning的一点思考">
+<meta property="og:url" content="http://mrhu.vip/2018/09/11/关于Matrix-Facorization和Representation-Learning的一点思考/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
+<meta property="og:description" content="Matrix Factorization 与 Representation Learning 2018.6.6 之前自己课题研究相关工作中提了MF和RL，对它们之间的关系有点困惑😖。 两者本质都是Embedding，为什么要分开来呢？ 其实，MF是对user-item矩阵进行分解，只关心现有的打分矩阵； 而RL是存在一个上下文关系的，其来源于NLP中word embedding，在2013年wo">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/question.png">
-<meta property="og:updated_time" content="2018-07-26T13:04:37.527Z">
+<meta property="og:updated_time" content="2018-09-11T03:10:32.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_633_Sum_of_Square_Numbers">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
-<meta name="twitter:image" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/question.png">
+<meta name="twitter:title" content="关于Matrix Facorization和Representation Learning的一点思考">
+<meta name="twitter:description" content="Matrix Factorization 与 Representation Learning 2018.6.6 之前自己课题研究相关工作中提了MF和RL，对它们之间的关系有点困惑😖。 两者本质都是Embedding，为什么要分开来呢？ 其实，MF是对user-item矩阵进行分解，只关心现有的打分矩阵； 而RL是存在一个上下文关系的，其来源于NLP中word embedding，在2013年wo">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/09/11/关于Matrix-Facorization和Representation-Learning的一点思考/"/>
 
 
 
 
 
-  <title>c_633_Sum_of_Square_Numbers | Chan's Blog</title>
+  <title>关于Matrix Facorization和Representation Learning的一点思考 | Chan's Blog</title>
   
 
 
@@ -255,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/09/11/关于Matrix-Facorization和Representation-Learning的一点思考/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_633_Sum_of_Square_Numbers</h1>
+          <h1 class="post-title" itemprop="name headline">关于Matrix Facorization和Representation Learning的一点思考</h1>
         
 
         <div class="post-meta">
@@ -284,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-26T21:03:27+08:00">
-                2018-07-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-11T11:10:32+08:00">
+                2018-09-11
               </time>
             
 
@@ -307,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Recommender-System/" itemprop="url" rel="index">
+                    <span itemprop="name">Recommender System</span>
                   </a>
                 </span>
 
@@ -344,9 +342,14 @@
       
 
       
-        <p><img src="/2018/07/26/c-633-Sum-of-Square-Numbers/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/7/26.<br>//<br>// 题目要求判断一个数能否被写成两个数的平方和形式<br>//<br>// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，<br>// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，<br>// 当两个数的平方和大于c，则–end;小于c，++begin；<br>// 为什么在–end之后，不需要考虑比begin小的值呢？因为–end说明结果&gt;c，考虑比begin小的值只会更小；<br>// 对++begin不需要考虑比end大的值原因相同<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>, end = <span class="built_in">sqrt</span>(c);</span><br><span class="line">        <span class="keyword">long</span> result;</span><br><span class="line">        <span class="keyword">while</span> (begin &lt;= end) &#123;</span><br><span class="line">            result = begin * begin + end * end;</span><br><span class="line">            <span class="keyword">if</span> (result == c) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result &gt; c) &#123;</span><br><span class="line">                --end;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ++begin;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Solution solution;</span><br><span class="line"><span class="comment">//    bool result = solution.judgeSquareSum(12345678);</span></span><br><span class="line">    <span class="keyword">bool</span> result = solution.judgeSquareSum(<span class="number">4</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>Matrix Factorization 与 Representation Learning</p>
+<p>2018.6.6</p>
+<p>之前自己课题研究相关工作中提了MF和RL，对它们之间的关系有点困惑😖。</p>
+<p>两者本质都是Embedding，为什么要分开来呢？</p>
+<p>其实，MF是对user-item矩阵进行分解，只关心现有的打分矩阵；</p>
+<p>而RL是存在一个上下文关系的，其来源于NLP中word embedding，在2013年word embedding被提出之前，NLP中对word进行向量化是用过两个词一起出现的次数来建立matrix，然后使用MF（当时称为隐语义模型 LFM）来得到每个词的向量表示。而word embedding提出来之后，每个句子中的词都是存在一个上下文关系，对每个词进行向量化就需要考虑其上下文，这个上下文就不仅仅局限于临近的词了，这里就有了Skip-gram和CBOW来对考虑这种关系。而RL在Recommender System中，就是考虑每个item的上下文，即和该item中一起被购买的item则可以称之为其上下文，而一起购买的item一般都存在相似性，所以可以使用频繁项集挖掘等方式来计算item之间的相似度，而这个相似度则可以用来约束item embedding。</p>
+<p>在Cofactor这篇论文中，就是将MF与co-occurence item结合，item embedding通过这两者共同学习得到，从而使得item embedding更加丰富。</p>
+
       
     </div>
     
@@ -363,9 +366,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
-          
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/Survey/" rel="tag"># Survey</a>
           
         </div>
       
@@ -378,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/26/c-594-Longest-Harmonious-Subsequence/" rel="next" title="c_594_Longest_Harmonious_Subsequence">
-                <i class="fa fa-chevron-left"></i> c_594_Longest_Harmonious_Subsequence
+              <a href="/2018/09/11/b-55-Jump-Game/" rel="next" title="b_55_Jump_Game">
+                <i class="fa fa-chevron-left"></i> b_55_Jump_Game
               </a>
             
           </div>
@@ -387,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/27/b-75-sort-Colors/" rel="prev" title="b_75_sort_Colors">
-                b_75_sort_Colors <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
