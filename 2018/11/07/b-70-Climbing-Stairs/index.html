@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Math,Leetcode," />
+  <meta name="keywords" content="DP_Algorithm,Leetcode," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
-<meta name="keywords" content="Math,Leetcode">
+<meta name="description" content="//// Created by Mr.Hu on 2018/11/7.//// leetcode 70 climbing stairs//// 题目要求对于给定的台阶数，求出所有可能的走法，要求每次只能走一个台阶或者两个台阶。//// 这个题目在我之前的面试中遇到过，属于动态规划的范畴。可以用递归的方式进行解决，当然也可以用递归的方式解决，// 其递推式：f(n) = f(n-1) + f(n-">
+<meta name="keywords" content="DP_Algorithm,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_633_Sum_of_Square_Numbers">
-<meta property="og:url" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/index.html">
+<meta property="og:title" content="b_70_Climbing_Stairs">
+<meta property="og:url" content="http://mrhu.vip/2018/11/07/b-70-Climbing-Stairs/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/11/7.//// leetcode 70 climbing stairs//// 题目要求对于给定的台阶数，求出所有可能的走法，要求每次只能走一个台阶或者两个台阶。//// 这个题目在我之前的面试中遇到过，属于动态规划的范畴。可以用递归的方式进行解决，当然也可以用递归的方式解决，// 其递推式：f(n) = f(n-1) + f(n-">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/question.png">
-<meta property="og:updated_time" content="2018-07-26T13:04:37.527Z">
+<meta property="og:image" content="http://mrhu.vip/2018/11/07/b-70-Climbing-Stairs/question.png">
+<meta property="og:updated_time" content="2018-11-07T11:33:50.832Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_633_Sum_of_Square_Numbers">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/7/26.//// 题目要求判断一个数能否被写成两个数的平方和形式//// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，// 当两个数的平方和大于c，则–end;小于c，++begin；// 为什么在–end之后，不需要考虑比begin小的值呢">
-<meta name="twitter:image" content="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/question.png">
+<meta name="twitter:title" content="b_70_Climbing_Stairs">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/11/7.//// leetcode 70 climbing stairs//// 题目要求对于给定的台阶数，求出所有可能的走法，要求每次只能走一个台阶或者两个台阶。//// 这个题目在我之前的面试中遇到过，属于动态规划的范畴。可以用递归的方式进行解决，当然也可以用递归的方式解决，// 其递推式：f(n) = f(n-1) + f(n-">
+<meta name="twitter:image" content="http://mrhu.vip/2018/11/07/b-70-Climbing-Stairs/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/11/07/b-70-Climbing-Stairs/"/>
 
 
 
 
 
-  <title>c_633_Sum_of_Square_Numbers | Chan's Blog</title>
+  <title>b_70_Climbing_Stairs | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/07/26/c-633-Sum-of-Square-Numbers/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/11/07/b-70-Climbing-Stairs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_633_Sum_of_Square_Numbers</h1>
+          <h1 class="post-title" itemprop="name headline">b_70_Climbing_Stairs</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-26T21:03:27+08:00">
-                2018-07-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T19:32:14+08:00">
+                2018-11-07
               </time>
             
 
@@ -344,9 +344,9 @@
       
 
       
-        <p><img src="/2018/07/26/c-633-Sum-of-Square-Numbers/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/7/26.<br>//<br>// 题目要求判断一个数能否被写成两个数的平方和形式<br>//<br>// 刚开始把这个题目想复杂了，以为是要考虑直角三角形的三条边的情况，<br>// 后来发现只需要遍历就行，将两个数值结果固定在0-sqrt(c)之间，<br>// 当两个数的平方和大于c，则–end;小于c，++begin；<br>// 为什么在–end之后，不需要考虑比begin小的值呢？因为–end说明结果&gt;c，考虑比begin小的值只会更小；<br>// 对++begin不需要考虑比end大的值原因相同<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgeSquareSum</span><span class="params">(<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>, end = <span class="built_in">sqrt</span>(c);</span><br><span class="line">        <span class="keyword">long</span> result;</span><br><span class="line">        <span class="keyword">while</span> (begin &lt;= end) &#123;</span><br><span class="line">            result = begin * begin + end * end;</span><br><span class="line">            <span class="keyword">if</span> (result == c) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result &gt; c) &#123;</span><br><span class="line">                --end;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ++begin;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Solution solution;</span><br><span class="line"><span class="comment">//    bool result = solution.judgeSquareSum(12345678);</span></span><br><span class="line">    <span class="keyword">bool</span> result = solution.judgeSquareSum(<span class="number">4</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/11/07/b-70-Climbing-Stairs/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/11/7.<br>//<br>// leetcode 70 climbing stairs<br>//<br>// 题目要求对于给定的台阶数，求出所有可能的走法，要求每次只能走一个台阶或者两个台阶。<br>//<br>// 这个题目在我之前的面试中遇到过，属于动态规划的范畴。可以用递归的方式进行解决，当然也可以用递归的方式解决，<br>// 其递推式：f(n) = f(n-1) + f(n-2)，但是使用递归的方式会相当耗时而且占用资源。<br>//<br>// 当然我们可以用动态规划的方式，采用备忘录法来记录子问题的结果，在后面的运算中直接使用。<br>//<br>// 这个问题需要注意的是，一旦n的取值比较大时，结果会成指数级增长，所以在用备忘录法来求解问题时，我们需要考虑大数加法的情况<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs_Recursion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; result;</span><br><span class="line">        result.push_back(<span class="number">0</span>);</span><br><span class="line">        result.push_back(<span class="number">1</span>);</span><br><span class="line">        result.push_back(<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> result[n];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> climbStairs_Recursion(n - <span class="number">1</span>) + climbStairs_Recursion(n - <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addNumber</span><span class="params">(<span class="built_in">string</span> num1, <span class="built_in">string</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> first = <span class="number">0</span>, second = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> summary = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = (<span class="keyword">int</span>) num1.length(), j = (<span class="keyword">int</span>) num2.length(); i &gt; <span class="number">0</span> || j &gt; <span class="number">0</span>;) &#123;</span><br><span class="line">            first = i &gt; <span class="number">0</span> ? num1[--i] - <span class="string">'0'</span> : <span class="number">0</span>;</span><br><span class="line">            second = j &gt; <span class="number">0</span> ? num2[--j] - <span class="string">'0'</span> : <span class="number">0</span>;</span><br><span class="line">            summary = to_string((first + second + carry) % <span class="number">10</span>) + summary;</span><br><span class="line">            carry = (first + second + carry) / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> summary;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">climbStairs_DP</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result;</span><br><span class="line">        result.emplace_back(<span class="string">"0"</span>);</span><br><span class="line">        result.emplace_back(<span class="string">"1"</span>);</span><br><span class="line">        result.emplace_back(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> stoi(result[n]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            result.push_back(addNumber(result[i - <span class="number">1</span>], result[i - <span class="number">2</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stoi(result[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"summary = "</span> &lt;&lt; solution.climbStairs_DP(n);</span><br><span class="line"><span class="comment">//    cout &lt;&lt; "summary = " &lt;&lt; solution.climbStairs_Recursion(n);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -363,7 +363,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
+            <a href="/tags/DP-Algorithm/" rel="tag"># DP_Algorithm</a>
           
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
@@ -378,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/26/c-594-Longest-Harmonious-Subsequence/" rel="next" title="c_594_Longest_Harmonious_Subsequence">
-                <i class="fa fa-chevron-left"></i> c_594_Longest_Harmonious_Subsequence
+              <a href="/2018/11/07/c-931-Minimum-Falling-Path-Sum/" rel="next" title="c_931_Minimum_Falling_Path_Sum">
+                <i class="fa fa-chevron-left"></i> c_931_Minimum_Falling_Path_Sum
               </a>
             
           </div>
@@ -387,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/27/b-75-sort-Colors/" rel="prev" title="b_75_sort_Colors">
-                b_75_sort_Colors <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
