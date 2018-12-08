@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,String," />
+  <meta name="keywords" content="Tree,Leetcode,DFS," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/10/22.//// leetcode 28 implement strStr()//// 题目要求实现strStr()方法，即判断字符串a是否为字符串b的子串，如果是则返回第一次出现a的头索引值，如果不是，则返回-1，// 注：如果字符串a为空串，则返回0。这在面试时相当重要，提前考虑这种情况。//// 方法1，直接使用string:">
-<meta name="keywords" content="Leetcode,String">
+<meta name="description" content="//// Created by Mr.Hu on 2018/12/8.//// leetcode 104 maximum depth of binary tree//// 题目要求求出给定二叉的树的深度，即二叉树所有路径中最长的路径。//// 可以使用DFS的思想，每次计算一条路径的长度，判断当前路径长度与当前最长路径的大小，取最大值保存在为最长路径，// 直到最终遍历完所有路径，循环结束，输出">
+<meta name="keywords" content="Tree,Leetcode,DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b_28_Implement_strStr">
-<meta property="og:url" content="http://mrhu.vip/2018/10/22/b-28-Implement-strStr/index.html">
+<meta property="og:title" content="c_104_Maximum_Depth_of_Binary_Tree">
+<meta property="og:url" content="http://mrhu.vip/2018/12/08/c-104-Maximum-Depth-of-Binary-Tree/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/10/22.//// leetcode 28 implement strStr()//// 题目要求实现strStr()方法，即判断字符串a是否为字符串b的子串，如果是则返回第一次出现a的头索引值，如果不是，则返回-1，// 注：如果字符串a为空串，则返回0。这在面试时相当重要，提前考虑这种情况。//// 方法1，直接使用string:">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/12/8.//// leetcode 104 maximum depth of binary tree//// 题目要求求出给定二叉的树的深度，即二叉树所有路径中最长的路径。//// 可以使用DFS的思想，每次计算一条路径的长度，判断当前路径长度与当前最长路径的大小，取最大值保存在为最长路径，// 直到最终遍历完所有路径，循环结束，输出">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/10/22/b-28-Implement-strStr/question.png">
-<meta property="og:updated_time" content="2018-10-22T07:56:01.884Z">
+<meta property="og:image" content="http://mrhu.vip/2018/12/08/c-104-Maximum-Depth-of-Binary-Tree/question.png">
+<meta property="og:updated_time" content="2018-12-08T12:30:25.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="b_28_Implement_strStr">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/10/22.//// leetcode 28 implement strStr()//// 题目要求实现strStr()方法，即判断字符串a是否为字符串b的子串，如果是则返回第一次出现a的头索引值，如果不是，则返回-1，// 注：如果字符串a为空串，则返回0。这在面试时相当重要，提前考虑这种情况。//// 方法1，直接使用string:">
-<meta name="twitter:image" content="http://mrhu.vip/2018/10/22/b-28-Implement-strStr/question.png">
+<meta name="twitter:title" content="c_104_Maximum_Depth_of_Binary_Tree">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/12/8.//// leetcode 104 maximum depth of binary tree//// 题目要求求出给定二叉的树的深度，即二叉树所有路径中最长的路径。//// 可以使用DFS的思想，每次计算一条路径的长度，判断当前路径长度与当前最长路径的大小，取最大值保存在为最长路径，// 直到最终遍历完所有路径，循环结束，输出">
+<meta name="twitter:image" content="http://mrhu.vip/2018/12/08/c-104-Maximum-Depth-of-Binary-Tree/question.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/10/22/b-28-Implement-strStr/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/12/08/c-104-Maximum-Depth-of-Binary-Tree/"/>
 
 
 
 
 
-  <title>b_28_Implement_strStr | Chan's Blog</title>
+  <title>c_104_Maximum_Depth_of_Binary_Tree | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/10/22/b-28-Implement-strStr/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/12/08/c-104-Maximum-Depth-of-Binary-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">b_28_Implement_strStr</h1>
+          <h1 class="post-title" itemprop="name headline">c_104_Maximum_Depth_of_Binary_Tree</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T15:53:34+08:00">
-                2018-10-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-08T20:28:57+08:00">
+                2018-12-08
               </time>
             
 
@@ -344,9 +344,9 @@
       
 
       
-        <p><img src="/2018/10/22/b-28-Implement-strStr/question.png" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/10/22.<br>//<br>// leetcode 28 implement strStr()<br>//<br>// 题目要求实现strStr()方法，即判断字符串a是否为字符串b的子串，如果是则返回第一次出现a的头索引值，如果不是，则返回-1，<br>// 注：如果字符串a为空串，则返回0。这在面试时相当重要，提前考虑这种情况。<br>//<br>// 方法1，直接使用string::find()方法，返回的值为string::size_type类型，如果存在，则返回头索引，如果不存在，则返回string::npos<br>// 方法2：循环判断是否存在b的子串与字符串a相同，有则返回该字符串在b中的头索引值，不存在则返回-1，<br>// 获取字符串b中的子串使用sunstr(index,length)的方法。具体实现如下。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span> :</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> haystack, <span class="keyword">const</span> <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span>::size_type position = haystack.find(needle);</span><br><span class="line">        <span class="keyword">if</span> (position == <span class="built_in">string</span>::npos) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> position;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strStr_optional</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> haystack, <span class="keyword">const</span> <span class="built_in">string</span> needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> h_size = (<span class="keyword">int</span>) haystack.size();</span><br><span class="line">        <span class="keyword">int</span> n_size = (<span class="keyword">int</span>) needle.size();</span><br><span class="line">        <span class="keyword">if</span> (h_size &lt; n_size) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n_size == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= h_size - n_size; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (haystack.substr(i, n_size) == needle) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Solution solution;</span><br><span class="line"><span class="comment">//    cout&lt;&lt;solution.strStr("abcde","bc")&lt;&lt;endl;</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; solution.strStr_optional(<span class="string">"abcde"</span>, <span class="string">"bc"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/12/08/c-104-Maximum-Depth-of-Binary-Tree/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/12/8.<br>//<br>// leetcode 104 maximum depth of binary tree<br>//<br>// 题目要求求出给定二叉的树的深度，即二叉树所有路径中最长的路径。<br>//<br>// 可以使用DFS的思想，每次计算一条路径的长度，判断当前路径长度与当前最长路径的大小，取最大值保存在为最长路径，<br>// 直到最终遍历完所有路径，循环结束，输出此时最长路径即为二叉树深度<br>//<br>// DFS的思想需要记住stack来存储之前的节点<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode *left;</span><br><span class="line">    TreeNode *right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) : val(x), left(<span class="literal">nullptr</span>), right(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode *root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max_depth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp_depth;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode *&gt; cur_node;</span><br><span class="line">        <span class="keyword">if</span> (root != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            cur_node.push(root);</span><br><span class="line">            tmp_depth = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> max_depth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!cur_node.empty()) &#123;</span><br><span class="line">            TreeNode *top = cur_node.top();</span><br><span class="line">            <span class="keyword">if</span> (top-&gt;left != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                tmp_depth += <span class="number">1</span>;</span><br><span class="line">                cur_node.push(top-&gt;left);</span><br><span class="line">                top-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (top-&gt;right != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                tmp_depth += <span class="number">1</span>;</span><br><span class="line">                cur_node.push(top-&gt;right);</span><br><span class="line">                top-&gt;right = <span class="literal">nullptr</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                max_depth = max(max_depth, tmp_depth);</span><br><span class="line">                tmp_depth -= <span class="number">1</span>;</span><br><span class="line">                cur_node.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_depth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">TreeNode <span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">b</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">c</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">d</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">e</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">f</span><span class="params">(<span class="number">6</span>)</span></span>;</span><br><span class="line">    a.left = &amp;b;</span><br><span class="line">    a.right = &amp;c;</span><br><span class="line">    b.right = &amp;d;</span><br><span class="line">    c.left = &amp;e;</span><br><span class="line">    e.left = &amp;f;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> max_depth = solution.maxDepth(&amp;a);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"max depth = "</span> &lt;&lt; max_depth;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -363,9 +363,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Tree/" rel="tag"># Tree</a>
+          
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
-            <a href="/tags/String/" rel="tag"># String</a>
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
           
         </div>
       
@@ -378,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/12/python基础学习/" rel="next" title="python基础学习">
-                <i class="fa fa-chevron-left"></i> python基础学习
+              <a href="/2018/12/08/c-700-Search-in-a-Binary-Search-Tree/" rel="next" title="c_700_Search_in_a_Binary_Search_Tree">
+                <i class="fa fa-chevron-left"></i> c_700_Search_in_a_Binary_Search_Tree
               </a>
             
           </div>
@@ -387,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/23/c-100-same-tree/" rel="prev" title="c_100_same_tree">
-                c_100_same_tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
