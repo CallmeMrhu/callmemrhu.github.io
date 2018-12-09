@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Math," />
+  <meta name="keywords" content="Tree,Leetcode,DFS," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/8/5.//// Tencent 2018 机试题//// 题目描述：已知一个正整数对(x,y)，其中x，y都不大于n，并且x除以y的余数大于等于k，求满足该条件共有多少数对。// 输入两个整数n，k（1&amp;lt;=n&amp;lt;=10^5，0&amp;lt;=k&amp;lt;=n-1）//// 分析：1、题目要求x%y&amp;gt;=k，那么x一定满足x&amp;gt;">
-<meta name="keywords" content="Math">
+<meta name="description" content="//// Created by Mr.Hu on 2018/12/9.//// leetcode 108 convert sorted array to binary search tree//// 题目要求对于给定已排序的数组，转换为平衡的二叉搜索树//// 这个题目的思想有点像二分搜索，每次找出中间的值当作子树的根节点，使用递归的方法自顶向下构建该树。// 每次选择中位数当作二叉树的跟节点，">
+<meta name="keywords" content="Tree,Leetcode,DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Find_the_All_Integer_Pair">
-<meta property="og:url" content="http://mrhu.vip/2018/08/05/Find-the-All-Integer-Pair/index.html">
+<meta property="og:title" content="c_108_Convert_Sorted_Array_to_Binary_Search_Tree">
+<meta property="og:url" content="http://mrhu.vip/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/8/5.//// Tencent 2018 机试题//// 题目描述：已知一个正整数对(x,y)，其中x，y都不大于n，并且x除以y的余数大于等于k，求满足该条件共有多少数对。// 输入两个整数n，k（1&amp;lt;=n&amp;lt;=10^5，0&amp;lt;=k&amp;lt;=n-1）//// 分析：1、题目要求x%y&amp;gt;=k，那么x一定满足x&amp;gt;">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/12/9.//// leetcode 108 convert sorted array to binary search tree//// 题目要求对于给定已排序的数组，转换为平衡的二叉搜索树//// 这个题目的思想有点像二分搜索，每次找出中间的值当作子树的根节点，使用递归的方法自顶向下构建该树。// 每次选择中位数当作二叉树的跟节点，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-05T03:08:47.006Z">
+<meta property="og:image" content="http://mrhu.vip/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/question.png">
+<meta property="og:updated_time" content="2018-12-09T06:59:18.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Find_the_All_Integer_Pair">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/8/5.//// Tencent 2018 机试题//// 题目描述：已知一个正整数对(x,y)，其中x，y都不大于n，并且x除以y的余数大于等于k，求满足该条件共有多少数对。// 输入两个整数n，k（1&amp;lt;=n&amp;lt;=10^5，0&amp;lt;=k&amp;lt;=n-1）//// 分析：1、题目要求x%y&amp;gt;=k，那么x一定满足x&amp;gt;">
+<meta name="twitter:title" content="c_108_Convert_Sorted_Array_to_Binary_Search_Tree">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/12/9.//// leetcode 108 convert sorted array to binary search tree//// 题目要求对于给定已排序的数组，转换为平衡的二叉搜索树//// 这个题目的思想有点像二分搜索，每次找出中间的值当作子树的根节点，使用递归的方法自顶向下构建该树。// 每次选择中位数当作二叉树的跟节点，">
+<meta name="twitter:image" content="http://mrhu.vip/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/question.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/08/05/Find-the-All-Integer-Pair/"/>
+  <link rel="canonical" href="http://mrhu.vip/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/"/>
 
 
 
 
 
-  <title>Find_the_All_Integer_Pair | Chan's Blog</title>
+  <title>c_108_Convert_Sorted_Array_to_Binary_Search_Tree | Chan's Blog</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/08/05/Find-the-All-Integer-Pair/">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Find_the_All_Integer_Pair</h1>
+          <h1 class="post-title" itemprop="name headline">c_108_Convert_Sorted_Array_to_Binary_Search_Tree</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-05T11:06:54+08:00">
-                2018-08-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-09T14:56:50+08:00">
+                2018-12-09
               </time>
             
 
@@ -292,28 +294,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/InterviewQ/" itemprop="url" rel="index">
-                    <span itemprop="name">InterviewQ</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -342,8 +322,9 @@
       
 
       
-        <p>//<br>// Created by Mr.Hu on 2018/8/5.<br>//<br>// Tencent 2018 机试题<br>//<br>// 题目描述：已知一个正整数对(x,y)，其中x，y都不大于n，并且x除以y的余数大于等于k，求满足该条件共有多少数对。<br>// 输入两个整数n，k（1&lt;=n&lt;=10^5，0&lt;=k&lt;=n-1）<br>//<br>// 分析：1、题目要求x%y&gt;=k，那么x一定满足x&gt;=k，因为余数是一定小于等于被除数，要想余数&gt;=k，则被除数一定&gt;=k，<br>// x的边界为x&lt;=n；2、对于y，因为余数是一定小于除数，要想余数&gt;=k，则除数一定&gt;=k；3、当除数取x-k之后的数时，<br>// 余数一定小于k，所以除数的边界为y&lt;=x-k。在上述三个条件下的双循环中进行遍历，求得x&gt;=y时满足条件pairs个数.<br>// 值得注意的是，由于k是可以取0，而n是从1开始，所以我们在循环之前先判断k的值，如果k==0，则用tmp来代替k，且tmp最小为1。<br>//<br>// 讨论完x&gt;=y（k=0时存在x==y的情况），还需要考虑x&lt;y的情况（）此时y的取值情况存在与闭区间[x+1,n]，其中包含n-x个数，<br>// 且在x&gt;=k的情况下，y取这n-x个数个数，余数都是x，即都满足题目要求。<br>// 因此判断n-x&gt;0?，是则将result+=n-x。<br>//<br>// 重复上述循环，最终返回result的结果。<br>//<br>// 题目的主要思考点是判断x与y的取值情况，我们可以根据被除数、除数、余数三者之间的关系来缩小判定范围，从而降低时间复杂度。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">number_of_integer_pair</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> tmp = k == <span class="number">0</span> ? <span class="number">1</span> : k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x = tmp; x &lt;= n; ++x) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> y = tmp; y &lt;= x - k; ++y) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x % y &gt;= k) &#123;</span><br><span class="line">                ++result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n - x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            result += n - x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">int</span> result = number_of_integer_pair(n, k);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/12/9.<br>//<br>// leetcode 108 convert sorted array to binary search tree<br>//<br>// 题目要求对于给定已排序的数组，转换为平衡的二叉搜索树<br>//<br>// 这个题目的思想有点像二分搜索，每次找出中间的值当作子树的根节点，使用递归的方法自顶向下构建该树。<br>// 每次选择中位数当作二叉树的跟节点，以此来保证二叉搜索树是平衡的。<br>// 这个题目的做法和树的深度优先搜索的递归方法比较像<br>//<br>// 在这个题目的coding中，发现了一个问题，就是我在创建TreeNode时，最后返回的TreeNode每次都是空值，<br>// 最开始，我在ArrayToBST()方法中使用的TreeNode root = TreeNode(val)来创建，在最后的返回语句中使用return &amp;root，<br>// 但是最终的主函数中拿到的总是nullptr。<br>// 这里就隐含着一个变量存储位置的情况：<br>// 1、不使用new得到的变量，作用域限制在定义类对象的方法中，当方法结束时，类对象也被系统释放了，这种方法安全，不会造成内存系统泄漏。存放在栈中<br>// 2、使用new得到的变量，创建的是指向类对象的指针，作用域变成了全局，当程序结束时，必须使用delete删除，系统不会自动释放。存放在堆中<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode* left;</span><br><span class="line">    TreeNode* right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x):val(x),left(<span class="literal">nullptr</span>),right(<span class="literal">nullptr</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">ArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> begin,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(begin&gt;end)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> middle = (begin + end)/<span class="number">2</span>;</span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> TreeNode(nums[middle]);</span><br><span class="line">        root-&gt;left = ArrayToBST(nums,begin,middle<span class="number">-1</span>);</span><br><span class="line">        root-&gt;right = ArrayToBST(nums,middle+<span class="number">1</span>,end);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">TreeNode* <span class="title">sortedArrayToBST</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> nums_size = nums.size();</span><br><span class="line">        TreeNode* root =  ArrayToBST(nums,<span class="number">0</span>,nums_size<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line">    nums.push_back(<span class="number">-10</span>);</span><br><span class="line">    nums.push_back(<span class="number">-8</span>);</span><br><span class="line">    nums.push_back(<span class="number">-1</span>);</span><br><span class="line">    nums.push_back(<span class="number">1</span>);</span><br><span class="line">    nums.push_back(<span class="number">3</span>);</span><br><span class="line">    nums.push_back(<span class="number">13</span>);</span><br><span class="line">    Solution solution;</span><br><span class="line">    TreeNode* root = solution.sortedArrayToBST(nums);</span><br><span class="line">    <span class="comment">// 输出该平衡二叉搜索树</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -360,7 +341,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
+            <a href="/tags/Tree/" rel="tag"># Tree</a>
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
           
         </div>
       
@@ -373,8 +358,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/04/c-450-Delete-Node-in-a-BST/" rel="next" title="c_450_Delete_Node_in_a_BST">
-                <i class="fa fa-chevron-left"></i> c_450_Delete_Node_in_a_BST
+              <a href="/2018/12/09/c-107-Binary-Tree-Level-Order-Traversal-II/" rel="next" title="c_107_Binary_Tree_Level_Order_Traversal_II">
+                <i class="fa fa-chevron-left"></i> c_107_Binary_Tree_Level_Order_Traversal_II
               </a>
             
           </div>
@@ -382,10 +367,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/05/Max-Duplication-Area-Number/" rel="prev" title="Max_Duplication_Area_Number">
-                Max_Duplication_Area_Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
