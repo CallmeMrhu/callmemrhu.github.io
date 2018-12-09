@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Tree,Leetcode,DFS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="//// Created by Mr.Hu on 2018/12/9.//// leetcode 110 balanced binary tree//// 平衡二叉树的理解：每个节点的左右子树高度相差不大于1，而每子树的高度为该树的最长路径//// 这个题目我在leetcode上提交了六七遍才顺利通过，而且最终通过的方法只打败了百分之五的方法，之所以前面错这么多次，是因为对于平衡二叉树的概念没有">
+<meta name="keywords" content="Tree,Leetcode,DFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c_110_Balanced_Binary_Tree">
+<meta property="og:url" content="http://mrhu.vip/2018/12/09/c-110-Balanced-Binary-Tree/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="//// Created by Mr.Hu on 2018/12/9.//// leetcode 110 balanced binary tree//// 平衡二叉树的理解：每个节点的左右子树高度相差不大于1，而每子树的高度为该树的最长路径//// 这个题目我在leetcode上提交了六七遍才顺利通过，而且最终通过的方法只打败了百分之五的方法，之所以前面错这么多次，是因为对于平衡二叉树的概念没有">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://mrhu.vip/2018/12/09/c-110-Balanced-Binary-Tree/question.png">
+<meta property="og:updated_time" content="2018-12-09T13:37:36.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c_110_Balanced_Binary_Tree">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/12/9.//// leetcode 110 balanced binary tree//// 平衡二叉树的理解：每个节点的左右子树高度相差不大于1，而每子树的高度为该树的最长路径//// 这个题目我在leetcode上提交了六七遍才顺利通过，而且最终通过的方法只打败了百分之五的方法，之所以前面错这么多次，是因为对于平衡二叉树的概念没有">
+<meta name="twitter:image" content="http://mrhu.vip/2018/12/09/c-110-Balanced-Binary-Tree/question.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mrhu.vip/2018/12/09/c-110-Balanced-Binary-Tree/"/>
+
+
+
+
+
+  <title>c_110_Balanced_Binary_Tree | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">CallMe胡先生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/12/09/c-110-Balanced-Binary-Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">c_110_Balanced_Binary_Tree</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-09T21:35:25+08:00">
+                2018-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/12/09/c-110-Balanced-Binary-Tree/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2018/12/9.<br>//<br>// leetcode 110 balanced binary tree<br>//<br>// 平衡二叉树的理解：每个节点的左右子树高度相差不大于1，而每子树的高度为该树的最长路径<br>//<br>// 这个题目我在leetcode上提交了六七遍才顺利通过，而且最终通过的方法只打败了百分之五的方法，之所以前面错这么多次，是因为对于平衡二叉树的概念没有理解。<br>// 错误的理解和当时写的方法在code中已经给出了wrong method<br>//<br>// 下面讲一下另外一种已经通过，但是效率不高的方法。考虑到平衡二叉树判断的是每个节点左右子树的高度差，所以我们要取计算每个节点左右子树的高度，<br>// 然后进行比较。而以某个节点作为根节点的子树高度，是等于其左右子树中较大高度加一得到。<br>// 按照上面的思想，我们采用类似于DFS的方法，去遍历整棵树，从底向上计算每个节点作为根节点的子树高度，在计算高度之前，先判断其左右子树高度的差值，<br>// 如果差值大于1，则说明该子树不平衡，也就是整棵树不满足平衡的条件，结束判断。如果小于等于一，则取较大值加一作为以当前节点为根的子树高度。<br>// 具体的逻辑关系可以查看代码部分。<br>//<br>// 在上述方法中，我们需要取保存以某个节点作为根节点的子树高度，其实我们完全可以用递归的方法，递归的得到每个节点为根节点的高度；<br>// max(1+depth(root-&gt;left),1+depth(root-&gt;right))；<br>// 在树这类的题目中，熟练使用递归方法是一种必备技能，而且能够帮助我们减少代码量。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode *left;</span><br><span class="line">    TreeNode *right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) : val(x), left(<span class="literal">NULL</span>), right(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode *root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode *&gt; cur_node;</span><br><span class="line">        <span class="built_in">map</span>&lt;TreeNode *, <span class="keyword">int</span>&gt; node_depth;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span> || root-&gt;left == <span class="literal">nullptr</span> &amp;&amp; root-&gt;right == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left_depth = <span class="number">0</span>, right_depth = <span class="number">0</span>;</span><br><span class="line">        cur_node.push(root);</span><br><span class="line">        <span class="keyword">while</span> (!cur_node.empty()) &#123;</span><br><span class="line">            TreeNode *top = cur_node.top();</span><br><span class="line">            <span class="comment">//先考虑左子树</span></span><br><span class="line">            <span class="keyword">if</span> (top-&gt;left != <span class="literal">nullptr</span> &amp;&amp; !node_depth.count(top-&gt;left)) &#123;</span><br><span class="line">                cur_node.push(top-&gt;left);</span><br><span class="line">            &#125;<span class="comment">//再考虑右子树</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (top-&gt;right != <span class="literal">nullptr</span> &amp;&amp; !node_depth.count(top-&gt;right)) &#123;</span><br><span class="line">                cur_node.push(top-&gt;right);</span><br><span class="line">            &#125;<span class="comment">//节点是叶子节点的情况</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (top-&gt;left == <span class="literal">nullptr</span> &amp;&amp; top-&gt;right == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                node_depth[top] = max(left_depth, right_depth);</span><br><span class="line">                cur_node.pop();</span><br><span class="line">            &#125;<span class="comment">//节点为内部节点，计算其左右子树的高度，并判断是否平衡，然后得到以该节点为根节点，树的高度</span></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (top-&gt;left == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                    left_depth = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    left_depth = node_depth[top-&gt;left] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (top-&gt;right == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                    right_depth = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    right_depth = node_depth[top-&gt;right] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">abs</span>(left_depth - right_depth) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    node_depth[top] = max(left_depth, right_depth);</span><br><span class="line">                    cur_node.pop();</span><br><span class="line">                    left_depth = <span class="number">0</span>;</span><br><span class="line">                    right_depth = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// wrong method</span></span><br><span class="line">    <span class="comment">// 对于平衡二叉树理解错误时，写的一种方法，在leetcode上提交了五六次才发现理解错了</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced_wrong</span><span class="params">(TreeNode *root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max_depth = <span class="number">0</span>, cur_depth = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> is_the_first = <span class="literal">true</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode *&gt; cur_node;</span><br><span class="line">        <span class="built_in">set</span>&lt;TreeNode *&gt; exist_left;</span><br><span class="line">        <span class="built_in">set</span>&lt;TreeNode *&gt; exist_right;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_node.push(root);</span><br><span class="line">        TreeNode *top = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">while</span> (!cur_node.empty()) &#123;</span><br><span class="line">            top = cur_node.top();</span><br><span class="line">            <span class="keyword">if</span> (top-&gt;left != <span class="literal">nullptr</span> &amp;&amp; !exist_left.count(top-&gt;left)) &#123;</span><br><span class="line">                cur_node.push(top-&gt;left);</span><br><span class="line">                exist_left.insert(top-&gt;left);</span><br><span class="line">                cur_depth += <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (top-&gt;right != <span class="literal">nullptr</span> &amp;&amp; !exist_right.count(top-&gt;right)) &#123;</span><br><span class="line">                cur_node.push(top-&gt;right);</span><br><span class="line">                exist_right.insert(top-&gt;right);</span><br><span class="line">                cur_depth += <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (top-&gt;left != <span class="literal">nullptr</span> &amp;&amp; top-&gt;right != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                cur_node.pop();</span><br><span class="line">                cur_depth -= <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (top-&gt;left == <span class="literal">nullptr</span> &amp;&amp; top-&gt;right == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (is_the_first) &#123;</span><br><span class="line">                    max_depth = cur_depth;</span><br><span class="line">                    is_the_first = <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="built_in">abs</span>(max_depth - cur_depth) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        max_depth = max(max_depth, cur_depth);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                cur_node.pop();</span><br><span class="line">                cur_depth -= <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">abs</span>(max_depth - cur_depth) &gt; <span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    cur_node.pop();</span><br><span class="line">                    cur_depth -= <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">TreeNode <span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">b</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">c</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">d</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">e</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">f</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">g</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    a.left = &amp;b;</span><br><span class="line">    a.right = &amp;e;</span><br><span class="line">    b.left = &amp;c;</span><br><span class="line">    c.left = &amp;d;</span><br><span class="line">    e.right = &amp;f;</span><br><span class="line">    f.right = &amp;g;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> result = (<span class="keyword">int</span>) solution.isBalanced(&amp;a);</span><br><span class="line">    <span class="built_in">string</span> res[] = &#123;<span class="string">"False"</span>, <span class="string">"True"</span>&#125;;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"is balanced binary tree: "</span> &lt;&lt; res[result];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tree/" rel="tag"># Tree</a>
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/09/c-108-Convert-Sorted-Array-to-Binary-Search-Tree/" rel="next" title="c_108_Convert_Sorted_Array_to_Binary_Search_Tree">
+                <i class="fa fa-chevron-left"></i> c_108_Convert_Sorted_Array_to_Binary_Search_Tree
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">178</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
