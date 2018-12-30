@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="关于音乐推荐： ​    1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelli">
+<meta name="description" content="关于音乐推荐：1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelligence">
 <meta name="keywords" content="Survey">
 <meta property="og:type" content="article">
 <meta property="og:title" content="音乐推荐">
 <meta property="og:url" content="http://mrhu.vip/2018/12/30/音乐推荐/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="关于音乐推荐： ​    1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelli">
+<meta property="og:description" content="关于音乐推荐：1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelligence">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-30T05:40:30.867Z">
+<meta property="og:updated_time" content="2018-12-30T05:49:06.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="音乐推荐">
-<meta name="twitter:description" content="关于音乐推荐： ​    1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelli">
+<meta name="twitter:description" content="关于音乐推荐：1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelligence">
 
 
 
@@ -342,10 +342,9 @@
       
 
       
-        <p>关于音乐推荐：</p>
-<p>​    1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelligence 2017:3654-3660. 使用最基本的MF(Matrix Factorixation) 结合 Song2vec Music Similarity，即通过word2vec的思想，将playlist看作context中的sentence，使用SDNS(the skip-gram negative sampling)的采样方法来学习歌曲中间的相似度，最后在MF（x{ij}-p_u q_i）的基础上加上(s{i,j}-q_i^{T}q_j)^2，最后minimize损失函数，训练得到user和item的embedding表示。</p>
-<p>​    2、基于Playlist：Chua, Tat Seng, et al. “Embedding Factorization Models for Jointly Recommending Items and User Generated Lists.” International ACM SIGIR Conference on Research and Development in Information Retrieval ACM, 2017:585-594. 提出embdding factorization models，使用user-item interaction（user-item-list），item-item interaction（item-item-list）两种关系矩阵，其中list作为side-information。使用sentence to vector的方法，对playlist进行向量化，即考虑某首music的上下相关music集以及其所在的playlist，主要包括words in the context of a sentence 和 words and a sentence in the context of a word。最后提出了两个模型，第一个为EFM-Side：主要包括\sigma(\hat x_{uij})，\sigma(\hat m_{ijt})，第一个表示user-item，第二个表示item-item；第二个位EFM-Joint：模型主要包含三个部分\sigma(\hat x_{uij})，\sigma(\hat y_{uij})，\sigma(\hat r_{ijt})。第一个表示user-item，第二个表示user-list，第三个表示item-item-list的关系。最后可以达到个性化推荐，由于歌曲所属playlist也参与其中，在new music进入时，通过其归属的playlist可以进行很好的推荐，从而有效解决cold start；而且可以提供item和list两种推荐模式。</p>
-<p>​    3、基于user-song interaction：这种类型的模型主要是使用协同过滤（collaborative filtering）。</p>
+        <h3 id="关于音乐推荐："><a href="#关于音乐推荐：" class="headerlink" title="关于音乐推荐："></a>关于音乐推荐：</h3><p>1、基于Music Play Sequence（在购物中就是基于basket）：Cheng, Zhiyong, et al. “Exploiting Music Play Sequence for Music Recommendation.” Twenty-Sixth International Joint Conference on Artificial Intelligence 2017:3654-3660. 使用最基本的MF(Matrix Factorixation) 结合 Song2vec Music Similarity，即通过word2vec的思想，将playlist看作context中的sentence，使用SDNS(the skip-gram negative sampling)的采样方法来学习歌曲中间的相似度，最后在MF（x{ij}-p_u q_i）的基础上加上(s{i,j}-q_i^{T}q_j)^2，最后minimize损失函数，训练得到user和item的embedding表示。</p>
+<p>2、基于Playlist：Chua, Tat Seng, et al. “Embedding Factorization Models for Jointly Recommending Items and User Generated Lists.” International ACM SIGIR Conference on Research and Development in Information Retrieval ACM, 2017:585-594. 提出embdding factorization models，使用user-item interaction（user-item-list），item-item interaction（item-item-list）两种关系矩阵，其中list作为side-information。使用sentence to vector的方法，对playlist进行向量化，即考虑某首music的上下相关music集以及其所在的playlist，主要包括words in the context of a sentence 和 words and a sentence in the context of a word。最后提出了两个模型，第一个为EFM-Side：主要包括\sigma(\hat x_{uij})，\sigma(\hat m_{ijt})，第一个表示user-item，第二个表示item-item；第二个位EFM-Joint：模型主要包含三个部分\sigma(\hat x_{uij})，\sigma(\hat y_{uij})，\sigma(\hat r_{ijt})。第一个表示user-item，第二个表示user-list，第三个表示item-item-list的关系。最后可以达到个性化推荐，由于歌曲所属playlist也参与其中，在new music进入时，通过其归属的playlist可以进行很好的推荐，从而有效解决cold start；而且可以提供item和list两种推荐模式。</p>
+<p>3、基于user-song interaction：这种类型的模型主要是使用协同过滤（collaborative filtering）。</p>
 
       
     </div>
@@ -440,8 +439,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -501,6 +509,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于音乐推荐："><span class="nav-number">1.</span> <span class="nav-text">关于音乐推荐：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

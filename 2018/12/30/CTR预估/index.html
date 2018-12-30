@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 CTR基于传统机器学习算法1、linear model、Factorization Machine 2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-30T05:39:49.161Z">
+<meta property="og:updated_time" content="2018-12-30T05:48:25.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTR预估">
 <meta name="twitter:description" content="CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 CTR基于传统机器学习算法1、linear model、Factorization Machine 2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu,">
@@ -345,14 +345,13 @@
         <p>CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。</p>
 <h3 id="CTR基于传统机器学习算法"><a href="#CTR基于传统机器学习算法" class="headerlink" title="CTR基于传统机器学习算法"></a>CTR基于传统机器学习算法</h3><p>1、linear model、Factorization Machine</p>
 <p>2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu, Yanxin Shi, Antoine Atallah, Ralf Herbrich, Stuart Bowers, and Joaquin Quin ̃onero Candela. Practical lessons from predicting clicks on ads at facebook. In ADKDD, pages 5:1–5:9, 2014. ）</p>
-<p>​    tensor based model（Steffen Rendle and Lars Schmidt-Thieme. Pairwise interaction tensor factor- ization for personalized tag recommendation. In WSDM, pages 81–90, 2010. ）</p>
-<p>​    support vector machine（Yin-Wen Chang, Cho-Jui Hsieh, Kai- Wei Chang, Michael Ringgaard, and Chih-Jen Lin. Train- ing and testing low-degree polynomial data mappings via linear SVM. JMLR, 11:1471–1490, 2010. ）</p>
-<p>​    bayesian model（Thore Graepel, Joaquin Quin ̃onero Candela, Thomas Borchert, and Ralf Herbrich. Web- scale bayesian click-through rate prediction for sponsored search advertising in microsoft’s bing search engine. In ICML, pages 13–20, 2010. ）</p>
-<p>###CTR基于深度学习算法</p>
-<p>3、FM-initialized fee-forward neural network（Weinan Zhang, Tianming Du, and Jun Wang. Deep learning over multi-field categorical data - - A case study on user response prediction. In ECIR, 2016. </p>
-<p>​    Product Neural Network（Yanru Qu, Han Cai, Kan Ren, Weinan Zhang, Yong Yu, Ying Wen, and Jun Wang. Product- based neural networks for user response prediction. CoRR, abs/1611.00144, 2016. ）    </p>
-<p>​    Wide&amp;Deep（Heng-Tze Cheng, Levent Koc, Jeremiah Harmsen, Tal Shaked, Tushar Chandra, Hrishi Aradhye, Glen Anderson, Greg Corrado, Wei Chai, Mustafa Ispir, Rohan Anil, Zakaria Haque, Lichan Hong, Vihan Jain, Xiaobing Liu, and Hemal Shah. Wide &amp; deep learning for recommender systems. CoRR, abs/1606.07792, 2016. ）</p>
-<p>​    DeepFM（DeepFM: A Factorization-Machine based Neural Network for CTR Prediction ）</p>
+<p>3、tensor based model（Steffen Rendle and Lars Schmidt-Thieme. Pairwise interaction tensor factor- ization for personalized tag recommendation. In WSDM, pages 81–90, 2010. ）</p>
+<p>4、support vector machine（Yin-Wen Chang, Cho-Jui Hsieh, Kai- Wei Chang, Michael Ringgaard, and Chih-Jen Lin. Train- ing and testing low-degree polynomial data mappings via linear SVM. JMLR, 11:1471–1490, 2010. ）</p>
+<p>5、bayesian model（Thore Graepel, Joaquin Quin ̃onero Candela, Thomas Borchert, and Ralf Herbrich. Web- scale bayesian click-through rate prediction for sponsored search advertising in microsoft’s bing search engine. In ICML, pages 13–20, 2010. ）</p>
+<h3 id="CTR基于深度学习算法"><a href="#CTR基于深度学习算法" class="headerlink" title="CTR基于深度学习算法"></a>CTR基于深度学习算法</h3><p>1、FM-initialized fee-forward neural network（Weinan Zhang, Tianming Du, and Jun Wang. Deep learning over multi-field categorical data - - A case study on user response prediction. In ECIR, 2016. </p>
+<p>2、Product Neural Network（Yanru Qu, Han Cai, Kan Ren, Weinan Zhang, Yong Yu, Ying Wen, and Jun Wang. Product- based neural networks for user response prediction. CoRR, abs/1611.00144, 2016. ）    </p>
+<p>3、Wide&amp;Deep（Heng-Tze Cheng, Levent Koc, Jeremiah Harmsen, Tal Shaked, Tushar Chandra, Hrishi Aradhye, Glen Anderson, Greg Corrado, Wei Chai, Mustafa Ispir, Rohan Anil, Zakaria Haque, Lichan Hong, Vihan Jain, Xiaobing Liu, and Hemal Shah. Wide &amp; deep learning for recommender systems. CoRR, abs/1606.07792, 2016. ）</p>
+<p>4、DeepFM（DeepFM: A Factorization-Machine based Neural Network for CTR Prediction ）</p>
 
       
     </div>
@@ -527,7 +526,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于传统机器学习算法"><span class="nav-number">1.</span> <span class="nav-text">CTR基于传统机器学习算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于传统机器学习算法"><span class="nav-number">1.</span> <span class="nav-text">CTR基于传统机器学习算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于深度学习算法"><span class="nav-number">2.</span> <span class="nav-text">CTR基于深度学习算法</span></a></li></ol></div>
             
 
           </div>
