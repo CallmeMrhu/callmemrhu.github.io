@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Survey," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="六大设计原则a、单一职责原则Single Responsibility Principle（SRP）：主要讲述“接口”的单一职责，我们一直想要实现的都是“类”的单一职责。但是类本属于实体的抽象，好的抽象结合单一职责，一般会导致类过多。 b、里氏替换原则Liskov Substitution Principle（LSP）：所有引用基类的地方必须能透明地使用其子类的对象。但是反过来未必成立。 该原则主">
+<meta name="keywords" content="Survey">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《设计模式之禅(第2版)》-学习笔记">
+<meta property="og:url" content="http://mrhu.vip/2018/12/30/《设计模式之禅-第2版-》-学习笔记/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="六大设计原则a、单一职责原则Single Responsibility Principle（SRP）：主要讲述“接口”的单一职责，我们一直想要实现的都是“类”的单一职责。但是类本属于实体的抽象，好的抽象结合单一职责，一般会导致类过多。 b、里氏替换原则Liskov Substitution Principle（LSP）：所有引用基类的地方必须能透明地使用其子类的对象。但是反过来未必成立。 该原则主">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-30T05:36:24.160Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《设计模式之禅(第2版)》-学习笔记">
+<meta name="twitter:description" content="六大设计原则a、单一职责原则Single Responsibility Principle（SRP）：主要讲述“接口”的单一职责，我们一直想要实现的都是“类”的单一职责。但是类本属于实体的抽象，好的抽象结合单一职责，一般会导致类过多。 b、里氏替换原则Liskov Substitution Principle（LSP）：所有引用基类的地方必须能透明地使用其子类的对象。但是反过来未必成立。 该原则主">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mrhu.vip/2018/12/30/《设计模式之禅-第2版-》-学习笔记/"/>
+
+
+
+
+
+  <title>《设计模式之禅(第2版)》-学习笔记 | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">CallMe胡先生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/12/30/《设计模式之禅-第2版-》-学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《设计模式之禅(第2版)》-学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-30T13:36:24+08:00">
+                2018-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Engineering/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Engineering</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="六大设计原则"><a href="#六大设计原则" class="headerlink" title="六大设计原则"></a>六大设计原则</h2><h3 id="a、单一职责原则"><a href="#a、单一职责原则" class="headerlink" title="a、单一职责原则"></a>a、单一职责原则</h3><p>Single Responsibility Principle（SRP）：主要讲述“接口”的单一职责，我们一直想要实现的都是“类”的单一职责。但是类本属于实体的抽象，好的抽象结合单一职责，一般会导致类过多。</p>
+<h3 id="b、里氏替换原则"><a href="#b、里氏替换原则" class="headerlink" title="b、里氏替换原则"></a>b、里氏替换原则</h3><p>Liskov Substitution Principle（LSP）：所有引用基类的地方必须能透明地使用其子类的对象。但是反过来未必成立。</p>
+<p>该原则主要讨论基类与子类之间的关系，即继承关系。继承可以实现代码共享，提高代码重用，代码的可扩展性，项目的开放性。但是继承是侵入性的，子类必须拥有父类的所有属性和方法，降低代码的灵活性，增强了耦合性（父类的修改要考虑子类的修改）。Java使用extends关键字来实现继承，其采用单一继承的规则；C++则采用了多重继承的规则，一个子类可以继承多个父类。</p>
+<p>LSP包含四层含义：</p>
+<p>1、子类必须完全实现父类的方法</p>
+<p>在类中调用其他类，务必使用父类或接口。例子：士兵使用枪械，而枪械有多种。枪械为一个父类，而具体的手枪，步枪为其具体实现。在士兵类中调用枪械，则调用枪械父类，而具体传入则可以穿手枪对象或者步枪对象，这就是父类可以透明地被子类对象替换。</p>
+<p>但是如果为玩具枪，则其不具备杀人的特点，即父类中的这一属性与子类本身不匹配。这就是如果子类不能完整地实现父类的方法，或者父类的某些方法在子类中已经发生“畸变”，则建议断开父子继承关系，采用依赖、聚集、组合等关系代替继承。</p>
+<p>2、子类可以有自己的个性</p>
+<p>子类可以增加其特有的变量和方法，在调用子类的地方，不能够乡下转型（downcast），即子类出现的地方父类未必就可以出现。</p>
+<p>3、覆盖或实现父类的方法时输入参数可以被放大</p>
+<p>方法中的输入参数被称为前置条件，所谓前置条件就是你要让我执行，就必须满足我的条件；后置条件就是我执行完了需要反馈，标准是什么。</p>
+<p>子类中的方法名与父类的方法名相同，但是传入参数类型不一样，不属于覆写（override），是重载（overload），不在同一个类中，但是也属于重载，因为父类中的方法在子类中都存在。例如：父类参数为HashMap，子类参数为Map，子类的输入参数范围扩大了，调用子类的该方法并传入HashMap，则编译器会选择继承于父类的方法来使用，而且这种情况必须要求子类的输入参数范围扩大。如果子类的输入参数范围缩小，即父类方法参数为Map，子类方法参数为HashMap，再重复上面的操作，此时会调用子类重载的方法……按照作者的意思，这就完蛋了，子类在没有覆写父类方法的前提下，居然调用了子类自己的方法，会引起业务逻辑混乱，即子类为实现类，传递一个实现类就会“歪曲”父类的意图，如上面枪的例子，枪存在杀人的功能，如果一个子类实现了同样的方法，功能确实求人，在参数范围缩小的情况下，传入较小范围的参数，就能导致最终调用子类的方法，从而引发混乱。正常想要调用子类的方法，则子类就需要覆写（重写）该方法，即方法名与参数都要与父类相同，只是功能上不同。</p>
+<p>所以子类中方法的前提条件必须与基类中被覆写的方法的前置条件相同或者更宽松。</p>
+<p>4、覆写或实现父类的方法时输出结果可以被缩小</p>
+<p>即父类的一个方法的返回值是一个类型T，子类相同方法（重载或覆写）的返回值为S，里氏替换原则要求S必须小于等于T，即要么同类，要么S是T的子类。</p>
+<p>总结：采用里氏替换原则的目的就是增加程序的健壮性，版本升级时也可以保持非常好的兼容性。即使增加子类，原来的子类还可以继续运行。在实际项目中，每个子类对应不同的业务含义，使用父类作为参数，传递不同的子类完成不同的业务逻辑，非常完美！在项目中，采用里氏替换原则，尽量避免子类的“个性”，一旦子类有“个性”，这个子类和父类的关系就很难调和，把子类当父类用，限制了其个性；子类单独作为一个业务来使用，则会让代码中间的耦合关系变复杂，缺乏类替换的标准。</p>
+<h3 id="c、依赖倒置原则"><a href="#c、依赖倒置原则" class="headerlink" title="c、依赖倒置原则"></a>c、依赖倒置原则</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Survey/" rel="tag"># Survey</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/30/c-617-Merge-Two-Binary-Trees/" rel="next" title="c_617_Merge_Two_Binary_Trees">
+                <i class="fa fa-chevron-left"></i> c_617_Merge_Two_Binary_Trees
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/30/CTR预估/" rel="prev" title="CTR预估">
+                CTR预估 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">200</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#六大设计原则"><span class="nav-number">1.</span> <span class="nav-text">六大设计原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a、单一职责原则"><span class="nav-number">1.1.</span> <span class="nav-text">a、单一职责原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b、里氏替换原则"><span class="nav-number">1.2.</span> <span class="nav-text">b、里氏替换原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c、依赖倒置原则"><span class="nav-number">1.3.</span> <span class="nav-text">c、依赖倒置原则</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
