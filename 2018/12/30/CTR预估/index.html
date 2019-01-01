@@ -79,18 +79,29 @@
 
 
 
-<meta name="description" content="CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 CTR基于传统机器学习算法1、linear model、Factorization Machine 2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu,">
+<meta name="description" content="“CTR”是互联网公司进行流量分配的核心依据之一。目前CTR预估方法预演的核心思路是：“通过建立模型来进行组合特征的挖掘”。CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 具体来说有两条推演路线：1、从FM开始推演其在深度学习上的各种推广 (考虑领域的FM、DCN、FNN、DeepFM、NFM、PNN等)">
 <meta name="keywords" content="Survey">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTR预估">
 <meta property="og:url" content="http://mrhu.vip/2018/12/30/CTR预估/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 CTR基于传统机器学习算法1、linear model、Factorization Machine 2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu,">
+<meta property="og:description" content="“CTR”是互联网公司进行流量分配的核心依据之一。目前CTR预估方法预演的核心思路是：“通过建立模型来进行组合特征的挖掘”。CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 具体来说有两条推演路线：1、从FM开始推演其在深度学习上的各种推广 (考虑领域的FM、DCN、FNN、DeepFM、NFM、PNN等)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-30T05:48:25.583Z">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/fnn.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/pnn.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/widedeep.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/deepcross.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/nfm.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/afm.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/deepfm.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/dcn.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/din.jpg">
+<meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/mtl_example.jpg">
+<meta property="og:updated_time" content="2019-01-01T13:55:19.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTR预估">
-<meta name="twitter:description" content="CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 CTR基于传统机器学习算法1、linear model、Factorization Machine 2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu,">
+<meta name="twitter:description" content="“CTR”是互联网公司进行流量分配的核心依据之一。目前CTR预估方法预演的核心思路是：“通过建立模型来进行组合特征的挖掘”。CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 具体来说有两条推演路线：1、从FM开始推演其在深度学习上的各种推广 (考虑领域的FM、DCN、FNN、DeepFM、NFM、PNN等)">
+<meta name="twitter:image" content="http://mrhu.vip/2018/12/30/CTR预估/fnn.jpg">
 
 
 
@@ -342,16 +353,47 @@
       
 
       
-        <p>CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。</p>
+        <p>“CTR”是互联网公司进行流量分配的核心依据之一。目前CTR预估方法预演的核心思路是：“通过建立模型来进行组合特征的挖掘”。CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。</p>
+<p>具体来说有两条推演路线：1、从FM开始推演其在深度学习上的各种推广 (考虑领域的FM、DCN、FNN、DeepFM、NFM、PNN等)；2、从embedding+MLP自身的演进特点结合CTR预估本身的业务场景进行推演 (embedding+MLP、Deep Cross、Wide&amp;Deep、DIN等)；</p>
+<p>CTR预估的场景主要是对离散且有具备领域的特征进行学习（特征组合挖掘），所以在深度网络结构上与CNN和RNN不同。</p>
 <h3 id="CTR基于传统机器学习算法"><a href="#CTR基于传统机器学习算法" class="headerlink" title="CTR基于传统机器学习算法"></a>CTR基于传统机器学习算法</h3><p>1、linear model、Factorization Machine</p>
 <p>2、tree-base model（Xinran He, Junfeng Pan, Ou Jin, Tianbing Xu, Bo Liu, Tao Xu, Yanxin Shi, Antoine Atallah, Ralf Herbrich, Stuart Bowers, and Joaquin Quin ̃onero Candela. Practical lessons from predicting clicks on ads at facebook. In ADKDD, pages 5:1–5:9, 2014. ）</p>
 <p>3、tensor based model（Steffen Rendle and Lars Schmidt-Thieme. Pairwise interaction tensor factor- ization for personalized tag recommendation. In WSDM, pages 81–90, 2010. ）</p>
 <p>4、support vector machine（Yin-Wen Chang, Cho-Jui Hsieh, Kai- Wei Chang, Michael Ringgaard, and Chih-Jen Lin. Train- ing and testing low-degree polynomial data mappings via linear SVM. JMLR, 11:1471–1490, 2010. ）</p>
 <p>5、bayesian model（Thore Graepel, Joaquin Quin ̃onero Candela, Thomas Borchert, and Ralf Herbrich. Web- scale bayesian click-through rate prediction for sponsored search advertising in microsoft’s bing search engine. In ICML, pages 13–20, 2010. ）</p>
-<h3 id="CTR基于深度学习算法"><a href="#CTR基于深度学习算法" class="headerlink" title="CTR基于深度学习算法"></a>CTR基于深度学习算法</h3><p>1、FM-initialized fee-forward neural network（Weinan Zhang, Tianming Du, and Jun Wang. Deep learning over multi-field categorical data - - A case study on user response prediction. In ECIR, 2016. </p>
-<p>2、Product Neural Network（Yanru Qu, Han Cai, Kan Ren, Weinan Zhang, Yong Yu, Ying Wen, and Jun Wang. Product- based neural networks for user response prediction. CoRR, abs/1611.00144, 2016. ）    </p>
+<h3 id="CTR基于深度学习算法"><a href="#CTR基于深度学习算法" class="headerlink" title="CTR基于深度学习算法"></a>CTR基于深度学习算法</h3><p>1、FNN（Factorization Machine supported Neural Network；Weinan Zhang, Tianming Du, and Jun Wang. Deep learning over multi-field categorical data - - A case study on user response prediction. In ECIR, 2016. </p>
+<p>采用FM预训练得到的隐藏层及其权重作为神经网络的第一层初始值，其可以理解成一种特殊的embedding+MLP</p>
+<p><img src="/2018/12/30/CTR预估/fnn.jpg" alt=""></p>
+<p>2、PNN（Yanru Qu, Han Cai, Kan Ren, Weinan Zhang, Yong Yu, Ying Wen, and Jun Wang. Product- based neural networks for user response prediction. CoRR, abs/1611.00144, 2016. ）</p>
+<p><img src="/2018/12/30/CTR预估/pnn.jpg" alt=""></p>
 <p>3、Wide&amp;Deep（Heng-Tze Cheng, Levent Koc, Jeremiah Harmsen, Tal Shaked, Tushar Chandra, Hrishi Aradhye, Glen Anderson, Greg Corrado, Wei Chai, Mustafa Ispir, Rohan Anil, Zakaria Haque, Lichan Hong, Vihan Jain, Xiaobing Liu, and Hemal Shah. Wide &amp; deep learning for recommender systems. CoRR, abs/1606.07792, 2016. ）</p>
-<p>4、DeepFM（DeepFM: A Factorization-Machine based Neural Network for CTR Prediction ）</p>
+<p><img src="/2018/12/30/CTR预估/widedeep.jpg" alt=""></p>
+<p>4、Deep Cross：DCN由其残差网络思想进化（Ying Shan, T Ryan Hoens, Jian Jiao, Haijing Wang, Dong Yu, and JC Mao. 2016. Deep Crossing: Web-Scale Modeling without Manually Cra ed Combinatorial Features. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM, 255–262）</p>
+<p><img src="/2018/12/30/CTR预估/deepcross.jpg" alt=""></p>
+<p>5、NFM（Xiangnan He and Tat-Seng Chua. Neural Factorization Machines for Sparse Predictive Analytics SIGIR. 355–364. 2017.）</p>
+<p><img src="/2018/12/30/CTR预估/nfm.jpg" alt=""></p>
+<p>6、AFM（J. Xiao, H. Ye, X. He, H. Zhang, F. Wu, and T.-S. Chua. Attentional factorization machines: Learning the weight of feature interactions via attention networks. In IJCAI, 2017）</p>
+<p><img src="/2018/12/30/CTR预估/afm.jpg" alt=""></p>
+<p>7、DeepFM（Huifeng Guo, Ruiming Tang, Yunming Ye, Zhenguo Li, and Xiuqiang He. DeepFM: A Factorization-Machine based Neural Network for CTR Prediction. arXiv preprint arXiv:1703.04247 (2017).）</p>
+<p><img src="/2018/12/30/CTR预估/deepfm.jpg" alt=""></p>
+<p>8、DCN（Wang, R., Fu, B., Fu, G., Wang, M.: Deep &amp; cross network for ad click predictions. In: Proceedings of the ADKDD 17. pp. 12:1–12:7 (2017)）</p>
+<p><img src="/2018/12/30/CTR预估/dcn.jpg" alt=""></p>
+<p><em>Wide&amp;Deep是DeepFM与DCN的基础框架。DeepFM、DCN与Wide&amp;Deep的Deep部分都是MLP；Wide&amp;Deep的Wide部分是logistic regression，可以手动设计特征组合；DeepFM的Wide部分是FM，DCN的Wide部分是cross network，二者均不强求手动设计特征，但此时都与字面意义上的Wide有一定的差异，因为均共享了降维后的嵌入特征</em></p>
+<p><em>Deep Cross相对于embedding+MLP的改进主要是在MLP部分增加了跳跃连接成为残差网络，其与传统的残差网络的区别主要是没有采用卷机操作，其一个原因是在广告点击率预告领域，特征不具备平移不变性。DCN相对于DeepCross的主要贡献是解耦合了Deep与Cross（特征交叉）部分</em></p>
+<p><em>部分内容来自于<a href="https://blog.csdn.net/longxinchen_ml/article/details/81031736，谢谢分享" target="_blank" rel="noopener">https://blog.csdn.net/longxinchen_ml/article/details/81031736，谢谢分享</a></em></p>
+<h3 id="DIN：对同领域历史信息引入注意力机制的MLP"><a href="#DIN：对同领域历史信息引入注意力机制的MLP" class="headerlink" title="DIN：对同领域历史信息引入注意力机制的MLP"></a>DIN：对同领域历史信息引入注意力机制的MLP</h3><p>以上神经网络对同领域离散特征的处理基本是将其嵌入后直接求和，这在一般情况下没太大问题。但其实可以做得更加精细。比如对于历史统计类特征。以用户历史浏览的商户id为例，假设用户历史浏览了10个商户，这些商户id的常规处理方法是作为同一个领域的特征嵌入后直接求和得到一个嵌入向量。但这10个商户只有一两个商户与当前被预测的广告所在的商户相似，其他商户关系不大。增加这两个商户在求和过程中的权重，应该能够更好地提高模型的表现力。而增加求和权重的思路就是典型的注意力机制思路</p>
+<p>Guorui Zhou, Chengru Song, Xiaoqiang Zhu, Xiao Ma, Yanghui Yan, Xingya Dai, Han Zhu, Junqi Jin, Han Li, and Kun Gai. 2017. Deep Interest Network for Click-Through Rate Prediction. arXiv preprint arXiv:1706.06978 (2017).</p>
+<p><img src="/2018/12/30/CTR预估/din.jpg" alt=""></p>
+<p><em>AFM也引入了注意力机制，其与FM同领域特征求和之后进行结合，而DIN直接将注意力机制与同领域特征求和之前进行结合</em></p>
+<h3 id="多任务视角：信息的迁移与补充"><a href="#多任务视角：信息的迁移与补充" class="headerlink" title="多任务视角：信息的迁移与补充"></a>多任务视角：信息的迁移与补充</h3><p>在大多数场景下，数据越多，训练出来的模型效果会更好。对于电商平台的不同场景的广告位，每个场景蕴含了用户的不同兴趣表示，这些信息的融合与汇总可以带来最后的提升。但是如果将不同场景的数据直接进行合并用来训练（CTR/CVR）模型，结果大多数不太乐观，不同场景下的样本分布存在差异，直接对样本累加会影响分布导致效果负向。</p>
+<p>Multi-task learning，多任务学习，不直接对样本进行累加和训练，而是不同场景对应不用的task。底层的embedding受限于单个场景的数据量，很可能学习不充分，通过子任务之间表示学习的共享（shared lookup table）。这样有助于大样本的子任务帮助小样本的子任务，使得底层的表达学习更加充分。</p>
+<p><img src="/2018/12/30/CTR预估/mtl_example.jpg" alt=""></p>
+<p><em>DeepFM和DCN也用到了这个思路，只是它们是同一任务的不同模型进行结合，而多任务学习是对不同任务的不同模型进行结合</em></p>
+<h3 id="2018年最新CTR论文"><a href="#2018年最新CTR论文" class="headerlink" title="2018年最新CTR论文"></a>2018年最新CTR论文</h3><p>1、DIEN（Deep Interest Evolution Network for Click-Through Rate Prediction，2018）</p>
+<p>该论文是对DIN论文的改进版本，主要解决：</p>
+<p>​    a、更加紧准的刻画用户的长期兴趣和短期兴趣；</p>
+<p>​    b、用户的兴趣是时刻变化的，需要更加准确的刻画用户兴趣的变化</p>
+<p>具体内容分析待进一步阅读…</p>
 
       
     </div>
@@ -526,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于传统机器学习算法"><span class="nav-number">1.</span> <span class="nav-text">CTR基于传统机器学习算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于深度学习算法"><span class="nav-number">2.</span> <span class="nav-text">CTR基于深度学习算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于传统机器学习算法"><span class="nav-number">1.</span> <span class="nav-text">CTR基于传统机器学习算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR基于深度学习算法"><span class="nav-number">2.</span> <span class="nav-text">CTR基于深度学习算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DIN：对同领域历史信息引入注意力机制的MLP"><span class="nav-number">3.</span> <span class="nav-text">DIN：对同领域历史信息引入注意力机制的MLP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多任务视角：信息的迁移与补充"><span class="nav-number">4.</span> <span class="nav-text">多任务视角：信息的迁移与补充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018年最新CTR论文"><span class="nav-number">5.</span> <span class="nav-text">2018年最新CTR论文</span></a></li></ol></div>
             
 
           </div>
@@ -546,7 +588,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
