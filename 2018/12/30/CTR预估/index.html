@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/xdeepfm.png">
 <meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/atrank.png">
 <meta property="og:image" content="http://mrhu.vip/2018/12/30/CTR预估/dien.png">
-<meta property="og:updated_time" content="2019-01-02T03:19:28.344Z">
+<meta property="og:updated_time" content="2019-01-02T03:20:03.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTR预估">
 <meta name="twitter:description" content="“CTR”是互联网公司进行流量分配的核心依据之一。目前CTR预估方法预演的核心思路是：“通过建立模型来进行组合特征的挖掘”。CTR预估中特征选择是一个很关键的问题，传统机器学习方法只能获取到低阶特征，深度学习模型能很好的提取高阶特征，但是往往会忽略低阶特征的影响。 具体来说有两条推演路线：1、从FM开始推演其在深度学习上的各种推广 (考虑领域的FM、DCN、FNN、DeepFM、NFM、PNN等)">
@@ -400,7 +400,7 @@
 <p>2、DIEN（Deep Interest Evolution Network for Click-Through Rate Prediction，AAAI 2019）</p>
 <p><img src="/2018/12/30/CTR预估/dien.png" alt=""></p>
 <p>该论文是对DIN论文的改进版本，主要解决：</p>
-<p>​    论文通过用户行为，提取不同step时用户特征；使用GRU；每个序列使用GRU来建模，同时RNN中的每个hidden state用其next item来约束auxiliary loss。（和STAMP/GRU2REC的训练类似，这种方式只是增加了offline的训练成本，对于online inference并没有效率上的影响） </p>
+<p>​    1、论文通过用户行为，提取不同step时用户特征；使用GRU；每个序列使用GRU来建模，同时RNN中的每个hidden state用其next item来约束auxiliary loss。（和STAMP/GRU2REC的训练类似，这种方式只是增加了offline的训练成本，对于online inference并没有效率上的影响） </p>
 <p>​    2、利用1中each step得到的output state，捕捉用户特征随时间的变化；AUGRU；通过上一步得到each step的output，当作AUGRU的input，同时用target Ad来对所有的hidden state进行attention weight计算，得到的weight当作AUGRU的update gate的权重值，表示当前特征与target Ad的相关度，从而控制GRU的hidden state与最终的结果更相关。 </p>
 <p>​    <strong>思考：该模型存在两个loss部分，具体的训练方式怎样？</strong></p>
 
