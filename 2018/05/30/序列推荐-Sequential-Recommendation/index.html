@@ -83,33 +83,33 @@
 <meta name="keywords" content="Survey">
 <meta property="og:type" content="article">
 <meta property="og:title" content="序列推荐(Sequential Recommendation)">
-<meta property="og:url" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/index.html">
+<meta property="og:url" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="序列推荐花了三天时间系统性看了一下推荐系统中关于“序列推荐”相关的八篇论文。其中七篇论文来源于SIGIR2018上关于Knowledge-Enhanced Memory Netwroks论文的related work。所有论文时间跨度为2010-2018，基本上是sequential recommendation这方面的主要成果。趁热打铁赶紧记录一下对每篇论文的理解以及一些思考。 1、（2010">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/fpmc.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/hrm1.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/hrm.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/dream_hidden.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/dream_score.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/dream.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rnn1.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rnn2.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rnn.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru1.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru2.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru3.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rum1.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rum2.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/cmn_score.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/cmn.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/ksr1.png">
-<meta property="og:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/ksr2.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/fpmc.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/hrm1.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/hrm.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/dream_hidden.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/dream_score.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/dream.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rnn1.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rnn2.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rnn.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru1.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru2.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/gru3.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rum1.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/rum2.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/cmn_score.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/cmn.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/ksr1.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/ksr2.png">
 <meta property="og:updated_time" content="2018-10-27T03:42:38.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序列推荐(Sequential Recommendation)">
 <meta name="twitter:description" content="序列推荐花了三天时间系统性看了一下推荐系统中关于“序列推荐”相关的八篇论文。其中七篇论文来源于SIGIR2018上关于Knowledge-Enhanced Memory Netwroks论文的related work。所有论文时间跨度为2010-2018，基本上是sequential recommendation这方面的主要成果。趁热打铁赶紧记录一下对每篇论文的理解以及一些思考。 1、（2010">
-<meta name="twitter:image" content="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/fpmc.png">
+<meta name="twitter:image" content="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/fpmc.png">
 
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/"/>
+  <link rel="canonical" href="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/"/>
 
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/">
+    <link itemprop="mainEntityOfPage" href="http://www.mrhu.vip/2018/05/30/序列推荐-Sequential-Recommendation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
