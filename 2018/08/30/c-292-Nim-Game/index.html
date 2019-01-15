@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="//// Created by Mr.Hu on 2018/8/30.//// leetcode 292 nim game//// 题目描述了一个游戏：现有n个棋子，两个人依此从棋子中取，一次最多取3粒，最少取1粒。最后取完的那个人算赢。// 给定棋子n的个数，判断是否能赢。//// 这个题目属于智力题，其实我们可以先将n取较小的几个数就可以发现规律。// 如果当前n为4的倍数，那么无论先取几粒">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.mrhu.vip/2018/08/30/c-292-Nim-Game/question.png">
+<meta property="og:image" content="http://www.mrhu.vip/2018/08/30/c-292-Nim-Game/c-292-Nim-Game/question.png">
 <meta property="og:updated_time" content="2018-08-30T09:40:02.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c_292_Nim_Game">
 <meta name="twitter:description" content="//// Created by Mr.Hu on 2018/8/30.//// leetcode 292 nim game//// 题目描述了一个游戏：现有n个棋子，两个人依此从棋子中取，一次最多取3粒，最少取1粒。最后取完的那个人算赢。// 给定棋子n的个数，判断是否能赢。//// 这个题目属于智力题，其实我们可以先将n取较小的几个数就可以发现规律。// 如果当前n为4的倍数，那么无论先取几粒">
-<meta name="twitter:image" content="http://www.mrhu.vip/2018/08/30/c-292-Nim-Game/question.png">
+<meta name="twitter:image" content="http://www.mrhu.vip/2018/08/30/c-292-Nim-Game/c-292-Nim-Game/question.png">
 
 
 
@@ -349,7 +349,7 @@
       
 
       
-        <p><img src="/2018/08/30/c-292-Nim-Game/question.png" alt=""></p>
+        <p><img src="c-292-Nim-Game/question.png" alt=""></p>
 <p>//<br>// Created by Mr.Hu on 2018/8/30.<br>//<br>// leetcode 292 nim game<br>//<br>// 题目描述了一个游戏：现有n个棋子，两个人依此从棋子中取，一次最多取3粒，最少取1粒。最后取完的那个人算赢。<br>// 给定棋子n的个数，判断是否能赢。<br>//<br>// 这个题目属于智力题，其实我们可以先将n取较小的几个数就可以发现规律。<br>// 如果当前n为4的倍数，那么无论先取几粒，另外一个人可以使得这一轮两个人取的总粒数为4，那么依此轮训下去，最后取的肯定为后取的人。<br>// 如果当前n不为4的倍数，那么先取的人可以取几粒，使得剩下的粒数为4的倍数，那么剩余的情况将和前面描述的类似，<br>// 只是接下来后取的人为整个游戏最开始取的人。<br>//</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n % <span class="number">4</span> != <span class="number">0</span> || n &lt; <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">10001</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> win = solution.canWinNim(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"can win? "</span> &lt;&lt; win &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
