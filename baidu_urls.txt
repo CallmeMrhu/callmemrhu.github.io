@@ -1,3 +1,5 @@
+http://www.mrhu.vip/2019/01/16/c-696-Count-Binary-Substrings/
+http://www.mrhu.vip/2019/01/16/c-657-Robot-Reture-to-Origin/
 http://www.mrhu.vip/2019/01/15/c-557-Reverse-Words-in-a-String-III/
 http://www.mrhu.vip/2019/01/15/c-521-Longest-Uncommon-Subsequence-I/
 http://www.mrhu.vip/2019/01/15/c-520-Detect-Capital/
@@ -16,5 +18,3 @@ http://www.mrhu.vip/2019/01/07/c-690-Employee-Importance/
 http://www.mrhu.vip/2019/01/07/c-645-set-Mismatch/
 http://www.mrhu.vip/2019/01/07/c-599-Minimum-Index-Sum-of-Two-Lists/
 http://www.mrhu.vip/2019/01/07/c-290-Word-Pattern/
-http://www.mrhu.vip/2019/01/06/c-941-Valid-Mountain-Array/
-http://www.mrhu.vip/2019/01/06/c-922-Sort-Array-By-Parity-II/
