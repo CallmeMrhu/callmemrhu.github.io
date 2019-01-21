@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Leetcode,Backtracking,Bit_Manipulation," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="//// Created by Mr.Hu on 2019/1/21.//// leetcode 401 binary watch//// 题目给定一个场景：一只二进制表，上排有四个LED灯，分别表示1，2，4，8；下排有六个LED灯，分别表示1，2，4，8，16，32；// 上排亮的LED构成当前时间的小时数，下排亮的LED构成当前时间的分钟数；// 如果某一排灯不亮，则表示为0时/0分。现在">
+<meta name="keywords" content="Leetcode,Backtracking,Bit_Manipulation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c_401_Binary_Watch">
+<meta property="og:url" content="http://www.mrhu.vip/2019/01/21/c-401-Binary-Watch/index.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
+<meta property="og:description" content="//// Created by Mr.Hu on 2019/1/21.//// leetcode 401 binary watch//// 题目给定一个场景：一只二进制表，上排有四个LED灯，分别表示1，2，4，8；下排有六个LED灯，分别表示1，2，4，8，16，32；// 上排亮的LED构成当前时间的小时数，下排亮的LED构成当前时间的分钟数；// 如果某一排灯不亮，则表示为0时/0分。现在">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.mrhu.vip/2019/01/21/c-401-Binary-Watch/c-401-Binary-Watch/question.png">
+<meta property="og:updated_time" content="2019-01-21T08:39:42.051Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c_401_Binary_Watch">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2019/1/21.//// leetcode 401 binary watch//// 题目给定一个场景：一只二进制表，上排有四个LED灯，分别表示1，2，4，8；下排有六个LED灯，分别表示1，2，4，8，16，32；// 上排亮的LED构成当前时间的小时数，下排亮的LED构成当前时间的分钟数；// 如果某一排灯不亮，则表示为0时/0分。现在">
+<meta name="twitter:image" content="http://www.mrhu.vip/2019/01/21/c-401-Binary-Watch/c-401-Binary-Watch/question.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.mrhu.vip/2019/01/21/c-401-Binary-Watch/"/>
+
+
+
+
+
+  <title>c_401_Binary_Watch | Chan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">本来无一物，何处惹尘AI</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mrhu.vip/2019/01/21/c-401-Binary-Watch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheng Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">c_401_Binary_Watch</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-21T16:36:27+08:00">
+                2019-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-user-circle-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="c-401-Binary-Watch/question.png" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2019/1/21.<br>//<br>// leetcode 401 binary watch<br>//<br>// 题目给定一个场景：一只二进制表，上排有四个LED灯，分别表示1，2，4，8；下排有六个LED灯，分别表示1，2，4，8，16，32；<br>// 上排亮的LED构成当前时间的小时数，下排亮的LED构成当前时间的分钟数；<br>// 如果某一排灯不亮，则表示为0时/0分。现在给定表盘亮的LED灯总数，求出所有可能的时间数。<br>//<br>// 这个题目属于回溯法范畴，我对于这个方法并没有什么概念，所以去查了一下这个方法：<br>// 回溯法其实就是对隐式图的深度优先搜索，基本思路：<br>// 1、确定问题的解空间；2、确定结点的扩展规则；3、以深度优先方式搜索解空间，并在搜索过程中用剪枝函数避免无效搜索。<br>//<br>// 问题的解空间，就是所有的时间组合，而扩展规则就是小时数在[0,11]，分钟数在[0,59]，且时钟的组合来源于[1,2,4,8],<br>// 分钟的组合来源于[1,2,4,8,16,32].<br>// 基本的情况定义出来，但是在编码上还是一头雾水，后来看了discussion中一个java解答，觉得很清晰，便以这种方法进行了编码：<br>//<br>// 对于给定的num个LED亮着的灯，时钟的选择和分钟的选择都以及明确，无非就是选与不选的问题，而每一次选择的整体结构是相同的，<br>// 只要最后满足LED灯数为num即可，递归方式，即深度优先搜索，dfs(num,hour,minute,cur_h,cur_m)。<br>// 上述方法参数的含义：num表示当前还需要亮多少LED灯，hour表示当前可以选择上排LED灯的位置，minute表示当前可以选择下排LED灯的位置；<br>// cur_h和cur_m则表示当前已经累计的小时数和分钟数。<br>//<br>// 递归的主体：首先是当前已经累计的小时数和分钟数都要在正常范围内，即小时数为[0,11]，分钟数为[0,59],<br>// 然后就是判断还剩的LED灯数，如果为0，则表示当前累计的小时数和分钟数正好满足题目规定亮的LED灯数。<br>// 如果还不满足，则判断当前小时数是否还有的选，即hour的位置是否&lt;4，因为只有四个上排LED，如果满足，则对于时钟有两种情况，<br>//      第一种就是选择该时钟，此时num-1，hour+1，cur_h需要累计top[hour]；<br>//      第二种就是不选择该时钟，此时num不变，hour+1，cur_h不变；<br>// 如果时钟已经选择完毕，则判断当前分钟数是否还有的选，即minute是否&lt;6，因为只有六个下排LED，<br>// 如果满足，则对于分钟也有上述两种情况，只是更新的是分钟<br>//<br>// 这就是整个递归方法，这种方法可以说足够清晰。<br>//<br>// 另外还有人将上排四个LED灯亮0个，1个，2个，3个所能组成的小时数分类，对于分钟同样，<br>// 这样当给定num时，只要进行嵌套循环遍历，然后进行组合即可。这种方式也比较有趣。<br>//<br>// leetcode中100%的答案是下面optimal的这种，对于解空间中的每一个值，判断num个LED灯能否得到该值，而具体的判断方法是用基于位运算的方法。<br>// 题目是二进制手表，即我们可以将每个时间看作是一个10位的二进制数，前四位表示小时数，后六位表示分钟数，<br>// 给定num就相当于给定10位二进制数中存在多少个1，而传入小时和分钟数，判断总共的1个数是否和num数相等，则可以判断当前这个时间是否属于最终的结果。<br>// 这个方法对解空间中所有的值进行显示判断，也很高效，但是对位运算需要很熟悉。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</span><br><span class="line">    <span class="keyword">int</span> top[<span class="number">4</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> bottom[<span class="number">6</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">16</span>, <span class="number">32</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">int</span> hour, <span class="keyword">int</span> minute, <span class="keyword">int</span> cur_h, <span class="keyword">int</span> cur_m)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// top最多3个灯亮</span></span><br><span class="line">        <span class="comment">// bottom最多5个灯亮</span></span><br><span class="line">        <span class="keyword">if</span> (cur_h &gt; <span class="number">11</span> || cur_m &gt; <span class="number">59</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 表示当前有num个LED亮</span></span><br><span class="line">            <span class="keyword">if</span>(cur_m &lt; <span class="number">10</span>)</span><br><span class="line">                res.push_back(to_string(cur_h) + <span class="string">":0"</span> + to_string(cur_m));</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                res.push_back(to_string(cur_h) + <span class="string">":"</span> + to_string(cur_m));</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (hour &lt; <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="comment">// 当前hour不加入</span></span><br><span class="line">            dfs(num, hour + <span class="number">1</span>, minute, cur_h, cur_m);</span><br><span class="line">            <span class="comment">// 当前hour加入</span></span><br><span class="line">            dfs(num - <span class="number">1</span>, hour + <span class="number">1</span>, minute, cur_h + top[hour], cur_m);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (minute &lt; <span class="number">6</span>) &#123;</span><br><span class="line">            <span class="comment">// 当前minute加入</span></span><br><span class="line">            dfs(num - <span class="number">1</span>, hour, minute + <span class="number">1</span>, cur_h, cur_m + bottom[minute]);</span><br><span class="line">            <span class="comment">// 当前minute不加入</span></span><br><span class="line">            dfs(num, hour, minute + <span class="number">1</span>, cur_h, cur_m);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; readBinaryWatch(<span class="keyword">int</span> num) &#123;</span><br><span class="line">        <span class="keyword">if</span> (num &gt; <span class="number">8</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        dfs(num, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; readBinaryWatch_optimal(<span class="keyword">int</span> num) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">60</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num == checkDigit(i, j)) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (j &lt; <span class="number">10</span>) &#123;</span><br><span class="line">                        result.push_back(to_string(i) + <span class="string">":0"</span> + to_string(j));</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        result.push_back(to_string(i) + <span class="string">":"</span> + to_string(j));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">checkDigit</span><span class="params">(<span class="keyword">int</span> hour, <span class="keyword">int</span> minute)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((hour &gt;&gt; i) &amp; <span class="number">1</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((minute &gt;&gt; i) &amp; <span class="number">1</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res = solution.readBinaryWatch(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res_optimal = solution.readBinaryWatch_optimal(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i : res) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i : res_optimal) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          
+            <a href="/tags/Backtracking/" rel="tag"># Backtracking</a>
+          
+            <a href="/tags/Bit-Manipulation/" rel="tag"># Bit_Manipulation</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/20/c-303-Range-Sum-Query-Immutable/" rel="next" title="c_303_Range_Sum_Query_Immutable">
+                <i class="fa fa-chevron-left"></i> c_303_Range_Sum_Query_Immutable
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cheng Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">247</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cheng Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
