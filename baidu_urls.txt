@@ -1,5 +1,5 @@
+http://www.mrhu.vip/2019/01/23/c-530-Minimum-Absolute-Difference-in-BST/
 http://www.mrhu.vip/2019/01/23/c-733-Flood-Fill/
 http://www.mrhu.vip/2019/01/23/c-977-Squares-of-a-Sorted-Array/
 http://www.mrhu.vip/2019/01/22/c-703-Kth-Largest-Element-in-a-Stream/
 http://www.mrhu.vip/2019/01/21/c-496-Next-Greater-Element-I/
-http://www.mrhu.vip/2019/01/21/c-784-Letter-Case-Permutation/

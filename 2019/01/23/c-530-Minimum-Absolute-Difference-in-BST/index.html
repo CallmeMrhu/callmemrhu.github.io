@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,HashTable," />
+  <meta name="keywords" content="Leetcode,BST," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/5/15.//// leetcode 204 count primes//// 这个题目要求求出小于n的素数的个数//// 当拿到这个题目，我刚开始想的是素数的计算方法。根据概念，因数只有1和其本身的数称为素数。// 没有一个公式能够很好的描述素数，因为它在数学表达上无法刻画。经过了一天，我觉得去学习一下别人是怎么做的。//// 基本方">
-<meta name="keywords" content="Leetcode,HashTable">
+<meta name="description" content="//// Created by Mr.Hu on 2019/1/23.//// leetcode 530 minimum absolute difference in BST//// 题目给定一棵平衡二叉树，要求找出树中所有任意两点节点值之差的相对最小值（即绝对值）。//// 由于给定的是一棵平衡二叉树，所以我们可以很容易的转换为有序的数组，使用中序遍历即可，递归操作。// 得到顺序数组之后，想">
+<meta name="keywords" content="Leetcode,BST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_204_Count_Primes">
-<meta property="og:url" content="http://www.mrhu.vip/2018/05/15/c-204-Count-Primes/index.html">
+<meta property="og:title" content="c_530_Minimum_Absolute_Difference_in_BST">
+<meta property="og:url" content="http://www.mrhu.vip/2019/01/23/c-530-Minimum-Absolute-Difference-in-BST/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/5/15.//// leetcode 204 count primes//// 这个题目要求求出小于n的素数的个数//// 当拿到这个题目，我刚开始想的是素数的计算方法。根据概念，因数只有1和其本身的数称为素数。// 没有一个公式能够很好的描述素数，因为它在数学表达上无法刻画。经过了一天，我觉得去学习一下别人是怎么做的。//// 基本方">
+<meta property="og:description" content="//// Created by Mr.Hu on 2019/1/23.//// leetcode 530 minimum absolute difference in BST//// 题目给定一棵平衡二叉树，要求找出树中所有任意两点节点值之差的相对最小值（即绝对值）。//// 由于给定的是一棵平衡二叉树，所以我们可以很容易的转换为有序的数组，使用中序遍历即可，递归操作。// 得到顺序数组之后，想">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzf4uh0nl5j314208c3zk.jpg">
-<meta property="og:updated_time" content="2019-01-22T02:03:44.293Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzgljhdvhhj30nw09ljrw.jpg">
+<meta property="og:updated_time" content="2019-01-23T08:27:31.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_204_Count_Primes">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/5/15.//// leetcode 204 count primes//// 这个题目要求求出小于n的素数的个数//// 当拿到这个题目，我刚开始想的是素数的计算方法。根据概念，因数只有1和其本身的数称为素数。// 没有一个公式能够很好的描述素数，因为它在数学表达上无法刻画。经过了一天，我觉得去学习一下别人是怎么做的。//// 基本方">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzf4uh0nl5j314208c3zk.jpg">
+<meta name="twitter:title" content="c_530_Minimum_Absolute_Difference_in_BST">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2019/1/23.//// leetcode 530 minimum absolute difference in BST//// 题目给定一棵平衡二叉树，要求找出树中所有任意两点节点值之差的相对最小值（即绝对值）。//// 由于给定的是一棵平衡二叉树，所以我们可以很容易的转换为有序的数组，使用中序遍历即可，递归操作。// 得到顺序数组之后，想">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzgljhdvhhj30nw09ljrw.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.mrhu.vip/2018/05/15/c-204-Count-Primes/"/>
+  <link rel="canonical" href="http://www.mrhu.vip/2019/01/23/c-530-Minimum-Absolute-Difference-in-BST/"/>
 
 
 
 
 
-  <title>c_204_Count_Primes | Chan's Blog</title>
+  <title>c_530_Minimum_Absolute_Difference_in_BST | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mrhu.vip/2018/05/15/c-204-Count-Primes/">
+    <link itemprop="mainEntityOfPage" href="http://www.mrhu.vip/2019/01/23/c-530-Minimum-Absolute-Difference-in-BST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_204_Count_Primes</h1>
+          <h1 class="post-title" itemprop="name headline">c_530_Minimum_Absolute_Difference_in_BST</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-15T12:06:14+08:00">
-                2018-05-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-23T16:24:22+08:00">
+                2019-01-23
               </time>
             
 
@@ -349,9 +349,9 @@
       
 
       
-        <p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzf4uh0nl5j314208c3zk.jpg" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/5/15.<br>//<br>// leetcode 204 count primes<br>//<br>// 这个题目要求求出小于n的素数的个数<br>//<br>// 当拿到这个题目，我刚开始想的是素数的计算方法。根据概念，因数只有1和其本身的数称为素数。<br>// 没有一个公式能够很好的描述素数，因为它在数学表达上无法刻画。经过了一天，我觉得去学习一下别人是怎么做的。<br>//<br>// 基本方法就是从2开始判断，因为0,1都不是素数。如果该数a是素数，则a<em>2,a</em>3,,,a<em>m都为合数；<br>// 如果该数为合数，则跳过，如合数4，不用计算4</em>2,4<em>3，因为在前一个数固定为2的时候，2</em>4,2<em>5,2</em>6已经将基数为4的合数更新过了。<br>//<br>// 更一般的，以一个数a为底，则a<em>2,a</em>3,a<em>4…都是合数。而且在计算合数时，以a为底，我们直接从a</em>a,a<em>(a+1)开始计算即可，<br>// 因为a</em>(a-1),a<em>(a-2)已经在底为a-1合底为a-2的时候计算过了。当a为合数的时候，我们不用重复计算，因为它一定由其之前的合数组成，<br>// 并且它的倍数一定被前面合数计算过。<br>//<br>// 在对以上思想进行coding的过程中，使用map&lt;int,bool&gt;来进行存储，当n比较大时，执行时间特别长，<br>// 所以去找了一下别人的方法，发现别人使用的是bool </em>allnumber数组来进行存储。更改了我的存储方法后，<br>// 执行时间从原来的1603ms变为了6ms…<br>//<br>// 对于map、array、list、vector，set之间存储效率和更新效率对比需要了解一下。<br>//<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//#include &lt;map&gt;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countPrimes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        map&lt;int, bool&gt; allnumber;</span></span><br><span class="line">        <span class="keyword">bool</span> *allnumber = <span class="keyword">new</span> <span class="keyword">bool</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            allnumber[i] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        allnumber[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">        allnumber[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">        isPrime(n, allnumber);</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (allnumber[i])</span><br><span class="line">                count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    void isPrime(int n, map&lt;int, bool&gt; &amp;allnumber) &#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">bool</span> *allnumber)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (allnumber[i]) &#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = i * i;</span><br><span class="line">                <span class="keyword">while</span> (tmp &lt; n) &#123;</span><br><span class="line">                    allnumber[tmp] = <span class="literal">false</span>;</span><br><span class="line">                    tmp += i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">999983</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> count = solution.countPrimes(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzgljhdvhhj30nw09ljrw.jpg" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2019/1/23.<br>//<br>// leetcode 530 minimum absolute difference in BST<br>//<br>// 题目给定一棵平衡二叉树，要求找出树中所有任意两点节点值之差的相对最小值（即绝对值）。<br>//<br>// 由于给定的是一棵平衡二叉树，所以我们可以很容易的转换为有序的数组，使用中序遍历即可，递归操作。<br>// 得到顺序数组之后，想要得到最小的任意两点之间差的绝对值，我们只需要考虑数组所有前后值所有的差值的绝对值即可。<br>// 在所有差值绝对值中，最小值即为所求。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode *left, *right;</span><br><span class="line"></span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) : val(x), left(<span class="literal">nullptr</span>), right(<span class="literal">nullptr</span>) &#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; order;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode *node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!node) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;left) inorder(node-&gt;left);</span><br><span class="line">        order.push_back(node-&gt;val);</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;right) inorder(node-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getMinimumDifference</span><span class="params">(TreeNode *root)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 中序遍历，得到排序后的树</span></span><br><span class="line">        inorder(root);</span><br><span class="line">        <span class="keyword">int</span> min_dif = INT_MAX;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; order.size(); i++) &#123;</span><br><span class="line">            min_dif = min(min_dif, order[i] - order[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min_dif;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">TreeNode <span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">b</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">TreeNode <span class="title">c</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    a.right = &amp;b;</span><br><span class="line">    b.left = &amp;c;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">int</span> min_diff = solution.getMinimumDifference(&amp;a);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; min_diff &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -370,7 +370,7 @@
           
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
-            <a href="/tags/HashTable/" rel="tag"># HashTable</a>
+            <a href="/tags/BST/" rel="tag"># BST</a>
           
         </div>
       
@@ -383,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/12/c-202-Happy-Number/" rel="next" title="c_202_Happy_Number">
-                <i class="fa fa-chevron-left"></i> c_202_Happy_Number
+              <a href="/2019/01/23/c-733-Flood-Fill/" rel="next" title="c_733_Flood_Fill">
+                <i class="fa fa-chevron-left"></i> c_733_Flood_Fill
               </a>
             
           </div>
@@ -392,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/17/DecisionTree/" rel="prev" title="DecisionTree">
-                DecisionTree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
