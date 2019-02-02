@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Leetcode,Linked_List," />
+  <meta name="keywords" content="Leetcode,Greedy," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
-<meta name="keywords" content="Leetcode,Linked_List">
+<meta name="description" content="//// Created by Mr.Hu on 2019/2/2.//// leetcode 860 lemonade change//// 题目给定一个交易场景，当前有很多顾客排队买单，每个顾客需要支付5元，而店家当前没有任何零钱在手中，当顾客给10块时，需要找回5块，// 当顾客给20块时，需要找回15块。先提供每个用户给的钱数，要求判断店家在没有零钱的情况下，是否能将所有交易完成，顾客给">
+<meta name="keywords" content="Leetcode,Greedy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c_237_Delete_Node_in_a_Linked_List">
-<meta property="og:url" content="http://www.mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/index.html">
+<meta property="og:title" content="c_860_Lemonade_Change">
+<meta property="og:url" content="http://www.mrhu.vip/2019/02/02/c-860-Lemonade-Change/index.html">
 <meta property="og:site_name" content="Chan&#39;s Blog">
-<meta property="og:description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
+<meta property="og:description" content="//// Created by Mr.Hu on 2019/2/2.//// leetcode 860 lemonade change//// 题目给定一个交易场景，当前有很多顾客排队买单，每个顾客需要支付5元，而店家当前没有任何零钱在手中，当顾客给10块时，需要找回5块，// 当顾客给20块时，需要找回15块。先提供每个用户给的钱数，要求判断店家在没有零钱的情况下，是否能将所有交易完成，顾客给">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzf50a6hh4j31bs0tuq8c.jpg">
-<meta property="og:updated_time" content="2019-01-22T02:09:09.799Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fzrxim9busj315n0u044a.jpg">
+<meta property="og:updated_time" content="2019-02-02T03:43:06.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c_237_Delete_Node_in_a_Linked_List">
-<meta name="twitter:description" content="//// Created by Mr.Hu on 2018/6/14.//// 题目要求将给定的节点从单链表中删除//// 当当前node的val和next都用node-&amp;gt;next的val和next来赋值// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，// 因为经过上一步操作，node-&amp;gt;next已经是其原来的next-&amp;gt">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzf50a6hh4j31bs0tuq8c.jpg">
+<meta name="twitter:title" content="c_860_Lemonade_Change">
+<meta name="twitter:description" content="//// Created by Mr.Hu on 2019/2/2.//// leetcode 860 lemonade change//// 题目给定一个交易场景，当前有很多顾客排队买单，每个顾客需要支付5元，而店家当前没有任何零钱在手中，当顾客给10块时，需要找回5块，// 当顾客给20块时，需要找回15块。先提供每个用户给的钱数，要求判断店家在没有零钱的情况下，是否能将所有交易完成，顾客给">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fzrxim9busj315n0u044a.jpg">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/"/>
+  <link rel="canonical" href="http://www.mrhu.vip/2019/02/02/c-860-Lemonade-Change/"/>
 
 
 
 
 
-  <title>c_237_Delete_Node_in_a_Linked_List | Chan's Blog</title>
+  <title>c_860_Lemonade_Change | Chan's Blog</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mrhu.vip/2018/06/14/c-237-Delete-Node-in-a-Linked-List/">
+    <link itemprop="mainEntityOfPage" href="http://www.mrhu.vip/2019/02/02/c-860-Lemonade-Change/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheng Hu">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c_237_Delete_Node_in_a_Linked_List</h1>
+          <h1 class="post-title" itemprop="name headline">c_860_Lemonade_Change</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-14T20:24:07+08:00">
-                2018-06-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-02T11:41:06+08:00">
+                2019-02-02
               </time>
             
 
@@ -349,9 +349,9 @@
       
 
       
-        <p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzf50a6hh4j31bs0tuq8c.jpg" alt=""></p>
-<p>//<br>// Created by Mr.Hu on 2018/6/14.<br>//<br>// 题目要求将给定的节点从单链表中删除<br>//<br>// 当当前node的val和next都用node-&gt;next的val和next来赋值<br>// 然后使用删除原node，这里值得注意的是，在delete时，不能delete但前node的next，<br>// 因为经过上一步操作，node-&gt;next已经是其原来的next-&gt;next，所以我们在刚开始使用auto next来保存这个位置<br>// 最后直接delete这个ListNode next单独的节点就行。<br>//<br>// delete似乎会报错，将这个指针赋值为nullptr吧。<br>//</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">nullptr</span>) &#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode *node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> next = node-&gt;next;</span><br><span class="line">        node-&gt;val = next-&gt;val;</span><br><span class="line">        node-&gt;next = next-&gt;next;</span><br><span class="line">        <span class="comment">// *node = *next;</span></span><br><span class="line">        <span class="keyword">delete</span> next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">ListNode <span class="title">a</span><span class="params">(<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">b</span><span class="params">(<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">c</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line">    <span class="function">ListNode <span class="title">d</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">    a.next = &amp;b;</span><br><span class="line">    b.next = &amp;c;</span><br><span class="line">    c.next = &amp;d;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a.next-&gt;val&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    Solution solution;</span><br><span class="line">    solution.deleteNode(&amp;b);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a.next-&gt;val&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fzrxim9busj315n0u044a.jpg" alt=""></p>
+<p>//<br>// Created by Mr.Hu on 2019/2/2.<br>//<br>// leetcode 860 lemonade change<br>//<br>// 题目给定一个交易场景，当前有很多顾客排队买单，每个顾客需要支付5元，而店家当前没有任何零钱在手中，当顾客给10块时，需要找回5块，<br>// 当顾客给20块时，需要找回15块。先提供每个用户给的钱数，要求判断店家在没有零钱的情况下，是否能将所有交易完成，顾客给定的钱为{5,10,20}。<br>//<br>// 利用两个变量分别保存店家手中的5块和10块数目，当顾客给20时，如果有10块的，则给其找回一个10块和一个5块，如果没有，则找回三个5块。<br>// 如果店家当前的零钱无法找给顾客，则返回false，如果都能找回，则返回true。<br>//</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">lemonadeChange</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;bills)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> five = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ten = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bills.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (bills[i] == <span class="number">5</span>) &#123;</span><br><span class="line">                five++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (bills[i] == <span class="number">10</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (five == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                five--;</span><br><span class="line">                ten++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (ten &gt; <span class="number">0</span> &amp;&amp; five &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    ten--;</span><br><span class="line">                    five--;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ten == <span class="number">0</span> &amp;&amp; five &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                    five -= <span class="number">3</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; bills = &#123;<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">20</span>&#125;;</span><br><span class="line">    Solution solution;</span><br><span class="line">    <span class="keyword">bool</span> change = solution.lemonadeChange(bills);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"can change ? "</span> &lt;&lt; change &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -370,7 +370,7 @@
           
             <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
-            <a href="/tags/Linked-List/" rel="tag"># Linked_List</a>
+            <a href="/tags/Greedy/" rel="tag"># Greedy</a>
           
         </div>
       
@@ -383,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/14/c-141-Linked-List-Cycle/" rel="next" title="c_141_Linked_List_Cycle">
-                <i class="fa fa-chevron-left"></i> c_141_Linked_List_Cycle
+              <a href="/2019/02/02/c-455-Assign-Cookies/" rel="next" title="c_455_Assign_Cookies">
+                <i class="fa fa-chevron-left"></i> c_455_Assign_Cookies
               </a>
             
           </div>
@@ -392,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/14/c-203-Remove-Linked-List-Elements/" rel="prev" title="c_203_Remove_Linked_List_Elements">
-                c_203_Remove_Linked_List_Elements <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
