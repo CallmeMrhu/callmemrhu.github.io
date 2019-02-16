@@ -1,5 +1,5 @@
+http://www.mrhu.vip/2019/02/16/c-989-Add-to-Array-Form-of-Integer/
 http://www.mrhu.vip/2019/02/02/c-860-Lemonade-Change/
 http://www.mrhu.vip/2019/02/02/c-455-Assign-Cookies/
 http://www.mrhu.vip/2019/01/31/c-908-Smallest-Range-I/
 http://www.mrhu.vip/2019/01/30/c-883-Projection-Area-of-3D-Shapes/
-http://www.mrhu.vip/2019/01/30/c-970-Powerful-Integers/
